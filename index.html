@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Prayer of the Church">
+<meta name="theme-color" content="#1a3c6e">
+<title>Prayer of the Church — Edmonton Eparchy</title>
+<link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Prayer">
+  <meta name="msapplication-TileColor" content="#1a3c6e">
+  <meta name="msapplication-TileImage" content="icons/icon-144.png">
+<style>
+/* ══════════════════════════════════════════
+   BYZANTINE CSS VARIABLES & RESET
+══════════════════════════════════════════ */
+:root {
+  --bg:       #f4efe4;
+  --bg2:      #ede7d7;
+  --card:     #fffdf5;
+  --tx:       #1e1812;
+  --mt:       #7a6a50;
+  --gold:     #a07418;
+  --gold2:    #c8991a;
+  --blue:     #1a3c6e;
+  --red:      #7a0c0c;
+  --rubric:   #8b2a10;
+  --border:   #d4c8a0;
+  --border2:  #c4b888;
+  --hd-from:  #0e2444;
+  --hd-to:    #1a3c6e;
+  --hd-text:  #e8dfc8;
+  --hd-sub:   #a09278;
+  --btn-bg:   rgba(255,255,255,0.08);
+  --shadow:   0 2px 12px rgba(30,24,18,0.12);
+  --feast-ring: #b08820;
+  --lent-dot: #5a7a3a;
+  --fast-dot: #888;
+}
+[data-dark] {
+  --bg:       #0d0c09;
+  --bg2:      #141208;
+  --card:     #18160f;
+  --tx:       #ddd0b8;
+  --mt:       #8a7d68;
+  --gold:     #c8a44e;
+  --gold2:    #e0bb60;
+  --blue:     #7a9ec4;
+  --red:      #e07060;
+  --rubric:   #d4785a;
+  --border:   #2a2518;
+  --border2:  #3a3220;
+  --hd-from:  #0a0908;
+  --hd-to:    #14110c;
+  --hd-text:  #e0d4c0;
+  --hd-sub:   #7a6a58;
+  --btn-bg:   rgba(255,255,255,0.06);
+  --shadow:   0 2px 16px rgba(0,0,0,0.4);
+  --feast-ring:#c8a44e;
+  --lent-dot: #7aa050;
+  --fast-dot: #666;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+body {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--tx);
+  min-height: 100dvh;
+  line-height: 1.6;
+  overscroll-behavior: contain;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+#header {
+  position: sticky; top: 0; z-index: 200;
+  background: linear-gradient(180deg, var(--hd-from), var(--hd-to));
+  border-bottom: 2.5px solid var(--gold);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  user-select: none;
+}
+.hd-row1 {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px 4px;
+  gap: 8px;
+}
+.hd-title {
+  flex: 1; text-align: center;
+  font-size: 0.92em; font-weight: 700; letter-spacing: 0.05em;
+  color: var(--hd-text); line-height: 1.2;
+}
+.hd-sub-line {
+  font-size: 0.58em; color: var(--hd-sub);
+  font-weight: 400; letter-spacing: 0.02em;
+  margin-top: 1px; display: block;
+}
+.hd-ctrl { display: flex; gap: 3px; align-items: center; flex-shrink: 0; }
+.hd-btn {
+  background: var(--btn-bg); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 5px; color: var(--hd-text); cursor: pointer;
+  font-family: inherit; padding: 4px 8px; font-size: 0.7em; font-weight: 600;
+  transition: background 0.15s;
+}
+.hd-btn:active { background: rgba(255,255,255,0.15); }
+.hd-btn.icon { padding: 4px 7px; font-size: 0.85em; border: none; background: none; }
+
+/* Date nav row */
+.hd-row2 {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 12px 8px; gap: 6px;
+}
+.hd-arrow {
+  background: none; border: none; color: var(--gold);
+  font-size: 1.4em; cursor: pointer; padding: 0 6px;
+  line-height: 1; opacity: 0.85; transition: opacity 0.15s;
+}
+.hd-arrow:active { opacity: 0.5; }
+.hd-date-btn {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(200,164,78,0.3);
+  border-radius: 8px; color: var(--hd-text);
+  font-family: inherit; cursor: pointer;
+  padding: 4px 14px; text-align: center;
+  min-width: 190px;
+}
+.hd-date-main { font-size: 0.9em; font-weight: 700; letter-spacing: 0.02em; }
+.hd-date-sub  { font-size: 0.6em; color: var(--gold); margin-top: 1px; }
+
+/* ══════════════════════════════════════════
+   CONTENT AREA
+══════════════════════════════════════════ */
+#main { max-width: 540px; margin: 0 auto; }
+
+/* ══════════════════════════════════════════
+   HOME VIEW
+══════════════════════════════════════════ */
+.day-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; margin: 12px 10px 6px;
+  padding: 16px 16px 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.day-card-cross { font-size: 2.2em; margin-bottom: 4px; line-height: 1; }
+.day-card-saint {
+  font-size: 0.95em; font-weight: 700; color: var(--tx);
+  line-height: 1.35; margin-bottom: 8px;
+  max-height: 3.5em; overflow: hidden;
+}
+.day-card-saint.feast { color: var(--red); }
+.day-card-badges {
+  display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.badge {
+  display: inline-block; padding: 2px 10px; border-radius: 20px;
+  font-size: 0.68em; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.badge-tone { background: var(--blue); color: #fff; opacity: 0.85; }
+.badge-fast { background: var(--lent-dot); color: #fff; opacity: 0.85; }
+.badge-period { background: var(--gold); color: #fff; opacity: 0.9; }
+.badge-feast { background: var(--red); color: #fff; opacity: 0.9; }
+.badge-plain { background: var(--border); color: var(--mt); }
+
+/* Calendar strip */
+.cal-strip-wrap {
+  padding: 2px 10px 8px;
+}
+.cal-strip-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 4px 4px;
+}
+.cal-month-label {
+  font-size: 0.78em; font-weight: 700; color: var(--mt);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.cal-strip {
+  display: flex; gap: 5px; overflow-x: auto;
+  padding: 4px 0 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.cal-strip::-webkit-scrollbar { display: none; }
+.cal-day {
+  flex-shrink: 0; width: 42px; min-height: 54px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border);
+  border-radius: 10px; cursor: pointer;
+  background: var(--card);
+  transition: all 0.12s;
+  padding: 4px 0;
+  position: relative;
+}
+.cal-day:active { opacity: 0.7; }
+.cal-day.selected {
+  border-color: var(--gold); background: var(--gold);
+}
+.cal-day.feast {
+  border-color: var(--feast-ring);
+}
+.cal-day.today {
+  border-style: dashed;
+}
+.cal-day-wd { font-size: 0.55em; color: var(--mt); text-transform: uppercase; letter-spacing: 0.04em; }
+.cal-day-n  { font-size: 1.05em; font-weight: 700; color: var(--tx); line-height: 1.2; }
+.cal-day.selected .cal-day-wd,
+.cal-day.selected .cal-day-n { color: #fff; }
+.cal-day-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  margin-top: 2px;
+}
+.dot-feast  { background: var(--feast-ring); }
+.dot-major  { background: var(--gold); }
+.dot-lent   { background: var(--lent-dot); }
+.dot-none   { background: transparent; }
+
+/* Services list */
+.section-label {
+  font-size: 0.68em; font-weight: 700; color: var(--mt);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 4px 14px 4px;
+}
+.svc-list { padding: 0 10px 20px; }
+.svc-btn {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 12px 14px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; margin-bottom: 6px;
+  cursor: pointer; font-family: inherit;
+  text-align: left; transition: all 0.12s;
+}
+.svc-btn:not(.disabled):active { background: var(--bg2); }
+.svc-btn.disabled { opacity: 0.42; cursor: default; }
+.svc-icon { font-size: 1.5em; width: 32px; text-align: center; flex-shrink: 0; }
+.svc-name { font-size: 0.95em; font-weight: 700; color: var(--tx); }
+.svc-ukr  { font-size: 0.72em; color: var(--mt); }
+.svc-arr  { margin-left: auto; color: var(--gold); font-size: 1.2em; font-weight: 300; }
+.svc-soon { margin-left: auto; font-size: 0.62em; color: var(--mt); font-style: italic; }
+
+/* ══════════════════════════════════════════
+   CALENDAR FULL VIEW
+══════════════════════════════════════════ */
+.cal-full { padding: 8px 10px 20px; }
+.cal-full-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 4px 10px;
+}
+.cal-month-nav {
+  background: none; border: none; color: var(--gold); cursor: pointer;
+  font-size: 1.4em; padding: 0 8px; line-height: 1;
+}
+.cal-full-month {
+  font-size: 1.05em; font-weight: 700; color: var(--tx);
+  letter-spacing: 0.02em;
+}
+.cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-wd-label {
+  text-align: center; font-size: 0.6em; color: var(--mt);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 4px 0;
+}
+.cal-cell {
+  aspect-ratio: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border-radius: 8px; cursor: pointer; font-size: 0.9em;
+  border: 1px solid transparent;
+  position: relative; transition: all 0.1s;
+}
+.cal-cell:active { opacity: 0.6; }
+.cal-cell.empty { cursor: default; }
+.cal-cell.selected { background: var(--gold); color: #fff; border-color: var(--gold); }
+.cal-cell.today { border-color: var(--gold); border-style: dashed; }
+.cal-cell.great-feast { border-color: var(--feast-ring); }
+.cal-cell .cd-n { font-weight: 600; font-size: 0.95em; }
+.cal-cell .cd-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  position: absolute; bottom: 3px;
+}
+.cal-cell.great-feast .cd-dot { background: var(--feast-ring); }
+.cal-cell.feast-day .cd-dot { background: var(--gold); }
+.cal-cell.lenten .cd-n { color: var(--lent-dot); }
+.cal-cell.selected .cd-n { color: #fff; }
+.cal-cell.out-of-range { opacity: 0.3; cursor: default; }
+
+/* ══════════════════════════════════════════
+   VESPERS VIEW
+══════════════════════════════════════════ */
+.svc-view-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px 6px;
+}
+.back-btn {
+  background: none; border: none; color: var(--gold);
+  font-family: inherit; font-size: 0.88em; cursor: pointer; padding: 6px 4px;
+}
+.print-btn {
+  background: none; border: 1px solid var(--border);
+  border-radius: 6px; color: var(--mt);
+  font-family: inherit; font-size: 0.72em; cursor: pointer;
+  padding: 4px 10px;
+}
+.svc-content {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; margin: 0 10px 24px;
+  padding: 18px 16px 28px;
+  box-shadow: var(--shadow);
+}
+.svc-day-header {
+  text-align: center; margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.svc-day-date { font-size: 0.78em; color: var(--mt); margin-bottom: 2px; }
+.svc-day-tone { font-size: 0.82em; color: var(--gold); font-weight: 600; }
+.svc-day-saint { font-size: 0.85em; color: var(--red); font-weight: 700; margin-top: 3px; line-height: 1.3; }
+
+/* English service blocks */
+.blk-title { text-align: center; font-size: 1.5em; font-weight: 800;
+  color: var(--red); letter-spacing: 0.06em; margin: 20px 0 2px; }
+.blk-subtitle { text-align: center; font-size: 0.82em; color: var(--mt);
+  margin: 0 0 16px; font-style: italic; }
+.blk-sec { font-size: 1em; font-weight: 700; color: var(--gold);
+  border-bottom: 1px solid; border-color: var(--gold);
+  padding-bottom: 4px; margin: 22px 0 10px; opacity: 0.9; }
+.blk-rubric { font-size: 0.88em; color: var(--rubric); font-style: italic;
+  margin: 5px 0; line-height: 1.6; }
+.blk-p { font-size: 1em; color: var(--tx); margin: 7px 0;
+  line-height: 1.78; text-align: justify; }
+.blk-resp { font-size: 1em; font-weight: 700; color: var(--blue);
+  margin: 5px 0; line-height: 1.6; }
+.blk-lit { margin: 6px 0; }
+.blk-lit-p { font-size: 1em; color: var(--tx); margin: 2px 0; line-height: 1.6; }
+.blk-lit-r { font-size: 1em; font-weight: 700; color: var(--blue);
+  margin: 2px 0 9px; line-height: 1.5; }
+.blk-end { text-align: center; font-size: 2.4em; color: var(--red);
+  margin: 28px 0 12px; }
+.blk-moveable-placeholder {
+  background: var(--bg2); border: 1px dashed var(--border2);
+  border-radius: 8px; padding: 12px 14px; margin: 10px 0;
+  font-size: 0.82em; color: var(--mt); font-style: italic;
+  text-align: center; line-height: 1.5;
+}
+
+/* Compline body rendering (both languages) */
+.compline-body { padding: 8px 0 24px; font-size: 1em; line-height: 1.72; }
+.compline-body h2 { color: var(--red); text-align: center; font-size: 1.3em; font-weight: 800;
+  margin: 28px 0 14px; border-bottom: 1px solid var(--border); padding-bottom: 8px; letter-spacing: 0.04em; }
+.compline-body p { margin: 5px 0; }
+.compline-body p i { color: var(--rubric); font-style: italic; }
+.compline-body p b { color: var(--blue); }
+.compline-body p b i, .compline-body p i b { color: var(--gold); font-style: italic; }
+
+/* Ukrainian HTML rendering */
+.uk-vespers { font-size: 1em; line-height: 1.78; }
+.uk-vespers h1 {
+  text-align: center; font-size: 1.4em; font-weight: 800;
+  color: var(--red); letter-spacing: 0.06em;
+  margin: 20px 0 6px;
+}
+.uk-vespers h2 {
+  font-size: 1em; font-weight: 700; color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px; margin: 22px 0 10px; opacity: 0.9;
+}
+.uk-vespers h3 {
+  font-size: 1em; font-weight: 700; color: var(--gold);
+  margin: 20px 0 8px; opacity: 0.85;
+}
+.uk-vespers p {
+  margin: 7px 0; text-align: justify; color: var(--tx);
+}
+.uk-vespers p i, .uk-vespers p em {
+  color: var(--rubric); font-style: italic;
+}
+.uk-vespers p b, .uk-vespers p strong {
+  color: var(--blue); font-weight: 700;
+}
+.uk-vespers p b i, .uk-vespers p i b,
+.uk-vespers p strong i, .uk-vespers p i strong {
+  color: var(--gold); font-weight: 700; font-style: italic;
+}
+
+/* Language toggle notice */
+.lang-notice {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px; margin: 12px 0;
+  font-size: 0.8em; color: var(--mt); text-align: center;
+}
+
+/* Loading state */
+.loading-spinner {
+  text-align: center; padding: 40px 20px;
+  font-size: 0.9em; color: var(--mt);
+}
+.loading-spinner::before {
+  content: '☦'; font-size: 2em; display: block;
+  margin-bottom: 10px; color: var(--gold);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════
+   PRINT STYLES
+══════════════════════════════════════════ */
+@media print {
+  #header, .svc-view-header, .back-btn, .print-btn { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .svc-content { border: none; box-shadow: none; }
+  .blk-rubric { color: #a00 !important; }
+  .blk-resp, .blk-lit-r { color: #00008b !important; }
+  .blk-sec { color: #000 !important; border-bottom: 1px solid #000; }
+  .blk-title { color: #a00 !important; }
+}
+
+/* ══════════════════════════════════════════
+   UTILITIES
+══════════════════════════════════════════ */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+</style>
+</head>
+<body>
+
+<!-- APP ROOT -->
+<div id="header">
+  <div class="hd-row1">
+    <div class="hd-ctrl">
+      <button class="hd-btn" id="btnLang" onclick="toggleLang()">UA</button>
+    </div>
+    <div class="hd-title">
+      Prayer of the Church
+      <span class="hd-sub-line" id="hd-eparchy">Edmonton Eparchy · UGCC</span>
+    </div>
+    <div class="hd-ctrl">
+      <button class="hd-btn icon" id="btnDark" onclick="toggleDark()" title="Dark mode">☾</button>
+      <button class="hd-btn" onclick="adjFont(-1)" title="Smaller">A−</button>
+      <button class="hd-btn" style="font-weight:700" onclick="adjFont(1)" title="Larger">A+</button>
+    </div>
+  </div>
+  <div class="hd-row2" id="hd-date-row">
+    <button class="hd-arrow" onclick="shiftDay(-1)" aria-label="Previous day">‹</button>
+    <button class="hd-date-btn" onclick="toggleCalView()">
+      <div class="hd-date-main" id="hd-date-main">—</div>
+      <div class="hd-date-sub"  id="hd-date-sub">—</div>
+    </button>
+    <button class="hd-arrow" onclick="shiftDay(1)"  aria-label="Next day">›</button>
+  </div>
+</div>
+
+<div id="main"></div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// PRAYER OF THE CHURCH — v0.5
+// Edmonton Eparchy of the Ukrainian Greek-Catholic Church
+// ══════════════════════════════════════════════════════════════
+
+// ── State ────────────────────────────────────────────────────
+const S = {
+  date: new Date(2026, 2, 11),   // default: March 11, 2026
+  view: 'home',                   // 'home' | 'cal' | 'vespers'
+  calMonth: 2,                    // 0-indexed, 0=Jan 1=Feb 2=Mar
+  lang: 'en',
+  dark: false,
+  fontSize: 18,
+  calData: null,                  // from data/calendar2026.json
+  moveableUK: null,               // from data/vespers-moveable-uk.json (lazy)
+  moveableEN: null,               // from data/vespers-moveable-en.json (lazy)
+  moveableLoading: false,
+};
+const TODAY = new Date(2026, 2, 11);
+const DATA_MONTHS = [0, 1, 2];    // Jan/Feb/Mar have data
+
+// ── Helpers ──────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const mmdd = d => `${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+const dateKey = d => mmdd(d);
+
+const MONTHS_EN = ['January','February','March','April','May','June',
+                   'July','August','September','October','November','December'];
+const MONTHS_UK = ['Січень','Лютий','Березень','Квітень','Травень','Червень',
+                   'Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'];
+const WD_EN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const WD_UK = ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'];
+const WD_FULL_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const WD_FULL_UK = ['Неділя','Понеділок','Вівторок','Середа','Четвер','Пятниця','Субота'];
+
+function fmtDate(d, lang) {
+  const m = lang==='uk' ? MONTHS_UK[d.getMonth()] : MONTHS_EN[d.getMonth()];
+  const wd = lang==='uk' ? WD_FULL_UK[d.getDay()] : WD_FULL_EN[d.getDay()];
+  return lang==='uk'
+    ? `${wd}, ${d.getDate()} ${m} 2026`
+    : `${wd}, ${m} ${d.getDate()}, 2026`;
+}
+
+function getLitPeriod(fast, lang) {
+  const uk = lang==='uk';
+  if (!fast) return '';
+  if (fast === '00m') return uk ? "М'ясопусний тиждень" : 'Meatfare Week';
+  if (fast === '00s') return uk ? 'Сиропусний тиждень' : 'Cheesefare Week';
+  const lentM = fast.match(/^0(\d)p$/);
+  if (lentM) {
+    const wk = parseInt(lentM[1]);
+    const names_en = ['','First','Second','Third','Fourth','Fifth','Sixth'];
+    const names_uk = ['','Перший','Другий','Третій','Четвертий',"П'ятий",'Шостий'];
+    return uk ? `${names_uk[wk]||wk} тиждень Великого Посту`
+               : `${names_en[wk]||wk} Week of Great Lent`;
+  }
+  const easterM = fast.match(/^0(\d)e$/);
+  if (easterM) return uk ? 'Пасхальний час' : 'Paschal Season';
+  if (fast === '***') return '';
+  const lentFast = fast.match(/^(\d+)d$/);
+  if (lentFast) {
+    const wk = parseInt(lentFast[1]);
+    return uk ? `${wk}-й тиждень після П'ятидесятниці`
+               : `${wk}th Week after Pentecost`;
+  }
+  return '';
+}
+
+function getFastLabel(fast, lang) {
+  const uk = lang==='uk';
+  if (!fast) return '';
+  if (fast==='30d') return uk ? "М'ясо та молоко дозволені" : 'Meat & dairy permitted';
+  if (fast==='31d') return uk ? "М'ясо дозволено" : 'Meat permitted';
+  if (fast==='32d'||fast==='33d'||fast==='34d'||fast==='35d') return uk ? 'Риба дозволена' : 'Fish permitted';
+  if (fast==='36d') return uk ? 'Вино та олія дозволені' : 'Wine & oil permitted';
+  if (fast==='37d') return uk ? 'Вино дозволено' : 'Wine permitted';
+  if (fast==='38d') return uk ? 'Суворий піст' : 'Strict fast';
+  if (fast==='***') return '';
+  if (fast==='00m') return uk ? 'Тиждень без посту' : 'Fast-free week';
+  if (fast==='00s') return uk ? 'Молочна їжа дозволена' : 'Dairy permitted';
+  if (fast.match(/^0\dp$/)) return uk ? 'Великий Піст' : 'Great Lent fast';
+  if (fast.match(/^0\de$/)) return uk ? 'Пасхальний час' : 'Paschal season';
+  return '';
+}
+
+function getRankLabel(rank, lang) {
+  const uk = lang==='uk';
+  if (rank==='#') return uk ? 'Велике свято' : 'Great Feast';
+  if (rank==='@') return uk ? 'Свято' : 'Feast';
+  if (rank==='+') return uk ? 'Святкування' : 'Commemoration';
+  if (rank==='&') return uk ? 'Поліелей' : 'Polyeleos';
+  return '';
+}
+
+function getToneLabel(tone, lang) {
+  if (!tone) return '';
+  return lang==='uk' ? `Глас ${tone}` : `Tone ${tone}`;
+}
+
+function isLenten(fast) {
+  return fast && fast.match(/^0[1-6]p$/) !== null;
+}
+
+function hasData(d) {
+  return d.getFullYear()===2026 && d.getMonth()<=2;
+}
+
+// ── Calendar Metadata (CALENDAR_META embedded) ───────────────
+// Format: MMDD:fastCode:rank:tone (from calendar_meta_2026.js)
+const CALENDAR_META_RAW = `0101:30d:#:4,0102:30d:-:4,0103:***:-:4,0104:***:-:5,0105:31d:-:5,0106:***:#:5,0107:31d:@:5,0108:31d:-:5,0109:31d:-:5,0110:***:-:5,0111:***:+:6,0112:32d:-:6,0113:32d:-:6,0114:32d:-:6,0115:32d:&:6,0116:32d:&:6,0117:32d:+:6,0118:***:&:7,0119:33d:&:7,0120:33d:+:7,0121:33d:-:7,0122:33d:-:7,0123:33d:-:7,0124:33d:-:7,0125:***:+:8,0126:34d:-:8,0127:34d:+:8,0128:34d:&:8,0129:34d:&:8,0130:***:*:8,0131:34d:&:8,0201:***:&:1,0202:***:#:1,0203:35d:&:1,0204:35d:-:1,0205:35d:-:1,0206:35d:-:1,0207:35d:-:1,0208:***:&:2,0209:00m:-:2,0210:00m:-:2,0211:00m:-:2,0212:00m:-:2,0213:00m:-:2,0214:***:+:2,0215:***:-:3,0216:00s:-:3,0217:00s:&:3,0218:00s:-:3,0219:00s:-:3,0220:00s:-:3,0221:***:-:3,0222:***:-:4,0223:01p:-:4,0224:01p:+:4,0225:01p:-:4,0226:01p:-:4,0227:01p:-:4,0228:01p:-:4,0301:***:-:5,0302:02p:-:5,0303:02p:-:5,0304:02p:-:5,0305:02p:-:5,0306:02p:-:5,0307:***:-:5,0308:***:-:6,0309:03p:+:6,0310:03p:-:6,0311:03p:-:6,0312:03p:-:6,0313:03p:-:6,0314:***:-:6,0315:***:-:7,0316:04p:-:7,0317:04p:-:7,0318:04p:-:7,0319:04p:-:7,0320:04p:-:7,0321:***:-:7,0322:***:-:8,0323:05p:-:8,0324:05p:&:8,0325:***:#:8,0326:05p:@:8,0327:05p:-:8,0328:***:-:8,0329:***:-:1,0330:06p:-:1,0331:06p:-:1,0401:06p:-:1,0402:06p:-:1,0403:06p:-:1,0404:***:-:1,0405:***:#:*,0406:***:+:*,0407:***:-:*,0408:***:-:*,0409:***:-:*,0410:***:-:*,0411:***:-:*,0412:***:#:1,0413:***:-:2,0414:***:-:3,0415:***:-:4,0416:***:-:5,0417:***:-:6,0418:***:-:8,0419:***:-:ev1,0420:***:-:,0421:***:-:,0422:***:-:,0423:***:-:,0424:***:-:,0425:***:-:,0426:***:-:2,0427:02e:-:2,0428:02e:-:2,0429:02e:-:2,0430:02e:-:2,0501:02e:-:2,0502:02e:-:2,0503:***:-:3,0504:03e:-:3,0505:03e:-:3,0506:03e:-:3,0507:03e:-:3,0508:03e:-:3,0509:03e:-:3,0510:***:-:4,0511:04e:-:4,0512:04e:-:4,0513:04e:-:4,0514:04e:-:4,0515:04e:-:4,0516:04e:-:4,0517:***:-:5,0518:05e:-:5,0519:05e:-:5,0520:05e:-:5,0521:***:#:5,0522:06e:-:6,0523:06e:-:6,0524:***:-:6,0525:07e:-:6,0526:07e:-:6,0527:07e:-:6,0528:07e:-:6,0529:07e:-:6,0530:07e:-:6,0531:***:-:7,0601:08e:-:7,0602:08e:-:7,0603:08e:-:7,0604:08e:-:7,0605:08e:-:7,0606:08e:-:7,0607:***:-:8,0608:01d:-:8,0609:01d:-:8,0610:01d:-:8,0611:01d:-:8,0612:01d:-:8,0613:01d:-:8,0614:***:-:1,0615:02d:-:1,0616:02d:-:1,0617:02d:-:1,0618:02d:-:1,0619:02d:-:1,0620:02d:-:1,0621:***:-:2,0622:03d:-:2,0623:03d:-:2,0624:***:#:2,0625:03d:-:2,0626:03d:-:2,0627:03d:-:2,0628:***:-:3,0629:***:#:3,0630:04d:-:3,0701:05d:&:3,0702:05d:+:3,0703:05d:-:3,0704:05d:-:3,0705:***:*:4,0706:06d:-:4,0707:06d:-:4,0708:06d:&:4,0709:06d:-:4,0710:06d:+:4,0711:06d:+:4,0712:***:-:5,0713:07d:-:5,0714:07d:-:5,0715:07d:-:5,0716:07d:-:5,0717:07d:-:5,0718:07d:+:5,0719:***:-:6,0720:08d:+:6,0721:08d:-:6,0722:08d:+:6,0723:08d:-:6,0724:08d:-:6,0725:08d:-:6,0726:***:-:7,0727:09d:+:7,0728:09d:-:7,0729:09d:-:7,0730:09d:-:7,0731:09d:-:7,0801:09d:+:7,0802:***:-:8,0803:10d:-:8,0804:10d:-:8,0805:10d:-:8,0806:***:#:8,0807:11d:-:8,0808:11d:-:8,0809:***:-:1,0810:12d:-:1,0811:12d:-:1,0812:12d:-:1,0813:12d:-:1,0814:12d:&:1,0815:***:#:1,0816:***:-:2,0817:13d:-:2,0818:13d:-:2,0819:13d:-:2,0820:13d:-:2,0821:13d:-:2,0822:13d:-:2,0823:***:-:3,0824:14d:+:3,0825:14d:+:3,0826:14d:-:3,0827:14d:-:3,0828:14d:-:3,0829:***:+:3,0830:***:-:4,0831:15d:+:4,0901:15d:+:4,0902:15d:-:4,0903:15d:-:4,0904:15d:-:4,0905:15d:-:4,0906:***:-:5,0907:16d:-:5,0908:***:#:5,0909:16d:-:5,0910:16d:-:5,0911:16d:+:5,0912:16d:-:5,0913:***:-:6,0914:***:#:6,0915:17d:+:6,0916:17d:-:6,0917:17d:+:6,0918:17d:-:6,0919:17d:-:6,0920:***:-:7,0921:18d:+:7,0922:18d:-:7,0923:18d:-:7,0924:18d:-:7,0925:18d:-:7,0926:18d:@:7,0927:***:-:8,0928:19d:-:8,0929:19d:-:8,0930:19d:-:8,1001:***:#:8,1002:18d:&:8,1003:18d:&:8,1004:***:-:1,1005:19d:-:1,1006:19d:+:1,1007:19d:&:1,1008:19d:-:1,1009:19d:+:1,1010:19d:-:1,1011:***:-:2,1012:20d:-:2,1013:20d:-:2,1014:20d:#:2,1015:20d:-:2,1016:20d:-:2,1017:20d:-:2,1018:***:+:3,1019:21d:+:3,1020:21d:-:3,1021:21d:-:3,1022:21d:-:3,1023:21d:+:3,1024:21d:-:3,1025:***:-:4,1026:22d:+:4,1027:22d:-:4,1028:22d:-:4,1029:22d:-:4,1030:22d:-:4,1031:22d:-:4,1101:***:-:5,1102:23d:-:5,1103:23d:-:5,1104:23d:-:5,1105:23d:-:5,1106:23d:-:5,1107:23d:-:5,1108:***:+:6,1109:24d:&:6,1110:24d:-:6,1111:24d:-:6,1112:24d:+:6,1113:24d:@:6,1114:24d:-:6,1115:***:-:7,1116:25d:-:7,1117:25d:-:7,1118:25d:-:7,1119:25d:-:7,1120:25d:-:7,1121:***:#:7,1122:***:-:8,1123:26d:-:8,1124:26d:&:8,1125:26d:&:8,1126:26d:+:8,1127:26d:-:8,1128:26d:-:8,1129:***:-:1,1130:27d:+:1,1201:27d:-:1,1202:27d:-:1,1203:27d:-:1,1204:27d:+:1,1205:27d:-:1,1206:***:+:2,1207:28d:+:2,1208:28d:&:2,1209:28d:&:2,1210:28d:-:2,1211:28d:-:2,1212:28d:-:2,1213:***:-:3,1214:29d:-:3,1215:29d:-:3,1216:29d:-:3,1217:29d:+:3,1218:29d:+:3,1219:29d:-:3,1220:***:-:4,1221:30d:-:4,1222:30d:-:4,1223:30d:-:4,1224:30d:-:4,1225:***:#:4,1226:30d:@:4,1227:30d:-:4,1228:***:-:5,1229:31d:-:5,1230:31d:-:5,1231:31d:-:5`;
+
+// Parse CALENDAR_META into calMeta object
+const calMeta = {};
+CALENDAR_META_RAW.split(',').forEach(e => {
+  const [mmddStr, fast, rank, tone] = e.split(':');
+  calMeta[mmddStr] = { fast, rank, tone: parseInt(tone)||0 };
+});
+
+// Saints map — loaded from data/calendar2026.json (has Ukrainian saint names)
+// Saints will be populated after data load; fallback to empty string
+const saintsCache = {};
+
+// ── Data Loading ──────────────────────────────────────────────
+async function loadCalData() {
+  try {
+    const r = await fetch('./data/calendar2026.json');
+    if (!r.ok) throw new Error('not found');
+    S.calData = await r.json();
+    // populate saintsCache
+    Object.entries(S.calData).forEach(([k,v]) => { saintsCache[k] = v.saint || ''; });
+    render();
+  } catch(e) {
+    // Use calMeta as fallback (no saints, but tone/fast/rank available)
+    console.warn('calendar2026.json not found — using embedded metadata');
+    S.calData = {};
+    render();
+  }
+}
+
+async function loadMoveableUK() {
+  if (S.moveableUK) return true;
+  if (S.moveableLoading) return false;
+  S.moveableLoading = true;
+  render();
+  try {
+    const r = await fetch('./data/vespers-moveable-uk.json');
+    if (!r.ok) throw new Error('not found');
+    S.moveableUK = await r.json();
+    S.moveableLoading = false;
+    return true;
+  } catch(e) {
+    S.moveableLoading = false;
+    return false;
+  }
+}
+
+async function loadMoveableEN() {
+  if (S.moveableEN) return true;
+  if (S.moveableLoading) return false;
+  S.moveableLoading = true;
+  render();
+  try {
+    const r = await fetch('./data/vespers-moveable-en.json');
+    if (!r.ok) throw new Error('not found');
+    S.moveableEN = await r.json();
+    S.moveableLoading = false;
+    return true;
+  } catch(e) {
+    S.moveableLoading = false;
+    return false;
+  }
+}
+
+// ── getMeta(date) — returns combined metadata for a date ──────
+function getMeta(d) {
+  const key = dateKey(d);
+  const base = calMeta[key] || { fast:'30d', rank:'-', tone:0 };
+  const cal  = S.calData ? (S.calData[key]||{}) : {};
+  return {
+    fast:  base.fast,
+    rank:  base.rank,
+    tone:  cal.tone || base.tone || 0,
+    saint: cal.saint || saintsCache[key] || '',
+    wd:    cal.wd || d.getDay(),  // note: getDay()=0-6 Sun-Sat; cal wd=1-7 Mon-Sun
+  };
+}
+
+// ── English Saints (a small subset of key feasts for English display) ──
+const EN_SAINTS = {
+  '0101': 'Circumcision of the Lord & St. Basil the Great',
+  '0106': 'Holy Theophany of Our Lord Jesus Christ',
+  '0107': 'Afterfeast of Theophany & John the Baptist',
+  '0202': 'Meeting of the Lord in the Temple (Candlemas)',
+  '0218': 'Sunday of the Prodigal Son',
+  '0225': 'Sunday of the Last Judgment (Meatfare)',
+  '0301': 'Sunday of Forgiveness (Cheesefare)',
+  '0307': 'Saturday of the Departed (1st Lenten)',
+  '0308': 'Sunday of Orthodoxy (1st Lenten)',
+  '0311': 'St. Sophronius, Patriarch of Jerusalem',
+  '0315': 'Sunday of the Veneration of the Cross (3rd Lenten)',
+  '0319': 'St. John of the Ladder (4th Lenten Sunday theme)',
+  '0322': 'Sunday of St. John Climacus (4th Lenten)',
+  '0324': 'St. Mary of Egypt (5th Lenten Sunday theme)',
+  '0325': 'Annunciation of the Most-Holy Theotokos',
+  '0329': 'Palm Sunday — Entry of the Lord into Jerusalem',
+};
+
+function getSaint(d, lang) {
+  const key = dateKey(d);
+  if (lang==='en') return EN_SAINTS[key] || (saintsCache[key] || '');
+  return saintsCache[key] || '';
+}
+
+// ── Liturgical Period Labels ──────────────────────────────────
+function getPeriodBadges(d, lang) {
+  const { fast, rank, tone, saint } = getMeta(d);
+  const badges = [];
+  const period = getLitPeriod(fast, lang);
+  const fastLabel = getFastLabel(fast, lang);
+  const rankLabel = getRankLabel(rank, lang);
+  const toneLabel = getToneLabel(tone, lang);
+
+  if (rankLabel) badges.push({ cls:'badge-feast', text: rankLabel });
+  if (toneLabel) badges.push({ cls:'badge-tone',  text: toneLabel });
+  if (period)    badges.push({ cls:'badge-period', text: period });
+  else if (fastLabel) badges.push({ cls:'badge-fast', text: fastLabel });
+
+  return badges;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ENGLISH VESPERS DATA
+// ═══════════════════════════════════════════════════════════════
+
+// ── Fixed Opening Blocks (all dates) ─────────────────────────
+const EN_FIXED_OPENING = [
+{t:'sec', x:'Opening Blessing'},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'Blessed is our God, always, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+{t:'p',   x:'Glory to You, our God, glory to You.'},
+{t:'p',   x:'O Heavenly King, Comforter, Spirit of Truth, who are everywhere present and fill all things, Treasury of blessings and Giver of life: come and dwell in us, cleanse us from every stain, and save our souls, O Good One.'},
+{t:'p',   x:'Holy God, Holy Mighty, Holy Immortal, have mercy on us. (3×)'},
+{t:'p',   x:'Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever. Amen.'},
+{t:'p',   x:'O Most Holy Trinity, have mercy on us. O Lord, cleanse us from our sins. O Master, pardon our transgressions. O Holy One, visit and heal our infirmities, for Your name\'s sake.'},
+{t:'p',   x:'Lord, have mercy. (3×)'},
+{t:'p',   x:'Glory… Now and ever… Amen.'},
+{t:'p',   x:'Our Father, who art in heaven, hallowed be Thy name. Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil.'},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'For Yours is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+{t:'p',   x:'Come, let us worship and fall down before God, our King.\nCome, let us worship and fall down before Christ, our King and our God.\nCome, let us worship and fall down before Christ Himself, our King and our God.'},
+{t:'sec', x:'Psalm 103 (104)'},
+{t:'r',   x:'During this psalm, the priest reads the Prayers of Light silently before the holy doors.'},
+{t:'p',   x:'Bless the Lord, O my soul! O Lord my God, You are very great. You are clothed in majesty and glory, robed in light as in a garment.'},
+{t:'p',   x:'You stretch out the heavens like a tent. You lay the beams of Your upper chambers in the waters. You make the clouds Your chariot. You walk upon the wings of the wind. You make Your angels spirits, and Your ministers a flaming fire.'},
+{t:'p',   x:'You set the earth on its foundations, so that it shall never be moved. The deep covered it as with a garment; the waters stood above the mountains.'},
+{t:'p',   x:'You send the springs into the valleys; they flow between the mountains. They give drink to every beast of the field. The birds of the air dwell beside them; they sing among the branches.'},
+{t:'p',   x:'You cause the grass to grow for the cattle, and plants for the service of man, that he may bring forth food from the earth, and wine that gladdens the heart of man, oil to make his face shine, and bread which strengthens the heart of man.'},
+{t:'p',   x:'He made the moon to mark the seasons; the sun knows its time for setting. You bring darkness, and it is night.'},
+{t:'p',   x:'How manifold are Your works, O Lord! In wisdom You have made them all. The earth is full of Your creatures.'},
+{t:'p',   x:'May the glory of the Lord endure forever; may the Lord rejoice in His works. I will sing to the Lord as long as I live; I will sing praise to my God while I have being.'},
+{t:'p',   x:'Let sinners vanish from the earth, and the wicked be no more. Bless the Lord, O my soul.'},
+{t:'p',   x:'Glory… Now and ever… Amen. Alleluia, alleluia, alleluia. Glory to You, O God. (3×)'},
+{t:'sec', x:'The Great Litany'},
+{t:'lit', x:[
+  ['In peace, let us pray to the Lord.','Lord, have mercy.'],
+  ['For the peace from on high and for the salvation of our souls, let us pray to the Lord.','Lord, have mercy.'],
+  ['For peace throughout the whole world, for the stability of the holy churches of God, and for the unity of all, let us pray to the Lord.','Lord, have mercy.'],
+  ['For this holy church and for those who enter it with faith, reverence, and the fear of God, let us pray to the Lord.','Lord, have mercy.'],
+  ['For our Pontiff (Name), our Major Archbishop (Name), our Bishop (Name), for the venerable presbyterate, the diaconate in Christ, for all the clergy and the people, let us pray to the Lord.','Lord, have mercy.'],
+  ['For our nation and those in civil authority, let us pray to the Lord.','Lord, have mercy.'],
+  ['For this city, every city and country, and the faithful who dwell in them, let us pray to the Lord.','Lord, have mercy.'],
+  ['For healthful seasons, abundance of the fruits of the earth, and peaceful times, let us pray to the Lord.','Lord, have mercy.'],
+  ['For travelers by land, sea, and air; for the sick, the suffering, the captive, and for their salvation, let us pray to the Lord.','Lord, have mercy.'],
+  ['For our deliverance from all affliction, wrath, danger, and need, let us pray to the Lord.','Lord, have mercy.'],
+  ['Help us, save us, have mercy on us, and protect us, O God, by Your grace.','Lord, have mercy.'],
+  ['Commemorating our most holy, most pure, most blessed and glorious Lady, the Mother of God and ever-virgin Mary, with all the saints, let us commend ourselves and one another, and our whole life to Christ our God.','To You, O Lord.'],
+]},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'For to You belong all glory, honor, and worship: to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+{t:'sec', x:'Psalm 140 — "Lord, I Have Cried"'},
+{t:'p',   x:'Lord, I have cried to You, hear me. Hear me, O Lord. Lord, I have cried to You, hear me; receive the voice of my prayer when I cry to You. Hear me, O Lord.'},
+{t:'p',   x:'Let my prayer arise in Your sight as incense, and let the lifting up of my hands be an evening sacrifice. Hear me, O Lord.'},
+{t:'p',   x:'Set a watch, O Lord, before my mouth, and a protecting door about my lips.'},
+{t:'p',   x:'Do not incline my heart to evil words, to make excuses in sins. With men who work iniquity; and I will not communicate with their chosen ones.'},
+{t:'p',   x:'The just man shall correct me in mercy and shall reprove me; but let not the oil of the sinner anoint my head.'},
+{t:'p',   x:'But to You, O Lord, are my eyes; in You I have trusted, take not away my soul. Keep me from the snare which they have laid for me, and from the traps of the workers of iniquity. Let the wicked fall into their own nets, whilst I alone escape.'},
+{t:'p',   x:'I cried to the Lord with my voice; with my voice I made supplication to the Lord. I pour out my prayer before Him; I tell my trouble before Him.'},
+{t:'p',   x:'When my spirit was overwhelmed within me, then You knew my path. Deliver me from my persecutors, for they are stronger than I.'},
+];
+
+// ── Fixed Closing Blocks (O Gladsome Light through end) ───────
+const EN_FIXED_GLADSOME = [
+{t:'sec', x:'O Gladsome Light'},
+{t:'p',   x:'O Gladsome Light of the holy glory of the immortal Father, heavenly, holy, blessed Jesus Christ. Now that we have come to the setting of the sun and behold the light of evening, we praise God: Father, Son, and Holy Spirit. For it is right at all times to worship You with voices of praise, O Son of God and Giver of life. Therefore all the world glorifies You.'},
+];
+
+const EN_FIXED_VOUCHSAFE = [
+{t:'sec', x:'"Vouchsafe, O Lord"'},
+{t:'p',   x:'Vouchsafe, O Lord, to keep us this evening without sin. Blessed are You, O Lord, God of our Fathers, and praised and glorified is Your name forever. Amen.'},
+{t:'p',   x:'Let Your mercy, O Lord, be upon us, as we have set our hope in You. Blessed are You, O Lord; teach me Your statutes. Blessed are You, O Master; grant me understanding of Your statutes. Blessed are You, O Holy One; enlighten me with Your statutes.'},
+{t:'p',   x:'O Lord, Your mercy endures forever; do not despise the works of Your hands. To You belongs praise, to You belongs song, to You belongs glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever. Amen.'},
+{t:'sec', x:'Litany of Supplication'},
+{t:'lit', x:[
+  ['Let us complete our evening prayer to the Lord.','Lord, have mercy.'],
+  ['Help us, save us, have mercy on us, and protect us, O God, by Your grace.','Lord, have mercy.'],
+  ['That the whole evening may be perfect, holy, peaceful, and sinless, let us ask of the Lord.','Grant this, O Lord.'],
+  ['An angel of peace, a faithful guide, a guardian of our souls and bodies, let us ask of the Lord.','Grant this, O Lord.'],
+  ['Pardon and remission of our sins and transgressions, let us ask of the Lord.','Grant this, O Lord.'],
+  ['Things good and profitable for our souls, and peace for the world, let us ask of the Lord.','Grant this, O Lord.'],
+  ['That we may complete the remaining time of our life in peace and repentance, let us ask of the Lord.','Grant this, O Lord.'],
+  ['A Christian ending to our life: painless, blameless, and peaceful; and a good defense before the dread judgment seat of Christ, let us ask.','Grant this, O Lord.'],
+  ['Commemorating our most holy, most pure, most blessed and glorious Lady, the Mother of God and ever-virgin Mary, with all the saints, let us commend ourselves and one another, and our whole life to Christ our God.','To You, O Lord.'],
+]},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'For You are a good and loving God, and to You we give glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+];
+
+const EN_FIXED_SIMEON = [
+{t:'sec', x:'Prayer of St. Simeon'},
+{t:'p',   x:'Lord, now You let Your servant go in peace, according to Your word; for my eyes have seen Your salvation, which You have prepared in the sight of all peoples: a light for revelation to the Gentiles, and for glory to Your people Israel.'},
+{t:'sec', x:'Trisagion Prayers'},
+{t:'p',   x:'Holy God, Holy Mighty, Holy Immortal, have mercy on us. (3×)'},
+{t:'p',   x:'Glory… Now and ever… Amen.'},
+{t:'p',   x:'O Most Holy Trinity, have mercy on us. O Lord, cleanse us from our sins. O Master, pardon our transgressions. O Holy One, visit and heal our infirmities, for Your name\'s sake.'},
+{t:'p',   x:'Lord, have mercy. (3×) Glory… Now and ever… Amen.'},
+{t:'p',   x:'Our Father, who art in heaven, hallowed be Thy name. Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil.'},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'For Yours is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+];
+
+const EN_FIXED_EPHREM = [
+{t:'sec', x:'Prayer of St. Ephrem the Syrian'},
+{t:'r',   x:'This prayer is said at every Lenten weekday service, with full prostrations:'},
+{t:'p',   x:'O Lord and Master of my life! Take from me the spirit of sloth, despondency, lust for power, and idle talk. (Prostration)'},
+{t:'p',   x:'Grant me, Your servant, the spirit of chastity, humility, patience, and love. (Prostration)'},
+{t:'p',   x:'O Lord and King! Grant me to see my own sins and not to judge my brother, for You are blessed unto ages of ages. Amen. (Prostration)'},
+{t:'p',   x:'O God, be merciful to me, a sinner. O God, cleanse my sins and have mercy on me. I have sinned without number, O Lord, forgive me. (12 small bows)'},
+{t:'r',   x:'Then the whole prayer is repeated once more, followed by one final prostration.'},
+{t:'sec', x:'Psalm 33 (34)'},
+{t:'p',   x:'I will bless the Lord at all times; His praise shall continually be in my mouth. My soul shall make its boast in the Lord; the humble shall hear of it and be glad.'},
+{t:'p',   x:'O magnify the Lord with me, and let us exalt His name together. I sought the Lord and He heard me, and delivered me from all my fears.'},
+{t:'p',   x:'They looked to Him and were radiant, and their faces were not ashamed. This poor man cried out and the Lord heard him, and saved him out of all his troubles.'},
+{t:'p',   x:'The angel of the Lord encamps all around those who fear Him, and delivers them. O taste and see that the Lord is good; blessed is the man who trusts in Him.'},
+{t:'p',   x:'Fear the Lord, you His saints, for there is no want to those who fear Him. The rich have become poor and hungry, but those who seek the Lord shall not lack any good thing.'},
+];
+
+// ── March 11 moveable parts (complete) ───────────────────────
+const EN_311_MOVEABLE = {
+  stichera: [
+{t:'sec', x:'Stichera on "Lord I Have Cried" — Tone 3 & 2'},
+{t:'r',   x:'Verse: When You, O Lord, take account of iniquities, who shall stand, O Lord? But with You there is forgiveness.'},
+{t:'p',   x:'(Tone 3): O Lord, who by the Cross destroyed the deceiver, free me, a sinner led astray by his deception. Cleansing me by the fast, grant me, O Master, to do Your will, that I may compassionately contemplate Your holy Passion.'},
+{t:'r',   x:'Verse: For Your name\'s sake I have waited for You, O Lord; my soul has waited on Your word; my soul has hoped in the Lord.'},
+{t:'p',   x:'O Lord, I have been wounded by pleasures and have mercilessly put myself to death. O Master, who gave Yourself to be pierced by the spear, heal and enliven my wretched soul, wounded by the enemy\'s arrow, that I may share plainly in Your sufferings.'},
+{t:'r',   x:'Verse: From the morning watch until night, let Israel hope in the Lord.'},
+{t:'p',   x:'(Tone 2): O Lord, enlighten our souls by the fast; guide us by the light of Your commandments toward Your sacred Passion, that with purified minds we may behold the three-day burial and the joyful Resurrection, and find there forgiveness, O Lover of mankind.'},
+{t:'r',   x:'Verse: For with the Lord there is mercy, and with Him is plenteous redemption.'},
+{t:'p',   x:'(Tone 2): You are the wall and the haven of those who run to You with faith, O Theotokos. We pray to You: guard the flock that calls upon You from every trial of the enemy.'},
+{t:'r',   x:'Verse: Praise the Lord, all you nations; praise Him, all you peoples.'},
+{t:'p',   x:'Rejoice, holy mountain and God-trodden; rejoice, living and unconsumed bush; rejoice, only bridge of the world to God, leading mortals to eternal life.'},
+{t:'r',   x:'Verse: For His mercy is confirmed on us, and the truth of the Lord endures forever.'},
+{t:'p',   x:'(Tone 6 — for St. Sophronius): Guide of the Orthodox, teacher of piety and purity, universal luminary, God-inspired adornment of hierarchs, O wise Sophronius, by your teachings you enlightened all. O spiritual trumpet, entreat Christ God to save our souls.'},
+  ],
+  prokeimenon: [
+{t:'sec', x:'Prokeimenon (Tone 3)'},
+{t:'resp',x:'My God, my God, attend to me. Why have You forsaken me?'},
+{t:'r',   x:'Verse: Far from my salvation are the words of my transgressions.'},
+  ],
+  readings: [
+{t:'sec', x:'Old Testament Readings'},
+{t:'r',   x:'Reader:'},
+{t:'p',   x:'A reading from Genesis. (7:1–5)'},
+{t:'r',   x:'The appointed Old Testament reading is proclaimed.'},
+{t:'p',   x:'A reading from Proverbs. (8:32 – 9:11)'},
+{t:'r',   x:'The appointed Old Testament reading is proclaimed.'},
+  ],
+  aposticha: [
+{t:'sec', x:'Stichera at the Aposticha — Tone 3'},
+{t:'p',   x:'Being rich in mercy, O Christ our God, pour out the flood of Your compassions upon us, and by the power of Your Cross grant victory to the faithful over the adversary, showing Your mercy upon us, through the prayers of the Theotokos, O only Lover of mankind.'},
+{t:'r',   x:'Verse: To You I lift up my eyes, O You who dwell in heaven.'},
+{t:'p',   x:'Save us from the affliction of famine and earthquake, from slavery to foreigners, from civil strife and invasion, O Christ, the King of all, through the supplications of the Theotokos, O only Lover of mankind.'},
+{t:'r',   x:'Glory… Now and ever… Theotokion:'},
+{t:'p',   x:'O wonder greater than all ancient wonders! For who has known a Mother who bore a child without a man, and carried in her arms the One who holds all creation? It is the will of God that was born. O Most Pure One, do not cease praying for us who venerate you, that He may be merciful and save our souls.'},
+  ],
+  troparia: [
+{t:'sec', x:'Troparia'},
+{t:'p',   x:'(Tone 1): Rejoice, O Virgin Theotokos, Mary full of grace, the Lord is with you. Blessed are you among women and blessed is the fruit of your womb, for you have borne the Savior of our souls. (Prostration)'},
+{t:'p',   x:'Glory: O Baptist of Christ, remember us all, that we may be delivered from our iniquities, for to you is given the grace to pray for us. (Prostration)'},
+{t:'p',   x:'Now and ever: Pray for us, O holy Apostles and all Saints, that we may be delivered from perils and sorrows, for we have you as fervent intercessors before the Savior. (Prostration)'},
+{t:'p',   x:'Beneath your compassion we take refuge, O Theotokos. Do not despise our prayers in our necessities, but deliver us from danger, O only pure and only blessed one. (Without prostration)'},
+{t:'p',   x:'Lord, have mercy. (40×) Lord, bless.'},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'Blessed is Christ our God, always, now and ever, and forever.'},
+{t:'resp',x:'Amen.'},
+{t:'p',   x:'Establish, O God, the holy and true faith of devout Orthodox Christians, with the holy Church, unto ages of ages.'},
+{t:'resp',x:'Most holy Theotokos, save us.'},
+{t:'p',   x:'More honorable than the Cherubim and beyond compare more glorious than the Seraphim; without corruption you gave birth to God the Word; true Mother of God, we magnify you.'},
+{t:'p',   x:'Glory to You, O Christ our God, our hope, glory to You.'},
+{t:'resp',x:'Glory… Now and ever… Lord, have mercy. (3×) Father, bless.'},
+{t:'r',   x:'Priest:'},
+{t:'p',   x:'May Christ our true God, through the prayers of His most pure Mother; of our venerable and God-bearing Fathers; of St. Sophronius, Patriarch of Jerusalem, whose memory we celebrate; and of all the saints: have mercy on us and save us, for He is good and loves mankind.'},
+{t:'resp',x:'Amen.'},
+  ],
+};
+
+// ── Tone-based Prokeimena for Sunday Vespers ──────────────────
+const EN_SUNDAY_PROKEIMENA = {
+  1: {text:'The Lord is King; He is robed in majesty.', verse:'The Lord is robed; He is girded with strength.'},
+  2: {text:'The Lord is my strength and my song, and has become my salvation.', verse:'The Lord has chastened me sorely, but has not given me over to death.'},
+  3: {text:'Sing praises to our God, sing praises. Sing praises to our King, sing praises.', verse:'All you peoples, clap your hands; shout to God with a voice of triumph.'},
+  4: {text:'How great are Your works, O Lord; You have made all things in wisdom.', verse:'Bless the Lord, O my soul; O Lord my God, You are very great.'},
+  5: {text:'You, O Lord, will protect us and guard us from this generation forever.', verse:'Save me, O Lord, for the godly man has failed.'},
+  6: {text:'O Lord, save Your people and bless Your heritage.', verse:'To You, O Lord, I will cry; O my God, be not silent to me.'},
+  7: {text:'The Lord is my strength and my song, and has become my salvation.', verse:'The Lord has chastened me sorely, but has not given me over to death.'},
+  8: {text:'O come, let us rejoice in the Lord; let us acclaim God our Savior.', verse:'Let us come before His presence with thanksgiving.'},
+};
+
+// ═══════════════════════════════════════════════════════════════
+// VESPERS RENDERER
+// ═══════════════════════════════════════════════════════════════
+
+function buildEnVespers(d) {
+  const key = dateKey(d);
+  const meta = getMeta(d);
+  const lenten = isLenten(meta.fast);
+  const isSun = d.getDay() === 0;
+
+  let wkLabel = getLitPeriod(meta.fast, 'en');
+  let toneLabel = meta.tone ? `Tone ${meta.tone}` : '';
+  let subline = [wkLabel, toneLabel].filter(Boolean).join(' — ');
+
+  const enDay = S.moveableEN ? (S.moveableEN[key] || null) : null;
+  const blocks = [];
+  blocks.push({t:'title', x:'VESPERS'});
+  blocks.push({t:'sub',   x: subline || fmtDate(d,'en')});
+
+  // Opening (fixed, same every day)
+  blocks.push(...EN_FIXED_OPENING);
+
+  // MOVEABLE: Stichera
+  if (key === '0311') {
+    blocks.push(...EN_311_MOVEABLE.stichera);
+  } else if (enDay && enDay.stichera) {
+    blocks.push(...enDay.stichera);
+  } else {
+    blocks.push({t:'moveable', section:'stichera', tone: meta.tone, date: fmtDate(d,'en')});
+  }
+
+  // O Gladsome Light (fixed)
+  blocks.push(...EN_FIXED_GLADSOME);
+
+  // MOVEABLE: Prokeimenon
+  if (key === '0311') {
+    blocks.push(...EN_311_MOVEABLE.prokeimenon);
+  } else if (enDay && enDay.prokeimenon) {
+    blocks.push(...enDay.prokeimenon);
+  } else {
+    blocks.push({t:'moveable', section:'prokeimenon', tone: meta.tone, date: fmtDate(d,'en')});
+  }
+
+  // MOVEABLE: OT Readings
+  if (key === '0311') {
+    blocks.push(...EN_311_MOVEABLE.readings);
+  } else if (enDay && enDay.readings) {
+    blocks.push(...enDay.readings);
+  }
+
+  // Vouchsafe + Litany of Supplication (fixed)
+  blocks.push(...EN_FIXED_VOUCHSAFE);
+
+  // MOVEABLE: Aposticha
+  if (key === '0311') {
+    blocks.push(...EN_311_MOVEABLE.aposticha);
+  } else if (enDay && enDay.aposticha) {
+    blocks.push(...enDay.aposticha);
+  } else {
+    blocks.push({t:'moveable', section:'aposticha', tone: meta.tone, date: fmtDate(d,'en')});
+  }
+
+  // Prayer of Simeon + Trisagion (fixed)
+  blocks.push(...EN_FIXED_SIMEON);
+
+  // MOVEABLE: Troparia
+  if (key === '0311') {
+    blocks.push(...EN_311_MOVEABLE.troparia);
+  } else if (enDay && enDay.troparia) {
+    blocks.push(...enDay.troparia);
+  } else {
+    blocks.push({t:'moveable', section:'troparia', tone: meta.tone, date: fmtDate(d,'en')});
+  }
+
+  // Prayer of Ephrem + Psalm 33 (Lenten weekdays, fixed)
+  const needsEphrem = enDay ? enDay.hasEphrem : (lenten && !isSun);
+  if (needsEphrem) {
+    blocks.push(...EN_FIXED_EPHREM);
+  }
+
+  blocks.push({t:'end', x:'☦'});
+  return blocks;
+}
+
+// ── Render a single English block ────────────────────────────
+function renderBlock(b) {
+  const fs = S.fontSize;
+  switch(b.t) {
+    case 'title':
+      return `<h1 class="blk-title" style="font-size:${fs*1.5}px">${b.x}</h1>`;
+    case 'sub':
+      return `<p class="blk-subtitle" style="font-size:${fs*0.82}px">${b.x}</p>`;
+    case 'sec':
+      return `<h2 class="blk-sec" style="font-size:${fs}px">${b.x}</h2>`;
+    case 'r':
+      return `<p class="blk-rubric" style="font-size:${fs*0.88}px">${b.x}</p>`;
+    case 'p':
+      return `<p class="blk-p" style="font-size:${fs}px">${b.x.replace(/\n/g,'<br>')}</p>`;
+    case 'resp':
+      return `<p class="blk-resp" style="font-size:${fs}px">${b.x}</p>`;
+    case 'lit': {
+      const rows = b.x.map(([p,r]) =>
+        `<p class="blk-lit-p" style="font-size:${fs}px">${p}</p>`+
+        `<p class="blk-lit-r" style="font-size:${fs}px">${r}</p>`
+      ).join('');
+      return `<div class="blk-lit">${rows}</div>`;
+    }
+    case 'end':
+      return `<p class="blk-end" style="font-size:${fs*2}px">${b.x}</p>`;
+    case 'moveable': {
+      const labels = {
+        'stichera':    'Stichera on "Lord I Have Cried"',
+        'prokeimenon': 'Prokeimenon',
+        'prokeimenon-text': 'Prokeimenon',
+        'ot-readings': 'Old Testament Readings',
+        'aposticha':   'Aposticha Stichera',
+        'troparia':    'Troparia & Dismissal',
+      };
+      const label = labels[b.section] || b.section;
+      const labelStr = b.label ? ` (${b.label})` : (b.tone ? ` — Tone ${b.tone}` : '');
+      return `<div class="blk-moveable-placeholder" style="font-size:${fs*0.82}px">
+        <strong>${label}${labelStr}</strong><br>
+        Full English text for this section is in preparation.<br>
+        Switch to <em>UA</em> to read the complete Ukrainian text.
+      </div>`;
+    }
+    default: return '';
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Ukrainian fixed opening HTML template
+// ─────────────────────────────────────────────────────────────
+const UK_FIXED_OPENING_HTML = `<h1>ВЕЧІРНЯ</h1>
+<p><i>Священник:</i> Благословенний Бог наш завжди, нині і повсякчас, і на віки віків.</p>
+<p><i>Вірні:</i> Амі́нь.</p>
+<p>Сла́ва Тобі́, Бо́же наш, сла́ва Тобі́.</p>
+<p>Ца́рю небе́сний, утіши́телю, Ду́ше іс́тини,* що всю́ди єси́ і все наповня́єш,* скарбни́це благ і життя́ пода́телю,* прийди́, і всели́ся в нас,* і очи́сти нас від уся́кої скве́рни,* і спаси́, благи́й, ду́ші на́ші.</p>
+<p>Святи́й Бо́же, святи́й Крі́пкий, святи́й Безсме́ртний, поми́луй нас. <i>(3 р.)</i></p>
+<p>Сла́ва Отцю́, і Си́ну, і Свято́му Ду́хові,* і ни́ні, і повсякча́с, і на ві́ки вікі́в. Амі́нь.</p>
+<p>Пресвята́ Тро́йце, поми́луй нас; Го́споди, очи́сти гріхи́ на́ші; Влади́ко, прости́ беззако́ння на́ші; Святи́й, завіта́й і зціли́ не́мочі на́ші, І́мени Твого́ ра́ди.</p>
+<p>Го́споди, поми́луй. <i>(3 р.)</i></p>
+<p>Сла́ва Отцю́, і Си́ну, і Свято́му Ду́хові,* і ни́ні, і повсякча́с, і на ві́ки вікі́в. Амі́нь.</p>
+<p>О́тче наш, що єси́ на небеса́х,* неха́й святи́ться ім'я́ Твоє́,* неха́й при́йде ца́рство Твоє́,* неха́й бу́де во́ля Твоя́, як на не́бі, так і на землі́.* Хліб наш насу́щний дай нам сього́дні;* і прости́ нам прови́ни на́ші,* як і ми проща́ємо винува́тцям на́шим;* і не введи́ нас у споку́су,* але́ ви́зволи нас від лука́вого.</p>
+<p><i>Священник:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині, і повсякчас, і на віки віків.</p>
+<p><i>Вірні:</i> Амі́нь. Го́споди, поми́луй. <i>(12 р.)</i></p>
+<p>Прийді́те, поклоні́мся царе́ві на́шому — Бо́гу.<br>
+Прийді́те, поклоні́мся Христо́ві, царе́ві на́шому — Бо́гу.<br>
+Прийді́те, поклоні́мся і припаді́м до само́го Го́спода Ісу́са Христа́ — царя́ і Бо́га на́шого.</p>`;
+
+// ═══════════════════════════════════════════════════════════════
+// UI / RENDER FUNCTIONS
+// ═══════════════════════════════════════════════════════════════
+
+const lang = () => S.lang;
+
+function render() {
+  // Update header date
+  const d = S.date;
+  const m = getMeta(d);
+  $('hd-date-main').textContent = fmtDate(d, S.lang);
+  const toneStr = m.tone ? (S.lang==='uk' ? `Глас ${m.tone}` : `Tone ${m.tone}`) : '';
+  const periodStr = getLitPeriod(m.fast, S.lang);
+  $('hd-date-sub').textContent = [periodStr, toneStr].filter(Boolean).join(' · ') || '';
+  $('btnLang').textContent = S.lang==='en' ? 'UA' : 'EN';
+  $('btnDark').textContent = S.dark ? '☀' : '☾';
+
+  const main = $('main');
+  main.style.fontSize = S.fontSize + 'px';
+
+  if (S.view==='home')    main.innerHTML = buildHome();
+  else if (S.view==='cal') main.innerHTML = buildCalFull();
+  else if (S.view==='vespers') buildVespersView(main);
+  else if (S.view==='compline') { main.innerHTML = buildComplineView(); }
+}
+
+// ── Home view ─────────────────────────────────────────────────
+
+// ═══════════════════════════════════════════════════════════════
+// GREAT COMPLINE — Ukrainian & English
+// ═══════════════════════════════════════════════════════════════
+const UK_COMPLINE_HTML = `<h2><i>Велике Повечір'я</i></h2>
+<p><i>Священик:</i> Благословенний Бог наш завжди, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор: </i>Амінь.</p>
+<p>Слава Тобі, Боже наш, слава Тобі.</p>
+<p>Царю небесний, утішителю, Душе істини, що всюди єси і все наповняєш, скарбнице благ і життя подателю, прийди і вселися в нас, і очисти нас від усякої скверни, і спаси, благий, душі наші.</p>
+<p>Святий Боже, святий кріпкий, святий безсмертний, помилуй нас <i>(3 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Пресвята Тройце, помилуй нас; Господи, очисти гріхи наші; Владико, прости беззаконня наші; Святий, завітай і зціли немочі наші імени твого ради.</p>
+<p>Господи, помилуй <i>(3 р.)</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Отче наш, що єси на небесах, нехай святиться ім’я Твоє, нехай прийде царство Твоє, нехай буде воля твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні; і прости нам провини наші, як і ми прощаємо винуватцям нашим; і не введи нас у спокусу, але визволи нас від лукавого.</p>
+<p><i>Священик:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p>Господи, помилуй <i>(12 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Прийдіте, поклонімся цареві нашому, Богу.</p>
+<p>Прийдіте, поклонімся Христові, цареві нашому Богу.</p>
+<p>Прийдіте, поклонімся і припадім до самого Господа Ісуса Христа, царя і Бога нашого.</p>
+<p><i>Псалом 4</i></p>
+<p>Вислухай мене, коли буду взивати,* мій Боже справедливий!</p>
+<p>У тіснотí моїй дав ти менí пíльгу.* Змилуйся наді мною і вислухай мою молитву.</p>
+<p>О сини людські, дóкіль будете твердосерді?* Чогó любите пусте й шукаєте неправду?</p>
+<p>Знайте: Господь предивне своєму святому робить:* Господь почує, коли візвý до нього.</p>
+<p>Тремтіть і не грішíть!* Роздумуйте в серцях ваших, на ложах ваших, і мовчіть!</p>
+<p>Жертвуйте жертви справедливі,* і на Господа надійтесь.</p>
+<p>Багато кажуть: «Хто нам покаже блага?»* Появи нам, Господи, світло лиця твого!</p>
+<p>Дав ти моєму серцю радість більшу,* ніж рáдість тих, що їм уродило удóзвіль вина й хліба.</p>
+<p>Не встигну я лягти, в мирі вже засинаю,* бо ти єдиний, Господи, даєш мені безпечно жити.</p>
+<p><i>Псалом 6</i></p>
+<p>Не докоряй менí, Господи, в твоєму гніві,* і не карай мене в твоїм обуренні.</p>
+<p>Помилуй мене, Господи, бо охляв я,* вилікуй мене, бо трясуться кості в мене.</p>
+<p>І душа моя – стривожена надміру.* Ти ж, Господи – дóкіль?</p>
+<p>Вернися, Господи, вирятуй мою душу,* спаси мене задля твоєї ласки!</p>
+<p>Бо ж хто по смерті тебе згадає,* в áді хто тебе хвалитиме?</p>
+<p>Знемігся я від стогнання мого,* щоночі ложе моє мокре від плачу, сльозами обливаю мою постіль.</p>
+<p>З журби в очах менí темніє,* – вони постáрілись через усіх моїх супостатів.</p>
+<p>Ідíть від мене геть, усí лиходії,* бо Господь почув голос плачу мого.</p>
+<p>Почув Господь моє благання,* Господь прийняв мою молитву.</p>
+<p>Усíх ворогів моїх покриє стид та страх великий,* і засоромлені вони назад повернуться швидко.</p>
+<p><i>Псалом 12</i></p>
+<p>Доки, Господи, зовсім будеш мене забувати?* Доки ховатимеш лице твоє від мене?</p>
+<p>Доки журбою буду мучити мою душу,* тужити щодня серцем?</p>
+<p>Доки мій ворог буде величатися нáдо мною?* Зглянься і вислухай мене, Господи, мій Боже!</p>
+<p>Просвіти мої очі, щоб мені не заснути смертю,* щоб не сказав мій ворог: «Я його подужав!»</p>
+<p>Щоб мої вороги не радíли, коли я захитаюсь.* Я ж бо надіявся на твою ласку.</p>
+<p>Нехай радíє моє серце твоїм спасíнням!* Заспіваю Господеві, добро бо менí вчинив.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Алилуя, алилуя, алилуя; слава Тобі, Боже <i>(3 р.).</i></p>
+<p>Господи, помилуй <i>(3 р.).</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p><i>Псалом 24</i></p>
+<p>До тебе, Господи, підношу душу мою,* на тебе покладаюсь, Боже мій.</p>
+<p>Не дай, щоб я осоромивсь!* Не дай, щоб вороги мої злораділи наді мною.</p>
+<p>Бо ніхто з тих, що на тебе чекають, не осоромиться.* Нехай осоромиться, хто зраджує без причини.</p>
+<p>Вкажи менí, Господи, твої дороги,* навчи мене, де твої стежки.</p>
+<p>Напути мене по твоїй правді й навчи мене,* бо ти Бог, мій Спаситель, тебе очікую увесь день.</p>
+<p>Згадай про твоє милосердя, Господи,* і про твою милість, вона бо споконвіку.</p>
+<p>Гріхів юности моєї і перéступів моїх не згадуй,* з милосердя твого згадай мене, Господи, доброти твоєї ради.</p>
+<p>Добрий Господь і праведний,* тому й навчає грішників дороги.</p>
+<p>Наводить покірливих на правду* і навчає смирéнних путі своєї.</p>
+<p>Усí стежки Господні – милість і правда* для тих, що бережуть зáвíт його і свідоцтва його.</p>
+<p>Íмени твого ради, Господи,* відпусти гріх мій, і бо він великий.</p>
+<p>Хто він, той чоловік, що Господа боїться?* Він вкаже йому дорогу, яку той має вибрати.</p>
+<p>Сам він зазнає щастя* і рід його успадкує землю.</p>
+<p>Довірливий Господь до тих, які його бояться,* і свій завіт дає їм знати.</p>
+<p>Очі мої завжди до Господа,* бо він звільнить від сіті мої ноги.</p>
+<p>Зглянься і змилосердься наді мною,* бо я самотній і нещасний.</p>
+<p>Злагідни скорботи мого серця* і виведи мене з тісноти моєї.</p>
+<p>Споглянь на моє горе й на труд мій,* і відпусти всі гріхи мої.</p>
+<p>Глянь, яка безліч ворогíв у мене;* ненавистю лютою ненавидять мене.</p>
+<p>Збережи мою душу й спаси мене,* щоб я не зазнав ганьби, бо до тебе прибігаю.</p>
+<p>Нехай правота і досконалість мене зберігають,* бо на тебе, Господи, я надíюсь.</p>
+<p>Визволь Ізрáїля, о Боже,* від усíх його скорбот.</p>
+<p><i>Псалом 30</i></p>
+<p>До тебе, Господи, я прибігаю; не дай мені осоромитися повíки,* у твоїй справедливості визволь мене.</p>
+<p>Нахили до мене твоє вухо, спаси мене притьмом,* будь скелею захисту для мене, твердинею міцною, щоб мене урятувати!</p>
+<p>Бо ти – скеля моя й моя твердиня,* і ради íмени твого веди мене та керуй мною.</p>
+<p>Виведи мене з тенет, що тайно наставлено на мене,* бо ти – моє пристановище.</p>
+<p>В руки твої віддаю я духа мого:* Ти визволив мене, Господи, вíрний Боже.</p>
+<p>Ти ненавидиш тих, що почитають бовванів нікчемних,* а я на Господа уповаю.</p>
+<p>Радíтиму й буду веселитись твоїм милосердям,* бо зглянувсь ти над моїм горем, знав душí моєї скорботи.</p>
+<p>І не віддав мене в руки супостата,* поставив на широкім мíсці мої ноги.</p>
+<p>Змилуйся нáдо мною, Господи, бо менí скрутно;* з журби виснажилися в мене очі, душа моя і нутро моє.</p>
+<p>Життя моє виснажується в горі, літа мої в стогнанні.* У смутку підупала моя сила, і кості мої повисихáли.</p>
+<p>Я став сміховиськом усíм моїм противникам і ганьбою моїм сусíдам,* страховищем моїм знайомим; хто мене бачить надворі, утікає від мене.</p>
+<p>Мене, немов мерця, забуто в серці;* я став, немов розбитий посуд.</p>
+<p>Бо чув я нашіптування багатьох, страхіття навколо;* коли вони разом змовлялися на мене, і замишляли відібрати життя в мене.</p>
+<p>А я на тебе, Господи, уповаю і кажу:* Ти єси Бог мій!</p>
+<p>В руках у тебе моя доля:* вирятуй мене з руки ворогíв і гнобителів моїх.</p>
+<p>Освітли світлом твого обличчя слугу твого,* спаси мене в твоїм милосерді!</p>
+<p>Господи, не дай менí осоромитись, до тебе бо взиваю;* нехай грішники вкриваються соромом, нехай мовчки зійдуть до шеóлу.</p>
+<p>Нехай заніміють уста брехливі,* що на праведного нахабно говорять.</p>
+<p>Яка велика, Господи, твоя доброта, що її ти зберіг тим, що тебе бояться;* і чиниш тим, що до тебе прибігають, перед людськими синами.</p>
+<p>Ти ховаєш їх у сховку обличчя свого від змов людських;* ти їх заховуєш у наметі від язиків сварливих.</p>
+<p>Благословенний Господь, бо дивне своє милосердя* явив менí в місті обороннім.</p>
+<p>Я ж у збентеженні моїм промовив: «Відтятий я з-пéред твоїх очей!»* Та ти почув голос мого благання, коли я взивав до тебе.</p>
+<p>Любíть Господа, усí його святí!* Вíрних стереже Господь, а гордовитим з лишком відплатить.</p>
+<p>Сміло! І нехай ваше серце буде відважне,* – ви всі, що уповаєте на Господа.</p>
+<p><i>Псалом 90</i></p>
+<p>Ти, що живеш під Всевишнього покровом,* що у Всесильного тíні пробуваєш!</p>
+<p>Скажи до Господа: Мій захисте і моя твердине,* мій Боже, на котрого покладаюсь.</p>
+<p>Він бо спасе тебе від сíтки птахолова,* і від погибельного мору.</p>
+<p>Він тебе покриє крилами своїми, і ти втечеш під його крила;* щит і заборóло – його вíрність.</p>
+<p>Ти не злякаєшся ні страху вночі,* анí стріли, що вдень літає.</p>
+<p>Анí чуми, що в пíтьмі бродить,* анí зарази, що нищить опівдні.</p>
+<p>Нехай і тисяча впаде біля тебе, і десять тисяч праворуч від тебе,* – до тебе не підійде.</p>
+<p>Ти лиш очима споглянеш* – і кару грішників побачиш.</p>
+<p>Бо Господь — твоє прибíжище,* Всевишній — твій захист.</p>
+<p>Ніяке лихо до тебе не приступить,* ніяка кара не підійде близько намету твого.</p>
+<p>Бо ангелам своїм він повелить про тебе,* щоб берегли тебе на всіх твоїх дорогах.</p>
+<p>І на руках тебе носитимуть,* щоб не спіткнулася нога твоя об камінь.</p>
+<p>На гада й змія будеш наступати,* розтопчеш лева й дракона.</p>
+<p>Тому, що він виявив свою любов до мене, я його врятую;* я вивищу його, бо він знає моє ім’я.</p>
+<p>Візвé до мене, і я озвусь до нього;* я буду з ним у скруті, я його визволю і його прославлю.</p>
+<p>Довгим віком його насичу* і явлю йому моє спасіння.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині і повсякчас, і на вíки вíчні. Амíнь.</p>
+<p>Алилýя, алилýя, алилýя; слава тобі, Боже! <i>(3 р.).</i></p>
+<p>Господи помилуй <i>(3 р.).</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, нині і повсякчас, і на віки віків. Амінь.</p>
+<p><b><i>З нами Бог</i></b></p>
+<p><i>І-ий хор: </i><b>З нами Бог, розумійте, народи, і покоряйтеся: Бо з нами Бог.</b></p>
+<p><i>ІІ-ий хор: </i><b>З нами Бог, розумійте, народи, і покоряйтеся: Бо з нами Бог.</b></p>
+<p><i>І-ий хор: </i><b>З нами Бог, розумійте, народи.</b></p>
+<p><i>ІІ-ий хор: </i><b>І покоряйтеся, бо з нами Бог.</b></p>
+<p><i>І хори читають стихи напереміну:</i></p>
+<p>Почуйте всі аж до краю землі: Бо з нами Бог.</p>
+<p>Могутні, покоряйтеся: Бо з нами Бог<sub>.</sub></p>
+<p>Задумуйте задуми, та вони не вдадуться: Бо з нами Бог.</p>
+<p>Давайте накази, та вони не здійсняться: Бо з нами Бог.</p>
+<p>Господа сил – його шануйте як святого: Бо з нами Бог.</p>
+<p>Його ви маєте боятися, перед ним маєте тремтіти: Бо з нами Бог.</p>
+<p>Він – камінь спотикання і скеля падіння: Бо з нами Бог.</p>
+<p>Надіятися буду на Господа, і він спасе мене: Бо з нами Бог.</p>
+<p>Ось сам я і діти, що їх дав мені Господь: Бо з нами Бог.</p>
+<p>Народ, що в пітьмі ходить, побачив світло велике: Бо з нами Бог.</p>
+<p>Над тими, що живуть у смертній тіні, світло засяяло: Бо з нами Бог.</p>
+<p>Бо хлоп’ятко нам народилося, сина нам дано: Бо з нами Бог.</p>
+<p>Влада на плечах у нього: Бо з нами Бог.</p>
+<p>І дадуть йому ім’я: Чудесний порадник: Бо з нами Бог.</p>
+<p>Сильний Бог, Отець довічний, Князь миру: Бо з нами Бог.</p>
+<p>Слава Отцю і Сину, і Святому Духові: Бо з нами Бог.</p>
+<p>І нині і повсякчас, і на віки віків. Амінь. Бо з нами Бог.</p>
+<p>З нами Бог, розумійте, народи:</p>
+<p>І покоряйтеся, бо з нами Бог.</p>
+<p><i>І одразу читається:</i></p>
+<p>День проживши, дякую тобі, Господи.* Подай мені, молю, Спасе,* вечір із ніччю без гріха, і спаси мене.</p>
+<p><b><i>Слава:</i></b> День проживши, прославляю тебе, Владико.* Подай мені, молю, Спасе,* вечір із ніччю без спокуси, і спаси мене.</p>
+<p><b><i>І нині:</i></b> День проживши, в піснях славлю тебе, Святий.* Подай мені, молю, Спасе,* вечір із ніччю без підступу, і спаси мене.</p>
+<p>Безтілесне єство херувимське немовчними піснями тебе прославляє.* Шестикрилі серафими неперестанними голосами тебе славлять.* Ангелів усе воїнство трисвятими піснями тебе вихваляє.* Бо ти, бувши Отцем, існуєш раніш усього* і маєш співбезначáльного твого Сина й носиш рівночесного Духа життя,* Трóйцю являючи неподільну.</p>
+<p>Пресвята Діво, Мати Божа,* Слова очевидці й слуги, та пророків і мучеників собори, що маєте життя безсмертне!* За всіх щиро моліться, бо всі ми в бідах,* щоб, визволившись з облуди лукавого, співали ми пісню ангельську:* Святий, святий, святий, трисвятий Господи,* помилуй і спаси нас. Амінь.</p>
+<p><i>Символ віри</i></p>
+<p>Вірую в єдиного Бога Отця, вседержителя, творця неба і землі, і всього видимого і невидимого.</p>
+<p>І в єдиного Господа Ісуса Христа, Сина Божого, єдинородного, від Отця родженого перед усіма віками.</p>
+<p>Світло від світла, Бога істинного від Бога істинного, родженого, несотвореного, єдиносущного з Отцем, що через нього все постало.</p>
+<p>Він задля нас людей і нашого ради спасіння зійшов із небес, і воплотився з Духа Святого і Марії Діви, і став людиною.</p>
+<p>І був розп’ятий за нас, за Понтія Пилата, і страждав, і був похований.</p>
+<p>І воскрес у третій день, згідно з Писанням.</p>
+<p>І вознісся на небо, і сидить праворуч Отця.</p>
+<p>І вдруге прийде зі славою судити живих і мертвих, а його царству не буде кінця.</p>
+<p>І в Духа Святого, Господа животворчого, що від Отця [і Сина] ісходить, що з Отцем і Сином рівнопоклоняємий і рівнославимий, що говорив через пророків.</p>
+<p>В єдину, святу, соборну й апостольську Церкву.</p>
+<p>Ісповідую одне хрещення на відпущення гріхів.</p>
+<p>Очікую воскресіння мертвих, і життя майбутнього віку. Амінь.</p>
+<p><i>Молебні стихи (з малими поклонами)</i></p>
+<p>Пресвята Владичице Богородице, моли Бога за нас, грíшних <i>(3 р.).</i></p>
+<p>Усí небесні сили святих Ангелів і Архангелів, молíте Бога за нас, грішних<i> (2 р.).</i></p>
+<p>Святий Іване, пророче і предтéче, і хрестителю Господа нáшого Ісýса Христá, моли Бога за нас, грíшних<i> (2 р.).</i></p>
+<p>Святí слáвні Апостоли, Пророки й Мученики та всі Святí, молíте Бога за нас, грíшних<i> (2 р.).</i></p>
+<p>Преподóбні й богонóсні отцí нáші Антóнію і Теодóсію та íнші чудотвóрці Печéрські, молíть Бóга за нас, грíшних<i> (2 р.).</i></p>
+<p><i>Тут додається стих і святому храму (2).</i></p>
+<p>Непереможна й незламна, і божественна сило чесного й животворчого Хреста, не покинь нас, грíшних<i> (2).</i></p>
+<p>Бóже, милостивий будь нам, грíшним <i>(2 р.).</i></p>
+<p>Бóже, очисти гріхи нáші і помилуй нас<i> (2 р.).</i></p>
+<p>Святий Боже, святий кріпкий, святий безсмертний, помилуй нас <i>(3 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Пресвята Тройце, помилуй нас; Господи, очисти гріхи наші; Владико, прости беззаконня наші; Святий, завітай і зціли немочі наші імени твого ради.</p>
+<p>Господи, помилуй <i>(3 р.)</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Отче наш, що єси на небесах, нехай святиться ім’я Твоє, нехай прийде царство Твоє, нехай буде воля твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні; і прости нам провини наші, як і ми прощаємо винуватцям нашим; і не введи нас у спокусу, але визволи нас від лукавого.</p>
+<p><i>Священик:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><i>Тоді співаються оці тропарі:</i></p>
+<p><i>(глас 8):</i><b><i> </i></b>Невсипущість невидимих ворогів моїх ти знаєш, Господи;* i окаянного тіла мого неміч пізнав ти, Творче мій.* Тому в руки твої віддаю дух мій.* Покрий мене покровом твоєї благодаті, щоб не заснути мені смертю.* I просвіти духовні очі мої для насолоди божественними словами твоїми.* I, як єдиний благий i людинолюбний,* збуди мене в час пригожий, щоб славословити тебе.</p>
+<p><i>Стих:</i><b><i> </i></b>Зглянься i вислухай мене,* Господи, мій Боже.</p>
+<p>Який страшний суд твій, Господи, у присутностi ангелів,* коли людей введуть, книги розгорнуть, вчинки випробують, думки розслідять!* Який суд буде зачатим у гріхах?* Хто полум’я мені загасить?* Хто мені темряву освітить, коли ти, Господи, не помилуєш мене, як людинолюбець?</p>
+<p><b><i>Слава: </i></b>Сльози дай мені, Боже, як колись жінці грішниці,* i сподоби мене обмити твої ноги,* які визволили мене від обманного шляху,* i приносити тобі, як запашне миро,* життя чисте, проведене у покаянні,* щоб i мені почути жаданий твій голос:* Віра твоя спасла тебе, іди в мирі.</p>
+<p><b><i>І нині: </i></b>На тебе, Богородице, бездоганну надію маючи, спасуся.* Твоє, Пречиста, заступництво мавши, не настрахаюся,* Пожену ворогів моїх i переможу їх,* зодягнувшись, наче в зброю, в єдиний покров твій.* I, благаючи твоєї всемогутньої помочі, взиватиму до тебе:* Владичице, спаси мене молитвами твоїми i силою Сина Божого,* що від тебе тіло прийняв,* виведи мене від темного сну, щоб славословити тебе.</p>
+<p><i>І одразу:</i></p>
+<p>Господи, помилуй <i>(40 р.).</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, нині і повсякчас, і на віки віків. Амінь.</p>
+<p>Чеснíшу від херувимів і незрівнянно славнíшу від серафимів, що без зотлíння Бога Слово породила, сущу Богородицю, тебе величаємо.</p>
+<p>Іменем Господнім благослови, отче!</p>
+<p><i>Священик: </i>Молитвами святих отців нáших, Господи Ісýсе Христе, Боже наш, помилуй нас.</p>
+<p><i>Хор: </i>Амíнь.</p>
+<p><b><i>Молитва св. Василія Великого</i></b></p>
+<p><i>Священик: </i>Гóсподи, Гóсподи, Ти охоронив нас від усякої напасти, що прихóдить удень, охорони нас і від усякої злої напасти вночі. Прийми жертву вечíрню, підношення рук наших. І сподоби нас і нічну пору без гріха прожити, без спокуси від злого, і визволь нас від усякої тривоги і страху, що від диявола до нас приходить. Даруй душам нашим покаяння і думкам нашим острах перед іспитом на страшному і праведному суді Твоєму. Прикуй до страху перед Тобою плоть нашу і приборкай тілесні члени наші, щоб ми і під час сну в спокої просвіщалися, роздумуючи про заповіді Твої. Віддали від нас усякі помисли неподобні й пристрасть згубну. Підведи нас на час молитви, щоб ми зміцнились вíрою і поступали у заповідях Твоїх, благоволінням і милосердям Єдинорóдного Сина Твого, що з ним Ти благословенний з пресвятим, і благим, і животворчим твоїм Духом, нині й повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><b>(Частина ІІ)</b></p>
+<p>Прийдіте, поклонімся цареві нашому, Богу.</p>
+<p>Прийдіте, поклонімся Христові, цареві нашому Богу.</p>
+<p>Прийдіте, поклонімся і припадім до самого Господа Ісуса Христа, царя і Бога нашого.</p>
+<p><i>Псалом 50</i></p>
+<p>Помилуй мене, Боже, по великій милості Твоїй,* і багатством щедрот Твоїх очисти беззаконня моє.</p>
+<p>Обмий мене повнотою з беззаконня мого* і від гріха мого очисти мене.</p>
+<p>Бо беззаконня моє я знаю* і гріх мій є завжди передо мною.</p>
+<p>Проти Тебе єдиного я згрішив* і перед Тобою зло вчинив.</p>
+<p>То і правий Ти в словах твоїх* і переможеш, коли будеш судити.</p>
+<p>Це бо в беззаконнях я зачатий* і в гріхах родила мене мати моя.</p>
+<p>Це бо істину полюбив єси,* невідоме й таємне мудрости своєї явив Ти мені.</p>
+<p>Окропи мене іссопом, і очищуся,* обмий мене, і стану біліший від снігу.</p>
+<p>Дай мені почути радість і веселість,* зрадіють кості сокрушені.</p>
+<p>Відверни лице Твоє від гріхів моїх* і всі беззаконня мої очисти.</p>
+<p>Серце чисте утвори в мені, Боже,* і духа правого обнови в нутрі моєму.</p>
+<p>Не відкинь мене від лиця Твого* і Духа Твого Святого не відійми від мене.</p>
+<p>Верни мені радість спасення Твого* і духом владичним утверди мене.</p>
+<p>Вкажу беззаконним дороги Твої,* і нечестиві до Тебе навернуться.</p>
+<p>Визволь мене від вини крови, Боже, Боже спасення мого,* і язик мій радісно прославить справедливість Твою.</p>
+<p>Господи, губи мої відкрий,* і уста мої сповістять хвалу Твою.</p>
+<p>Бо, якби Ти жертви захотів, дав би я,* та всепалення не миле Тобі.</p>
+<p>Жертва Богові – дух сокрушений,* серцем сокрушеним і смиренним Бог не погордить.</p>
+<p>Ущаслив, Господи, благоволінням Твоїм Сіон* і нехай здвигнуться стіни єрусалимські.</p>
+<p>Тоді уподобаєш собі жертву правди, приношення і всепалення,* тоді положать на вівтар твій тельців.</p>
+<p><i>Псалом 101</i></p>
+<p>Господи, почуй мою молитву;* моє благання нехай до тебе дíйде.</p>
+<p>Не ховай обличчя твого від мене в день моєї скрути.* Прихили до мене твоє вухо, коли до тебе взиваю, вислухай мене скоро.</p>
+<p>Бо дні мої, як дим, щезають,* і мої кості, як жар, тлíють.</p>
+<p>Прибите, мов трава, в’яне моє серце,* я забуваю íсти хліб мій.</p>
+<p>Від сильного мого стогнання* прилипли мої кості до моєї шкíри.</p>
+<p>Я став, мов пелікан у пустині,* зробивсь, мов пугач той у руїнах.</p>
+<p>Не сплю я і стогну,* немов самітна пташка на покрíвлі.</p>
+<p>Вороги мої ввесь час мене ображають;* ті, що лютують проти мене, кленýться мною.</p>
+<p>Бо я, неначе хліб, їм попіл,* і напиток мій із сльозами я змíшую:</p>
+<p>Через твій гнів і твоє обурення,* бо ти мене підняв і кинув.</p>
+<p>Дні мої, неначе тінь, що простягнулась,* і сам я, неначе трава, в’яну.</p>
+<p>Ти ж, Господи, сидиш повíки на престолі,* й ім’я твоє по всі роди.</p>
+<p>Ти встанеш, змилуєшся над Сіóном,* бо час над ним уже змилосердитись, бо прийшла година.</p>
+<p>Слуги твої люблять його камíння,* їм милий його порох.</p>
+<p>Народи будуть íмени Господнього боятися* і всі царí землі – твоєї слави.</p>
+<p>Коли Господь Сіóн відбудує,* з’явиться у своїй славі.</p>
+<p>Зглянеться він над молитвою нужденних,* молитвою їхньою не погордує.</p>
+<p>Нехай це запишеться для майбутнього роду,* і народ, що буде створений, хвалитиме Господа.</p>
+<p>Бо він з висоти своєї святині подивився,* Господь із небес на землю поглянув.</p>
+<p>Щоб почути стогін бранця,* щоб визволити призначених на смерть;</p>
+<p>Щоб звіщали ім’я Господа в Сіóні,* і хвалили його в Єрусалимі,</p>
+<p>Коли разом зберуться народи і царства,* щоб служити Господеві.</p>
+<p>Він виснажив у дорозі мою силу,* укоротив дні мої.</p>
+<p>Я кажу: Боже мій, не забирай мене в половині віку мого;* літа твої по всі роди!</p>
+<p>Спервовіку свíту ти заснував землю,* і небеса – діло рук твоїх.</p>
+<p>Вони загинуть, ти ж будеш стояти; все постáріється, немов одежа.* Наче вбрання, ти їх міняєш і вони пройдуть.</p>
+<p>Ти ж усе той самий,* і літам твоїм кінця немає.</p>
+<p>Сини слуг твоїх будуть жити* і їхнє потóмство утривáлиться перед тобою.</p>
+<p><b><i>Молитва Манасії, царя Юдейського</i></b></p>
+<p><i>Священик: </i>Господи Вседержителю, Боже отцíв наших, Авраáма й Ісаáка та Якова й праведного роду їх. Ти сотворив небо й землю з усією красою їх, ти зв’язáв море словом наказу твого. Ти замкнув безóдню і запечатав її страшним і славним Іменем твоїм, тебе все боїться і тремтить перед силою твоєю, бо ніхто не встоїть перед величністю слави твоєї; нестерпний гнів погрози твоєї на грíшників, але безмежна й недослідима милість обíтниці твоєї. Бо ти Господь Всевишній, милосердний, довготерпеливий і многомилостивий, і вболіваєш над гріхами людськими. Ти, Господи, з безмежної доброти твоєї, дав змогу покаяння і відпущення тим, що нагрішили перед тобою і, з безмежного милосердя твого, призначив покаяння для грíшних на спасіння. Ти ж, Господи, Боже сил,, не встановив покаяння для Авраáма, Ісаáка та Якова, що не згрішили перед тобою, але встановив покаяння для нас грíшних, бо гріхів наших бíльше, ніж піску морського. Намножилися беззаконня наші, Господи, намножилися беззаконня наші, тож ми недостойні глянути й побачити висоту небесну задля безлічі провин наших. Зв’язано нас великими оковами залізними так, що не можемо піднести голови й нема полéгші для нас, бо ми прогнівили тебе, і лукаве перед тобою вчинили, не сповнивши волі твоєї і не додержавши наказів твоїх. Тому нині ми згинаємо коліна й від серця благаємо в тебе милосердя. Нагрішили ми, Господи, нагрішили, і беззаконня наші ми знаємо! Але прохаємо, благаючи: Прости нам, Господи, прости нам і не погуби нас з беззаконнями нашими, не пам’ятáй провин наших і в гнíві твоєму не засуди нас повíк до безодні. Бо ти, Боже, є Бог тих, що каються, і на нас виявив всю ласкавість свою: з великої милости твоєї спаси нас, недостóйних, і будемо тебе завжди прославляти за днів життя нашого. Бо тебе хвалять усí сили небесні й слава твоя на вíки вíчні.</p>
+<p><i>Хор:</i> Амíнь.</p>
+<p>Святий Боже, святий кріпкий, святий безсмертний, помилуй нас <i>(3 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Пресвята Тройце, помилуй нас; Господи, очисти гріхи наші; Владико, прости беззаконня наші; Святий, завітай і зціли немочі наші імени твого ради.</p>
+<p>Господи, помилуй <i>(3 р.)</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Отче наш, що єси на небесах, нехай святиться ім’я Твоє, нехай прийде царство Твоє, нехай буде воля твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні; і прости нам провини наші, як і ми прощаємо винуватцям нашим; і не введи нас у спокусу, але визволи нас від лукавого.</p>
+<p><i>Священик:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><i>тоді тропарі:</i></p>
+<p><i>(глас 6):</i><b><i> </i></b>Помилуй нас, Господи, помилуй нас,* бо, ніякого одвіту не знаючи,* оцю Тобі молитву як Владиці ми, грішні, приносимо:* Помилуй нас.</p>
+<p><b><i>Слава:</i></b><i> </i>Господи, помилуй нас,* бо на Тебе ми уповали.* Не прогнівайся дуже на нас,* ні не пом’яни беззаконь наших,* але зглянься й нині як милосердний* і ізбав нас від ворогів наших,* бо Ти єси Бог наш,* а ми – люди Твої, всі – діла рук Твоїх,* і ім’я Твоє призиваємо.</p>
+<p><b><i>І нині:</i></b><i> </i>Милосердя двері відкрий нам,* благословенна Богородице,* щоб, надіючися на тебе, ми не погибнули,* але щоб ізбавились тобою від бід.* Ти бо єси спасення роду християнського.</p>
+<p><i>І одразу:</i></p>
+<p>Господи, помилуй <i>(40 р.).</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, нині і повсякчас, і на віки віків. Амінь.</p>
+<p>Чеснíшу від херувимів і незрівнянно славнíшу від серафимів, що без зотлíння Бога Слово породила, сущу Богородицю, тебе величаємо.</p>
+<p>Іменем Господнім благослови, отче.</p>
+<p><i>Священик: </i>Молитвами святих отців наших, Господи Ісýсе Христе, Боже наш, помилуй нас.</p>
+<p><i>Хор: </i><b>Амíнь.</b></p>
+<p><b><i>Молитва св. Василія Великого</i></b></p>
+<p><i>Священик:</i> Владико, Боже, Отче вседержителю, Господи, Сину єдинорóдний, Ісýсе Христе і Святий Душе, єдине Божество і єдина сило: Помилуй мене грішного і, якими задумами знаєш, спаси мене, недостóйного слугу Твого, бо Ти благословенний на вíки вíчні.</p>
+<p><i>Хор:</i> <b>Амíнь.</b></p>
+<p><b><i>(Частина ІІІ)</i></b></p>
+<p>Прийдіте, поклонімся цареві нашому, Богу.</p>
+<p>Прийдіте, поклонімся Христові, цареві нашому Богу.</p>
+<p>Прийдіте, поклонімся і припадім до самого Господа Ісуса Христа, царя і Бога нашого.</p>
+<p><i>Псалом 69</i></p>
+<p>Боже, рятуй мене,* Господи, мені на допомогу поспішися!</p>
+<p>Нехай засоромляться і почервоніють ті,* що на моє життя чигають.</p>
+<p>Нехай назад відступлять і застидаються ті,* що тішаться моїм нещастям.</p>
+<p>Нехай повернуться назад, стидом прибиті ті,* що до мене кажуть: «Добре йому, добре!».</p>
+<p>Нехай радуються й веселяться в тобі всі,* що тебе шукають</p>
+<p>Ті, що завжди кажуть: «Нехай возвеличиться Господь!»* і ті, що люблять твою допомогу.</p>
+<p>Я ж бідний та нужденний, Боже,* поспішись до мене!</p>
+<p>Ти моя допомога і мій визволитель,* Господи, не забарися.</p>
+<p><i>Псалом 142</i></p>
+<p>О Господи, почуй мою молитву,* у твоїй вірності нахили вухо своє до мольби моєї; вислухай мене в твоїй правді!</p>
+<p>І не входь у суд із твоїм слугою,* бо ніхто з живих не виправдається перед тобою.</p>
+<p>Бо мою душу гонить ворог, життя моє топче в землю,* він оселює мене в пітьмі, як давно померлих.</p>
+<p>Дух мій тривожиться в мені,* і серце моє жахається в мені всередині.</p>
+<p>Я згадую дні давні,* роздумую над усіма вчинками твоїми і над ділами рук твоїх міркую.</p>
+<p>До тебе простягаю мої руки;* моя душа, мов спрагла земля, тебе жадає.</p>
+<p>Вислухай мене скоро, Господи, бо знемагає дух мій.* Не крий твого обличчя від мене, щоб я не став, як ті, що сходять у яму.</p>
+<p>Дай мені вранці відчути твою милість, бо я на тебе покладаюсь.* Вкажи мені дорогу, якою слід мені ходити, бо до тебе я підношу мою душу.</p>
+<p>Спаси мене, Господи, від ворогів моїх,* - бо до тебе прибігаю.</p>
+<p>Навчи мене творити твою волю, бо ти Бог мій.* Нехай твій добрий дух веде мене по рівній землі.</p>
+<p>Живи мене, о Господи, імени твого ради,* у справедливості твоїй виведи з скорботи мою душу.</p>
+<p>І в гніві твоєму знищ моїх супротивників.* І вигуби всіх гнобителів душі моєї, бо я твій слуга.</p>
+<p><b><i>Мале славослов’я</i></b></p>
+<p>Слава во вишніх Богу, і на землі мир,* в людях благовоління.</p>
+<p>Хвалимо Тебе, благословимо Тебе, кланяємось Тобі,* славимо Тебе, дякуємо Тобі заради великої Твоєї слави.</p>
+<p>Господи, Царю небесний, Боже, Отче вседержителю,* Господи, Сину єдинородний, Ісусе Христе, і Святий Душе.</p>
+<p>Господи, Боже, Агнче Божий, Сину Отця,* що береш гріх світу, помилуй нас.</p>
+<p>Ти, що береш гріхи світу,* прийми нашу молитву.</p>
+<p>Ти, що сидиш по правиці Отця,* помилуй нас.</p>
+<p>Ти бо один лише святий, Ти єдиний Господь, Ісус Христос,* на славу Бога Отця. Амінь.</p>
+<p>Щоночі буду Тебе благословити* і хвалити ім’я Твоє на віки віків.</p>
+<p>Господи, Ти був нам пристановищем* по всі роди.</p>
+<p>Молюсь: Господи, змилуйся надо мною,* вилікуй мою душу, бо гріх мій – перед Тобою.</p>
+<p>Господи, до Тебе я прибігаю,* навчи мене творити Твою волю, бо Ти Бог мій.</p>
+<p>Бо в Тебе є джерело життя,* у Твоїм світлі побачимо світло.</p>
+<p>Добавляй ласку тим,* що визнають Тебе.</p>
+<p>Сподоби, Господи, у цю ніч* без гріха зберегтися нам.</p>
+<p>Благословенний Ти, Господи, Боже отців наших,* і хвальне, і прославлене ім’я Твоє навіки. Амінь.</p>
+<p>Нехай буде, Господи, милість Твоя на нас,* бо ми надіємось на Тебе.</p>
+<p>Благословенний Ти, Господи,* навчи мене установ Твоїх.</p>
+<p>Благословенний Ти, Владико,* врозуми мене установами Твоїми.</p>
+<p>Благословенний Ти, Святий,* просвіти мене установами Твоїми.</p>
+<p>Господи, милість твоя повіки,* не покидай діло рук твоїх.</p>
+<p>Тобі належить хвала,* Тобі належить пісня.</p>
+<p>Тобі належить слава:* Отцю, і Сину, і Святому Духові.</p>
+<p>Нині і повсякчас,* і на віки віків. Амінь.</p>
+<p><i>Канон Пресвятій Богородиці, глас 6 (у вівторок ввечері)</i></p>
+<p><i>Пісня 1</i></p>
+<p><i>Ірмос: </i>Як по суші, перейшов Ізраїль по безодні стопами, бачачи, як гонитель фараон потопляється; пісню перемоги Богові співаймо, взиваючи.</p>
+<p><i>Приспів на цілім каноні:</i> <b>Пресвята Богородице, спаси нас!</b></p>
+<p>Ридаю за осквернене моє життя і безліч моїх безмеж­них гріхів: що ж сповідую я перед Тобою, Чиста? Не розумію і жахаюся, але допоможи мені, Владичице.</p>
+<p>Звідки почну говорити про лукаві і люті мої падін­ня, пристрасний я? Горе мені, що буде далі; але ра­ніше кінця, Владичице, ущедри мене.</p>
+<p><i>Слава:</i> Про смертний час і про судилище страш­не я завжди помишляю, Пречиста, звичаями ж гріхов­ними спокушаюся люто, але допоможи мені.</p>
+<p><i>І нині:</i> Розтлитель добра, бачачи, що я позбавле­ний божественних щедрот і далеко відійшов і відсту­пив від Бога, намагається мене поглинути; Влади­чице, попередь.</p>
+<p><i>Пісня 3</i></p>
+<p><i>Ірмос:</i> Нема святого, як Ти, Господи, Боже мій, що підніс рід вірних Твоїх, Блаже, і утвердив нас на камені сповідан­ня Твого.</p>
+<p>Душу осквернив я, пристрасний, безмежними мої­ми гріхами, Богородице Владичице; і куди піду далі, охоплений весь відчаєм?</p>
+<p>І те, що за образом, я осквернив блудом і марно­славною волею; горе мені, Чиста; за подобою ж сотво­рив безумне і ділом, і словом, і помислом.</p>
+<p><i>Слава:</i> Нема іншого серед людей, хто народився на світ, як я, що вчинив неподобство, будучи затьма­реним розумом, Блага, бо осквернив я хрещення.</p>
+<p><i>І нині:</i> Досягнув я вершини гріха, Пресвята Діво, Ти допоможи мені незабаром: небо і земля взивають гірко від безумних діянь неподобства.</p>
+<p><i>Пісня 4</i></p>
+<p><i>Ірмос: </i>Христос моя сила, Бог і Господь, чесна Церква побожно співає, взиваючи, від помислу чистого Господа прославляючи.</p>
+<p>Ангельські чини і воїнства небесних сил жахають­ся держави Сина Твого, Чиста; нині ж я у відчаї, охоп­лений безстрашністю.</p>
+<p>Здивувалася вся земля і вжахнулася, побачивши мої люті, злі і безумні діяння, і дивується великому милосердю Твого Сина.</p>
+<p><i>Слава:</i> Церкву тілесну осквернив я гріхом і церк­ву Господню, в яку люди входять з тремтінням, я ж, блудний, входжу без сорому, горе мені!</p>
+<p><i>І нині:</i> Не показуй, не показуй мене, Владичице, таким, що відійшов із дому Сина Твого як недостойний; але омий мене від скверни гріхів моїх.</p>
+<p><i>Пісня 5</i></p>
+<p><i>Ірмос:</i> Божественним Твоїм світлом, Блаже, просвіти, молюся, душі тих, що зранку линуть до Тебе, пізнаючи Тебе, Слово Боже, істинного Бога, що з темряви гріхів взиває.</p>
+<p>Божественним Твоїм сяянням, Блага, зціли ду­шевні мої пристрасті, які посіяв у мені спокусник, і визволи мене із цього гіркого полону; бо він насмі­хається наді мною, бачачи, що я беззахисний.</p>
+<p>Адам порушив єдину заповідь Сина Твого, Діво, і був вигнаний; як же ридаю я, законопорушник, за безодню моїх гріхів, і є відступником Його.</p>
+<p><i>Слава:</i> Вбивцею став у давнині і братовбивцею Каїн і був проклятий Богом; що ж зроблю я, лука­вий, нині убив душу і не соромлюся.</p>
+<p><i>І нині:</i> Ісаву поревнував лютому черевоугодництвом і ситністю; душу осквернив пияцтвом і ласо­любством — життя моє, і хто мене оплакує, горе мені!</p>
+<p><i>Пісня 6</i></p>
+<p><i>Ірмос:</i> Житейське море, схвильоване бурею пристрастей, бачачи і до тихого пристановища Твого прийшовши, бла­гаю: визволи з тління життя моє, Многомилостивий.</p>
+<p>Життя моє блудне, душа моя осквернена, і все жит­тя моє окаянне, тіло ж моє все гріхами забруднене; тому поспіши, Діво, допомогти мені.</p>
+<p>Кінець наближається, і не витримую, Блага; со­вість викриває мене: бо вчинив я лукаві діяння, і житіє моє блудне; і жахаюся судилища Сина Твого, Чиста.</p>
+<p><i>Слава:</i> Плоті моєї розпалення, воістину чекає мене ріка вогняна, страшна і невгасима, і черва невмиру­ща; але погаси це молитвами Твоїми, Пречиста.</p>
+<p><i>І нині:</i> Нині охоплений я тремтінням, Блага, і жахаюся лукавого ловіння; раніше бо кінця хоче спо­кусник убити мене, тримаючи мене як полоненого і нагим без чеснот.</p>
+<p>Господи, помилуй <i>(3 р.).</i> <i>Слава, і нині:</i></p>
+<p><b><i>Сідальний, глас 6</i></b></p>
+<p>Уповання і стіна, пристановище людей Твоїх, Діво, із Тебе бо народився безстрасно Спас усіх і спасає тих, що уповають на Тебе; як Ти оплакувала Сина Твого на хресті, Його і нині благай визволити із тління всіх, хто оспівує Тебе.</p>
+<p><i>Пісня 7</i></p>
+<p><i>Ірмос:</i> Росоносну піч учинив ангел преподобним юнакам, халдеїв же опаляючи, веління Боже мучителя спонукало взивати: благословен єси, Боже отців наших.</p>
+<p>Сімдесят по сім розпалив лукавий полум’я при­страстей моїх і любодіянням серце моє завжди умер­твляє; тому струмками сліз моїх погаси його, Мати Божа, і спаси мене.</p>
+<p>Оскверненого болотом гріхів моїх, не відкинь мене, Владичице Блага; бо, дивлячись на мене у відчаї, насміхається наді мною лукавий ворог; але Ти Сама Твоєю державною рукою підніми мене.</p>
+<p><i>Слава:</i> Страшне судилище, пристрасна і нечуттєва душе моя, муки ж безкінечні і суворі; але припади нині до Матері Судді Твого і Бога і не впадай сама у відчай.</p>
+<p><i>І нині:</i> Затьмарився я, пристрасний, безліччю без­межних гріхів і осквернив душу, і тіло, і розум; тому, Пречиста, світлом Твого сяяння швидко введи мене до насолоди безстрастя.</p>
+<p><i>Пісня 8</i></p>
+<p><i>Ірмос:</i> Із полум’я преподобним росу виточив і жертву праведника водою спалив; бо все твориш, Христе, з волі Своєї, Тебе прославляємо по всі віки.</p>
+<p>Ти, що народила одного із Тройці єдиного Бога і на руках носила, Діво Мати, погаси пристрастей вогне­пальну піч і струмками сліз омий душу мою.</p>
+<p>Приходу смерті жахаюся я, Пречиста, і боюся нині того суду; чинячи ж гріхи, ніскільки не соромлюсь; ущедри мене раніше кінця молитвами Твоїми, Діво.</p>
+<p><i>Слава:</i> Стогнання невмовкне даруй мені і сліз хмари подай, щоб я обмив мої многі гріхи і невиліковані рани, щоб я успадкував життя вічне.</p>
+<p><i>І нині:</i> Гріхів моїх безліч Тобі сповідав, Владичи­це, бо ніхто в світі не прогнівав Бога, Сина і Господа Твого так, як я; гнів Свій незабаром, Діво, переміни на милість/“-</p>
+<p><i>Пісня 9</i></p>
+<p><i>Ірмос:</i> Бога людям неможливо бачити, бо на Нього не сміють чини ангельські дивитися; через Тебе, Пречиста, Слово стало тілом і явилося людям; величаючи Його, з не­бесними силами Тебе ублажаємо.</p>
+<p>Ось приходжу до Тебе, Пречиста, з великим стра­хом і любов’ю, бо знає раб Твій кріпкість молитви Твоєї, бо воістину багато може молитва матерня до Сина, Владичице, бо милосердям прихиляється.</p>
+<p>Прийми чин архангелів і безліч вишніх воїнств Сотворителя мого; апостолів же і пророків собори, і мучеників, і преподобних, і священномучеників; і сотвори за нас молитву Богу, Чиста.</p>
+<p><i>Слава:</i> І нині, і тоді, коли вийде мій дух, нехай знайду я поміч Твою, Чиста; визволи мене незаба­ром від бісівських мук, Всенепорочна, і не залиш мене, Блага, відданим бути їм.</p>
+<p><i>І нині:</i> Суддю щедрого чекаю, людинолюбивого Твого Сина, Чиста; не зневаж мене, але вчини Його благісним, постанови мене тоді праворуч, Всенепо­рочна, судилища Його, бо на Тебе уповаю.</p>
+<p>Достойно є воістину* величати блаженною тебе, Богородицю,* всеблаженну, і пренепорочну, і Матір Бога нашого.* Чеснішу від херувимів* і незрівнянно славнішу від серафимів,* що без зотління Бога Слово породила,* сущу Богородицю, тебе величаємо.</p>
+<p>Святий Боже, святий кріпкий, святий безсмертний, помилуй нас <i>(3 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Пресвята Тройце, помилуй нас; Господи, очисти гріхи наші; Владико, прости беззаконня наші; Святий, завітай і зціли немочі наші імени твого ради.</p>
+<p>Господи, помилуй <i>(3 р.)</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Отче наш, що єси на небесах, нехай святиться ім’я Твоє, нехай прийде царство Твоє, нехай буде воля твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні; і прости нам провини наші, як і ми прощаємо винуватцям нашим; і не введи нас у спокусу, але визволи нас від лукавого.</p>
+<p><i>Священик:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><b><i>Господи сил</i></b></p>
+<p><i>Тропар, глас 6 (з малими поклонами)</i></p>
+<p><b>Господи сил, будь з нами,* іншого бо крім тебе допомiжника в скорботах не маємо.* Господи сил, помилуй нас.</b></p>
+<p><i>Стих:</i><b> </b>Хваліте Бога у святині його,* хвалiте його у твердині сили його.</p>
+<p><i>Після кожного стиха співається тропар</i><b> Господи сил...</b></p>
+<p><i>Стих:</i> Хвалiте його за його подвиги великі,* хвалiте його в його величі безмежній.</p>
+<p><i>Стих:</i> Хвалiте його звуком рогу,* хваліте його на арфі й на гуслах.</p>
+<p><i>Стих:</i> Хвалiте його на бубні й танком,* хвалiте його на струнах i сопiлцi.</p>
+<p><i>Стих:</i> Хвалiте його на дзвінких цимбалах,* хвалiте його на гучних цимбалах. Усе, що живе, нехай хвалить Господа.</p>
+<p><b><i>Слава:</i> </b>Господи, коли б ми не мали святих твоїх, що моляться за нас,* та благодаті твоєї, що милує нас,* то як би ми сміли, Спасе, славити тебе,* що його безперестанно ангели славословлять?* Серцевідче, помилуй душі наші.</p>
+<p><b><i>І нині:</i> </b>Безліч гріхів моїх, Богородице!* Тому до тебе прибігаю, Чиста, спасіння благаючи.* Зглянься на немічну душу мою,* i моли Сина твого й Бога нашого,* щоб простив мені злі вчинки,* єдина Благословенна.</p>
+<p>Всесвята Богородице!* За життя мого не покидай мене,* i людському захистові не доручай мене,* але сама заступи i помилуй мене.</p>
+<p>Усю надію мою покладаю* на тебе, Мати Божа;* збережи мене під покровом твоїм.</p>
+<p><i>І одразу: </i></p>
+<p>Господи, помилуй <i>(40 р.).</i></p>
+<p><i>Священик:</i><b> </b>Ти, що повсякчас і кожної години на небі й на землі приймаєш поклін і славу, Боже добрий, довготерпеливий і многомилостивий, що праведних любиш, і грішних милуєш, і всіх кличеш до спасіння, заради обіцянки майбутніх благ! Прийми, Господи, в цю хвилину й наші молитви і спрямуй життя наше до твоїх заповідей. Душі наші освяти, тіла очисти, думки наші направ, розум очисти й протверези, і визволь нас від усякої скорботи, лиха й слабування. Захисти нас святими ангелами твоїми, щоб ми, їх охороною збережені й напоумлені, осягнули єдність віри та зрозуміння неприступної твоєї слави, бо ти благословенний на віки віків.</p>
+<p><i>Хор:</i><b><i> </i></b>Амінь.</p>
+<p>Господи, помилуй <i>(3 р.).</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, нині і повсякчас, і на віки віків. Амінь.</p>
+<p>Чеснíшу від херувимів і незрівнянно славнíшу від серафимів, що без зотлíння Бога Слово породила, сущу Богородицю, тебе величаємо.</p>
+<p>Іменем Господнім благослови, отче.</p>
+<p><i>Священик: </i>Боже, змилуйся над нами i благослови нас, світлом лиця твого осяй нас i помилуй нас.</p>
+<p><i>Хор:</i><b> </b>Амінь.</p>
+<p><b><i>Молитва св. Єфрема Сирійського</i></b></p>
+<p>Господи i Владико життя мого! Духа лінивства, недбайливості, властолюб'я i пустомовства віджени від мене. <i>(великий поклін)</i></p>
+<p>Духа чистоти, покори, терпеливості й любові даруй мені, слузі твоєму. <i>(великий поклін)</i></p>
+<p>Так, Господи, Царю! Дай мені бачити гріхи мої i не осуджувати брата мого, бо ти благословенний на віки віків. Амінь. <i>(великий поклін)</i></p>
+<p><i>Також дванадцять малих поклонів з молитвами:</i></p>
+<p>Боже, милостивий будь мені, грішному!</p>
+<p>Боже, очисти гріхи мої i помилуй мене!</p>
+<p>Без числа нагрішив я, Господи, прости мені!</p>
+<p><i>І знову молитва св. Єфрема: </i></p>
+<p>Господи i Владико життя мого! Духа лінивства, недбайливости, властолюб'я i пустомовства віджени від мене. Духа чистоти, покори, терпеливости й любови даруй мені, слузі твоєму. Так, Господи, Царю! Дай мені бачити гріхи мої i не осуджувати брата мого, бо ти благословенний на віки віків. Амінь. <i>(великий поклін)</i></p>
+<p>Святий Боже, святий кріпкий, святий безсмертний, помилуй нас <i>(3 р.)</i>.</p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Пресвята Тройце, помилуй нас; Господи, очисти гріхи наші; Владико, прости беззаконня наші; Святий, завітай і зціли немочі наші імени твого ради.</p>
+<p>Господи, помилуй <i>(3 р.)</i></p>
+<p>Слава Отцю, і Сину, і Святому Духові, і нині, і повсякчас, і на віки віків. Амінь.</p>
+<p>Отче наш, що єси на небесах, нехай святиться ім’я Твоє, нехай прийде царство Твоє, нехай буде воля твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні; і прости нам провини наші, як і ми прощаємо винуватцям нашим; і не введи нас у спокусу, але визволи нас від лукавого.</p>
+<p><i>Священик:</i> Бо Твоє є царство, і сила, і слава, Отця, і Сина, і Святого Духа, нині і повсякчас, і на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p>Господи, помилуй <i>(12 р.).</i></p>
+<p><b><i>Молитва до Пресвятої Богородиці</i></b></p>
+<p><i>Священик:</i> Нескверна, непорочна, нетлінна, пречиста Діво, богоневісто Владичице! Ти преславним своїм народженням Бога Слово з людьми з’єднала й впалу нашу природу з небесною злучила. Безнадійних – єдина надіє й допомого переможених; готове заступництво тим, що до тебе прибігають i всіх християн захисте. Не гидуй нами, грішними і скверними, що злими думками, словами й ділами вчинили себе цілком негідними й стали рабами похотей, недбальства й лінивства. Але, як Мати людинолюбного Бога, змилуйся людинолюбно над нами, грішними й блудними, i прийми наше моління, що його приносимо тобі скверними устами. Обнявши твого Сина й нашого Владику i Господа з матерньою сміливістю, умоли його, щоб відкрив нам людинолюбне милосердя своєї доброти i, незважаючи на наші незліченні провини, навернув нас на покаяння й учинив нас вмілими виконавцями своїх заповідей. Будь при нас, як милостива, й милосердна, i людинолюбна, завжди i в теперішньому житті, теплою заступницею й помічницею, відганяючи полки супротивників, наставляючи нас на спасіння; а в час відходу зберігай нашу окаянну душу; відганяй далеко від неї темні примари лукавих духів. У страшний день праведного суду визволь нас від вічної муки, вчиняючи спадкоємцями несказанної слави твого Сина й Бога нашого; щоб ми осягнули її, Владичице наша, пресвята Богородице, за твоїм заступництвом i поміччю, благодаттю і людинолюб’ям єдинородного твого Сина, Господа Бога й Спаса нашого Ісуса Христа, якому належить усяка слава, честь i поклоніння з безначальним його Отцем та з пресвятим, i благим, і животворним його Духом, нині i повсякчас, i на віки віків.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><b><i>Молитва до Ісуса Христа</i></b></p>
+<p><i>Священик: </i>І дай, Владико, нам, що на сон ідемо, спокій душі й тіла, та охорони нас від тяжкого сну гріховного i від усякої темної i нічної розкоші. Утихомир запал пристрастей i погаси розпалені стріли лукавого, на нас підступно спрямовані, i порушення нашого тіла припини, i приспи всяку земну й тілесну гадку нашу. І дай нам, Боже, бадьорий ум i чисту думку, тверезе серце, сон легкий i неприступний для всяких диявольських примар. Підведи нас на час молитви непохитними у твоїх заповідях та з постійною пам'яттю на твої суди. І дай нам всенічне славослов'я, щоб співати, i благословити, i славити твоє пречесне й величне ім'я, Отця, i Сина, i Святого Духа, нині i повсякчас, i на віки віків.</p>
+<p>Хор: Амінь.</p>
+<p><i>І одразу:</i></p>
+<p>Преславна Вседіво, Богородице!* Прийми молитви наші i донеси їх Синові твоєму i Богові нашому,* щоб заради тебе спас душі наші.</p>
+<p>Уповання наше – Отець,* прибіжище наше – Син,* і покровитель наш – Дух Святий;* Тройце Свята, Боже наш – слава тобі!</p>
+<p><b><i>Відпуст</i></b></p>
+<p><i>Хор: </i>Слава Отцю, і Сину, і Святому Духові, i нині, і повсякчас, і на віки віків. Амінь. </p>
+<p>Господи, помилуй <i>(3 р.)</i>. Благослови.</p>
+<p><i>Священик читає замість відпусту цю молитву звернений до людей, які прихилили голови до землі:</i></p>
+<p>Владико многомилостивий, Господи Ісусе Христе, Боже наш! Молитвами пречистої Владичиці нашої Богородиці і Приснодіви Марії, силою чесного і животворчого Хреста, заступництвом чесних небесних сил безплотних,; чесного і славного пророка, предтечі і хрестителя Йоана, святих славних і всехвальних апостолів, святих отців наших і вселенських великих учителів і святителів Василія Великого, Григорія Богослова, Йоана Золотоустого, Атанасія і Кирила, святого отця нашого Миколая, архиєпископа Мирлікійського, чудотворця, святих рівноапостольних Кирила і Методія, учителів слов’янських, святого благовірного і рівноапостольного великого князя Володимира, святого священномученика Йосафата, святих, славних і переможних мучеників, преподобних і богоносних отців наших Антонія і Теодосія Печерських та інших преподобних і богоносних отців наших, святих і праведних богоотців Йоакима і Анни, і святого<i> (ім'я, якого є храм і день),</i> і всіх святих, - приємну вчини молитву нашу, даруй нам прощення гріхів наших, покрий нас ласкою своєю, віджени від нас усякого ворога й супротивника. Втихомир наше життя, Господи, помилуй нас і світ твій і спаси душі наші, як благий і людинолюбний.</p>
+<p><i>Хор:</i> Амінь.</p>
+<p><i>Потім священик, звернувшись до братії, вклоняється і просить прощення:</i></p>
+<p>Благословіть, отці й брати, і простіть мені грішному, чим згрішив я в цей день (цю ніч) і по всі дні життя мого словом, ділом, думкою і всіма почуттями моїми.</p>
+<p><i>Вірні:</i> Нехай Бог простить і помилує тебе, чесний отче. Благослови і прости, чесний отче, і нам грішним провини наші добровільні і недобровільні <i>(і теж вклоняються).</i></p>
+<p><i>Священик:</i> Нехай простить Господь Бог ласкою своєю гріхи ваші і помилує вас.</p>
+<p><i>І відразу священик:</i> Помолімся за святішого, вселенського Архиєрея нашого Лева Папу Римського.</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За правлячу владу нашу.</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За блаженнішого Патріярха нашого Кир Святослава, високопреосвященнішого Архиєпископа нашого Кир <i>(ім'я)</i> (і боголюбивого Єпископа нашого Кир <i>(ім'я)</i>).</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За всіх католицьких єпископів.</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За благородних доброчинців святого храму цього (святої обителі цієї).</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За всечесніших отців наших, Протоархимандрита <i>(ім'я)</i>, Архимандрита <i>(ім'я)</i>, Протоігумена <i>(ім'я)</i> й Ігумена <i>(ім'я).</i></p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За отців наших духовних і всіх у Христі братів наших.</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За відсутніх і подорожніх.</p>
+<p><i>Вірні:</i> Бог нехай захоронить і помилує.</p>
+<p>За тих, що чинять нам милостиню.</p>
+<p><i>Вірні:</i> Бог нехай віддасть і помилує.</p>
+<p>За тих, що служать і послужили у святім храмі цім (обителі цій).</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За тих, що ненавидять нас, і за тих, що нас люблять.</p>
+<p><i>Вірні:</i> Бог нехай простить і помилує.</p>
+<p>За визволення поневолених.</p>
+<p><i>Вірні:</i> Бог нехай визволить і помилує.</p>
+<p>За недужих і терплячих.</p>
+<p><i>Вірні:</i> Бог нехай оздоровить і помилує.</p>
+<p>За тих, що в журбі перебувають і на тяжких роботах поневіряються.</p>
+<p><i>Вірні:</i> Бог нехай відвідає і помилує.</p>
+<p>За всіх православних християн.</p>
+<p><i>Вірні:</i> Бог нехай спасе і помилує.</p>
+<p>За розмноження плодів землі.</p>
+<p><i>Вірні:</i> Бог нехай розмножить плоди землі.</p>
+<p>Пом'янім доброчинців святого храму цього (обителі цієї).</p>
+<p><i>Вірні:</i> Бог нехай пом'яне і упокоїть їх.</p>
+<p>Померлих батьків і родичів наших.</p>
+<p><i>Вірні:</i> Бог нехай пом'яне і упокоїть їх.</p>
+<p>Раніш померлих отців і братів наших.</p>
+<p><i>Вірні:</i> Бог нехай пом'яне і упокоїть їх.</p>
+<p>Убитих за віру християнську.</p>
+<p><i>Вірні: </i>Бог нехай пом'яне і упокоїть їх.</p>
+<p>Тут похованих, вписаних і всіх спочилих християн.</p>
+<p><i>Вірні:</i> Вічна їм пам'ять.</p>
+<p>Молитвами святих отців наших, Господи, Ісусе Христе, Боже наш, помилуй нас.</p>
+<p><i>Вірні:</i> Амінь.</p>`;
+
+const EN_COMPLINE_HTML = `<h2><i>Great Compline</i></h2>
+<p><i>Priest:</i> Blessed is our God, always, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p>Glory to You, our God, glory to You.</p>
+<p>O Heavenly King, Comforter, Spirit of Truth, who are everywhere present and fill all things, Treasury of good things and Giver of life: come and dwell within us, cleanse us of all stain, and save our souls, O gracious One.</p>
+<p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <i>(3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>O Most Holy Trinity, have mercy on us. O Lord, cleanse us of our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for your name's sake.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.</p>
+<p><i>Priest:</i> For Thine is the kingdom, and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Lord, have mercy. (12 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Come, let us worship God, our King.</p>
+<p>Come, let us worship and fall down before Christ our King and God.</p>
+<p>Come, let us worship and fall down before Christ himself, our King and our God.</p>
+<p><i>Psalm 4</i></p>
+<p>When I called, you heard me, O God of my righteousness; you gave me room when I was in distress. Have mercy on me, and hear my prayer.</p>
+<p>O sons of men, how long will you be dull of heart? Why do you love vanity and seek after falsehood?</p>
+<p>Know that the Lord has set apart for himself the one who is faithful; the Lord hears when I call to him.</p>
+<p>Tremble, and do not sin; commune with your own hearts on your beds, and be silent.</p>
+<p>Offer right sacrifices, and put your trust in the Lord.</p>
+<p>Many say, "Who will show us good?" Lord, let the light of your face shine upon us.</p>
+<p>You have put more joy in my heart than they have when their grain and wine abound.</p>
+<p>In peace I will both lie down and sleep, for you alone, O Lord, make me to dwell in safety.</p>
+<p><i>Psalm 6</i></p>
+<p>O Lord, rebuke me not in your anger, nor chasten me in your wrath.</p>
+<p>Have mercy on me, O Lord, for I am languishing; heal me, O Lord, for my bones are troubled.</p>
+<p>My soul also is greatly troubled; but you, O Lord — how long?</p>
+<p>Turn, O Lord, deliver my soul; save me for the sake of your steadfast love.</p>
+<p>For in death there is no remembrance of you; in the grave who will give you praise?</p>
+<p>I am weary with my moaning; every night I flood my bed with tears; I drench my couch with my weeping.</p>
+<p>My eye wastes away because of grief; it grows weak because of all my foes.</p>
+<p>Depart from me, all you workers of evil, for the Lord has heard the sound of my weeping.</p>
+<p>The Lord has heard my supplication; the Lord accepts my prayer.</p>
+<p>All my enemies shall be ashamed and greatly troubled; they shall turn back and be put to shame in a moment.</p>
+<p><i>Psalm 12</i></p>
+<p>How long, O Lord? Will you forget me forever? How long will you hide your face from me?</p>
+<p>How long must I take counsel in my soul and have sorrow in my heart all the day? How long shall my enemy be exalted over me?</p>
+<p>Consider and answer me, O Lord my God; light up my eyes, lest I sleep the sleep of death.</p>
+<p>Lest my enemy say, "I have prevailed over him," lest my foes rejoice because I am shaken.</p>
+<p>But I have trusted in your steadfast love; my heart shall rejoice in your salvation.</p>
+<p>I will sing to the Lord, because he has dealt bountifully with me.</p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Alleluia, alleluia, alleluia; glory to You, O God. (3 times)</i></p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Psalm 24</i></p>
+<p>To you, O Lord, I lift up my soul. O my God, in you I trust.</p>
+<p>Let me not be put to shame; let not my enemies exult over me.</p>
+<p>Indeed, none who wait for you shall be put to shame; let those be ashamed who are treacherous without cause.</p>
+<p>Make me to know your ways, O Lord; teach me your paths.</p>
+<p>Lead me in your truth and teach me, for you are the God of my salvation; for you I wait all the day long.</p>
+<p>Remember your mercy, O Lord, and your steadfast love, for they have been from of old.</p>
+<p>Remember not the sins of my youth or my transgressions; according to your steadfast love remember me, for the sake of your goodness, O Lord.</p>
+<p>Good and upright is the Lord; therefore he instructs sinners in the way.</p>
+<p>He leads the humble in what is right, and teaches the humble his way.</p>
+<p>All the paths of the Lord are steadfast love and faithfulness, for those who keep his covenant and his testimonies.</p>
+<p>For your name's sake, O Lord, pardon my guilt, for it is great.</p>
+<p>Who is the man who fears the Lord? Him will he instruct in the way that he should choose.</p>
+<p>His soul shall abide in well-being, and his offspring shall inherit the land.</p>
+<p>The friendship of the Lord is for those who fear him, and he makes known to them his covenant.</p>
+<p>My eyes are ever toward the Lord, for he will pluck my feet out of the net.</p>
+<p>Turn to me and be gracious to me, for I am lonely and afflicted.</p>
+<p>The troubles of my heart are enlarged; bring me out of my distresses.</p>
+<p>Consider my affliction and my trouble, and forgive all my sins.</p>
+<p>Consider how many are my foes, and with what violent hatred they hate me.</p>
+<p>Oh, guard my soul, and deliver me; let me not be put to shame, for I take refuge in you.</p>
+<p>May integrity and uprightness preserve me, for I wait for you.</p>
+<p>Redeem Israel, O God, out of all his troubles.</p>
+<p><i>Psalm 30</i></p>
+<p>In you, O Lord, do I take refuge; let me never be put to shame; in your righteousness deliver me.</p>
+<p>Incline your ear to me; rescue me speedily; be a rock of refuge for me, a strong fortress to save me.</p>
+<p>For you are my rock and my fortress; and for your name's sake you lead me and guide me.</p>
+<p>You take me out of the net they have hidden for me, for you are my refuge.</p>
+<p>Into your hand I commit my spirit; you have redeemed me, O Lord, faithful God.</p>
+<p>You hate those who pay regard to worthless idols, but I trust in the Lord.</p>
+<p>I will rejoice and be glad in your steadfast love, because you have seen my affliction; you have known the distress of my soul.</p>
+<p>You have not delivered me into the hand of the enemy; you have set my feet in a broad place.</p>
+<p>Be gracious to me, O Lord, for I am in distress; my eye is wasted from grief; my soul and my body also.</p>
+<p>For my life is spent with sorrow, and my years with sighing; my strength fails because of my iniquity, and my bones waste away.</p>
+<p>Because of all my adversaries I have become a reproach, especially to my neighbors, and an object of dread to my acquaintances; those who see me in the street flee from me.</p>
+<p>I have been forgotten like one who is dead; I have become like a broken vessel.</p>
+<p>For I hear the whispering of many — terror on every side — as they scheme together against me, as they plot to take my life.</p>
+<p>But I trust in you, O Lord; I say, "You are my God."</p>
+<p>My times are in your hand; rescue me from the hand of my enemies and from my persecutors.</p>
+<p>Make your face shine on your servant; save me in your steadfast love!</p>
+<p>O Lord, let me not be put to shame, for I call upon you; let the wicked be put to shame; let them go silently to the grave.</p>
+<p>Let the lying lips be mute, which speak insolently against the righteous in pride and contempt.</p>
+<p>How abundant is your goodness, which you have stored up for those who fear you and worked for those who take refuge in you, in the sight of the children of mankind.</p>
+<p>In the cover of your presence you hide them from the plots of men; you store them in your shelter from the strife of tongues.</p>
+<p>Blessed be the Lord, for he has wondrously shown his steadfast love to me when I was in a besieged city.</p>
+<p>I had said in my alarm, "I am cut off from your sight." But you heard the voice of my pleas for mercy when I cried to you for help.</p>
+<p>Love the Lord, all you his saints! The Lord preserves the faithful but abundantly repays the one who acts in pride.</p>
+<p>Be strong, and let your heart take courage, all you who wait for the Lord!</p>
+<p><i>Psalm 90</i></p>
+<p>He who dwells in the shelter of the Most High will abide in the shadow of the Almighty.</p>
+<p>I will say to the Lord, "My refuge and my fortress, my God, in whom I trust."</p>
+<p>For he will deliver you from the snare of the fowler and from the deadly pestilence.</p>
+<p>He will cover you with his pinions, and under his wings you will find refuge; his faithfulness is a shield and buckler.</p>
+<p>You will not fear the terror of the night, nor the arrow that flies by day.</p>
+<p>Nor the pestilence that stalks in darkness, nor the destruction that wastes at noonday.</p>
+<p>A thousand may fall at your side, ten thousand at your right hand, but it will not come near you.</p>
+<p>You will only look with your eyes and see the recompense of the wicked.</p>
+<p>Because you have made the Lord your dwelling place — the Most High, who is my refuge —</p>
+<p>No evil shall be allowed to befall you, no plague come near your tent.</p>
+<p>For he will command his angels concerning you to guard you in all your ways.</p>
+<p>On their hands they will bear you up, lest you strike your foot against a stone.</p>
+<p>You will tread on the lion and the adder; the young lion and the serpent you will trample underfoot.</p>
+<p>"Because he holds fast to me in love, I will deliver him; I will protect him, because he knows my name.</p>
+<p>When he calls to me, I will answer him; I will be with him in trouble; I will rescue him and honor him.</p>
+<p>With long life I will satisfy him and show him my salvation."</p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Alleluia, alleluia, alleluia; glory to You, O God. (3 times)</i></p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><b><i>God Is With Us</i></b></p>
+<p><i>Choir 1:</i> God is with us; understand, O nations, and submit, for God is with us.</p>
+<p><i>Choir 2:</i> God is with us; understand, O nations, and submit, for God is with us.</p>
+<p><i>The choirs alternate the verses:</i></p>
+<p>Hear, all you to the ends of the earth: <i>For God is with us.</i></p>
+<p>You mighty ones, submit: <i>For God is with us.</i></p>
+<p>Though you make plans, they shall be brought to nothing: <i>For God is with us.</i></p>
+<p>Though you speak a word, it shall not stand: <i>For God is with us.</i></p>
+<p>We do not fear your fear, neither are we troubled: <i>For God is with us.</i></p>
+<p>The Lord of hosts — him shall you hallow; he shall be your fear: <i>For God is with us.</i></p>
+<p>And if I trust in him, he shall be for my sanctification: <i>For God is with us.</i></p>
+<p>And I will hope in him: <i>For God is with us.</i></p>
+<p>Behold, I and the children whom God has given me: <i>For God is with us.</i></p>
+<p>The people who walked in darkness have seen a great light: <i>For God is with us.</i></p>
+<p>Those who dwell in the land of the shadow of death, upon them a light has dawned: <i>For God is with us.</i></p>
+<p>For unto us a child is born: <i>For God is with us.</i></p>
+<p>And the government shall be upon his shoulder: <i>For God is with us.</i></p>
+<p>And his name shall be called: <i>For God is with us.</i></p>
+<p>Wonderful Counselor: <i>For God is with us.</i></p>
+<p>Mighty God, Eternal Father, Prince of Peace: <i>For God is with us.</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit: <i>For God is with us.</i></p>
+<p>Now and ever, and unto ages of ages. Amen: <i>For God is with us.</i></p>
+<p>God is with us, understand, O nations, and submit: <b>For God is with us.</b></p>
+<p><i>Evening Troparia:</i></p>
+<p>Having passed the day, I give thanks to you, O Lord, and I ask that the evening and the night be sinless; grant this to me, O Savior, and save me.</p>
+<p><i>Glory:</i> Having passed the day, I glorify you, O Master, and I ask that the evening and the night be without temptation; grant this to me, O Savior, and save me.</p>
+<p><i>Now and ever:</i> Having passed the day, I sing praise to you, O Holy One, and I ask that the evening and the night be without failure; grant this to me, O Savior, and save me.</p>
+<p>The bodiless nature of the cherubim praises you with unceasing song; the six-winged seraphim glorify you with never-silent voices, crying out: Holy, holy, holy Lord of Sabaoth; heaven and earth are full of your glory.</p>
+<p>O Most Holy Virgin, Mother of God, the witnesses and ministers of the Word, the assemblies of prophets and martyrs, who possess immortal life: intercede for our salvation.</p>
+<p><b><i>Nicene Creed</i></b></p>
+<p>I believe in one God, the Father Almighty, maker of heaven and earth, and of all things visible and invisible.</p>
+<p>And in one Lord Jesus Christ, the only-begotten Son of God, begotten of the Father before all ages.</p>
+<p>Light from Light, true God from true God, begotten, not made, one in essence with the Father, through whom all things were made.</p>
+<p>For us and for our salvation he came down from heaven and was incarnate by the Holy Spirit and the Virgin Mary, and became man.</p>
+<p>He was crucified under Pontius Pilate, suffered, and was buried.</p>
+<p>He rose on the third day in accordance with the Scriptures.</p>
+<p>He ascended into heaven and is seated at the right hand of the Father.</p>
+<p>He will come again in glory to judge the living and the dead, and his kingdom will have no end.</p>
+<p>And in the Holy Spirit, the Lord, the giver of life, who proceeds from the Father, who together with the Father and the Son is worshiped and glorified, who spoke through the prophets.</p>
+<p>In one, holy, catholic, and apostolic Church.</p>
+<p>I confess one baptism for the forgiveness of sins.</p>
+<p>I look for the resurrection of the dead and the life of the age to come. Amen.</p>
+<p><b><i>Intercessory Litany</i></b> <i>(with bows)</i></p>
+<p>O Most Holy Lady Theotokos, pray to God for us sinners. <i>(3 times)</i></p>
+<p>All the heavenly hosts of the holy angels and archangels, pray to God for us sinners. <i>(twice)</i></p>
+<p>Holy John, Prophet, Forerunner, and Baptizer of our Lord Jesus Christ, pray to God for us sinners. <i>(twice)</i></p>
+<p>The holy glorious Apostles, Prophets, Martyrs, and all the saints, pray to God for us sinners. <i>(twice)</i></p>
+<p>Our venerable and God-bearing fathers Anthony and Theodosius, and the other miracle-workers of the Caves, pray to God for us sinners. <i>(twice)</i></p>
+<p><i>Here is added a verse to the patron saint of the church.</i></p>
+<p>O unconquered, unvanquished, and divine power of the precious and life-giving Cross, do not forsake us sinners. <i>(twice)</i></p>
+<p>O God, be merciful to us sinners. <i>(twice)</i></p>
+<p>O God, cleanse us of our sins and have mercy on us. <i>(twice)</i></p>
+<p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <i>(3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>O Most Holy Trinity, have mercy on us. O Lord, cleanse us of our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for your name's sake.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.</p>
+<p><i>Priest:</i> For Thine is the kingdom, and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Troparia, Tone 8:</i></p>
+<p>You know the sleepless malice of my invisible enemies, O Lord; and you know also the weakness of my wretched body. Into your hands, O Creator, I commit my spirit; keep it under your wings until the day of judgment, so that through your help I may be found worthy of the blessed life of those who love you.</p>
+<p><i>Verse:</i> Look upon me and hear me, O Lord my God.</p>
+<p>How awesome is your judgment, O Lord, in the presence of the angels, when the books are opened and actions are examined; then the fire burns fiercely, all things quake before your glory. How will I, a sinner, stand at that hour? Who will intercede for me? But before the end, have mercy on me, O Lord, according to your great mercy.</p>
+<p><i>Glory:</i> Give me tears, O God, as you once gave to the sinful woman, and grant that I may wash your feet, which freed me from the path of error. I shall bring you as myrrh a repentant life; through which, O Word, accept my compunction, and save me.</p>
+<p><i>Now and ever:</i> Having placed all my hope in you, O Theotokos, I shall be saved. Being protected by your intercession, O Most Pure, I shall not be afraid. I shall crush the armies of the enemies and destroy all who oppress me, who dare to do battle against me; through your mediation I shall gain victory. Therefore I will ever praise you, O sovereign Lady.</p>
+<p><i>Lord, have mercy. (40 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>More honorable than the cherubim, and more glorious beyond compare than the seraphim, who without corruption gave birth to God the Word, the true Theotokos — we magnify you.</p>
+<p>In the name of the Lord, bless, O father.</p>
+<p><i>Priest:</i> By the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Prayer of Saint Basil the Great:</i></p>
+<p><i>Priest:</i> O Lord, Lord, who have delivered us from every shaft of night, and granted us the light of day, accept our evening prayer and turn to yourself our hearts from every temptation; grant that our acts and thoughts be pleasing to you; lead our life peacefully according to your commandments. Grant us peaceful sleep and free from all fantasy of the devil. Save us, O Lord, from vain worry and from every earthly passion, and grant us, when we lie down to sleep, the renewal of soul and body. O Lord of all, spare us who are present in your holy temple, who bow before you; rescue, guard, and keep us from every evil word and deed, from every passion of body and soul, and deem us worthy, O God, that in every hour, we may praise and glorify and bless your most honorable and magnificent name, of the Father and of the Son and of the Holy Spirit, now and ever and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><b>(Part II)</b></p>
+<p>Come, let us worship God, our King.</p>
+<p>Come, let us worship and fall down before Christ our King and God.</p>
+<p>Come, let us worship and fall down before Christ himself, our King and our God.</p>
+<p><i>Psalm 50</i></p>
+<p>Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions.</p>
+<p>Wash me thoroughly from my iniquity, and cleanse me from my sin.</p>
+<p>For I know my transgressions, and my sin is ever before me.</p>
+<p>Against you, you only, have I sinned and done what is evil in your sight, so that you may be justified in your words and blameless in your judgment.</p>
+<p>Behold, I was brought forth in iniquity, and in sin did my mother conceive me.</p>
+<p>Behold, you delight in truth in the inward being, and you teach me wisdom in the secret heart.</p>
+<p>Purge me with hyssop, and I shall be clean; wash me, and I shall be whiter than snow.</p>
+<p>Let me hear joy and gladness; let the bones that you have broken rejoice.</p>
+<p>Hide your face from my sins, and blot out all my iniquities.</p>
+<p>Create in me a clean heart, O God, and renew a right spirit within me.</p>
+<p>Cast me not away from your presence, and take not your Holy Spirit from me.</p>
+<p>Restore to me the joy of your salvation, and uphold me with a willing spirit.</p>
+<p>Then I will teach transgressors your ways, and sinners will return to you.</p>
+<p>Deliver me from bloodguiltiness, O God, O God of my salvation, and my tongue will sing aloud of your righteousness.</p>
+<p>O Lord, open my lips, and my mouth will declare your praise.</p>
+<p>For you will not delight in sacrifice, or I would give it; you will not be pleased with a burnt offering.</p>
+<p>The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise.</p>
+<p>Do good to Zion in your good pleasure; build up the walls of Jerusalem.</p>
+<p>Then will you delight in right sacrifices, in burnt offerings and whole burnt offerings; then bulls will be offered on your altar.</p>
+<p><i>Psalm 101</i></p>
+<p>Hear my prayer, O Lord; let my cry come to you.</p>
+<p>Do not hide your face from me in the day of my distress; incline your ear to me; answer me speedily in the day when I call.</p>
+<p>For my days pass away like smoke, and my bones burn like a furnace.</p>
+<p>My heart is struck down like grass and has withered; I forget to eat my bread.</p>
+<p>Because of my loud groaning my bones cling to my flesh.</p>
+<p>I am like a desert owl, like an owl of the waste places.</p>
+<p>I lie awake; I am like a lonely sparrow on the housetop.</p>
+<p>All the day my enemies taunt me; those who deride me use my name for a curse.</p>
+<p>For I eat ashes like bread and mingle tears with my drink.</p>
+<p>Because of your indignation and anger; for you have taken me up and thrown me down.</p>
+<p>My days are like an evening shadow; I wither away like grass.</p>
+<p>But you, O Lord, are enthroned forever; you are remembered throughout all generations.</p>
+<p>You will arise and have pity on Zion; it is the time to favor her; the appointed time has come.</p>
+<p>For your servants hold her stones dear and have pity on her dust.</p>
+<p>Nations will fear the name of the Lord, and all the kings of the earth will fear your glory.</p>
+<p>For the Lord builds up Zion; he appears in his glory.</p>
+<p>He regards the prayer of the destitute and does not despise their prayer.</p>
+<p>Let this be recorded for a generation to come, so that a people yet to be created may praise the Lord.</p>
+<p>That he looked down from his holy height; from heaven the Lord looked at the earth.</p>
+<p>To hear the groans of the prisoners, to set free those who were doomed to die.</p>
+<p>That they may declare in Zion the name of the Lord, and in Jerusalem his praise.</p>
+<p>When peoples gather together, and kingdoms, to worship the Lord.</p>
+<p>He has broken my strength in midcourse; he has shortened my days.</p>
+<p>"O my God," I say, "take me not away in the midst of my days — you whose years endure throughout all generations!"</p>
+<p>Of old you laid the foundation of the earth, and the heavens are the work of your hands.</p>
+<p>They will perish, but you will remain; they will all wear out like a garment. You will change them like a robe, and they will pass away.</p>
+<p>But you are the same, and your years have no end.</p>
+<p>The children of your servants shall dwell secure; their offspring shall be established before you.</p>
+<p><i>Prayer of Manasseh, King of Judah</i></p>
+<p><i>Priest:</i> O Lord Almighty, God of our fathers Abraham, Isaac, and Jacob, and of their righteous posterity: you who made heaven and earth with all their adornment; who bound the sea by your word of command, who shut up the abyss and sealed it with your terrible and glorious name; of whom all things are afraid, and tremble before your power, for the magnificence of your glory is unbearable, and the wrath of your threatening against sinners is unendurable; but the mercy of your promise is immeasurable and unsearchable. For you are the Lord Most High, compassionate, long-suffering, very merciful, and you repent for the evils of men. You, Lord, according to the abundance of your goodness, promised repentance and forgiveness to those who have sinned against you, and in the multitude of your mercies, you appointed repentance for sinners as the way of salvation. You, therefore, O Lord, God of the righteous, did not appoint repentance for the righteous: Abraham, Isaac, and Jacob, who did not sin against you; but you appointed repentance for me, a sinner. For my sins are more in number than the sand of the sea; my transgressions are multiplied, O Lord, multiplied, and I am not worthy to behold and see the height of heaven for the multitude of my iniquities. I am weighed down with many a fetter of iron, so that I cannot lift up my head; and I have no relief, for I have provoked your anger and done evil before you: I did not do your will; I did not observe your commandments; I set up abominations and multiplied offences. And now I bow the knees of my heart, beseeching your goodness: I have sinned, O Lord, I have sinned, and I know my transgressions. I beseech you, forgive me, O Lord, forgive me, and destroy me not with my iniquities. Be not angry with me forever, storing up evil for me; neither condemn me into the lower parts of the earth. For you are the God of those who repent, and in me you will show all your goodness; for you will save me who am unworthy, according to your great mercy, and I will praise you always through all the days of my life. For all the hosts of heaven sing your praise, and yours is the glory, forever and ever. Amen.</p>
+<p><i>Choir:</i> Amen.</p>
+<p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <i>(3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>O Most Holy Trinity, have mercy on us. O Lord, cleanse us of our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for your name's sake.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.</p>
+<p><i>Priest:</i> For Thine is the kingdom, and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Troparia, Tone 6:</i></p>
+<p>Have mercy on us, O Lord, have mercy on us, for we sinners, having no defense, offer to you as Master this prayer: have mercy on us.</p>
+<p><i>Glory:</i> O Lord, have mercy on us, for in you we have put our trust; be not very angry with us, nor remember our iniquities, but look upon us now as you are merciful, and deliver us from our enemies; for you are our God and we are your people; all we are the work of your hands, and we call upon your name.</p>
+<p><i>Now and ever:</i> Open to us the doors of mercy, O blessed Theotokos; for we who hope in you shall not perish, but through you shall be delivered from all adversities, for you are the salvation of the Christian race.</p>
+<p><i>Lord, have mercy. (40 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>More honorable than the cherubim, and more glorious beyond compare than the seraphim, who without corruption gave birth to God the Word, the true Theotokos — we magnify you.</p>
+<p>In the name of the Lord, bless, O father.</p>
+<p><i>Priest:</i> By the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Prayer of Saint Basil the Great:</i></p>
+<p><i>Priest:</i> O Master, God, Father Almighty, Lord, only-begotten Son, Jesus Christ, and Holy Spirit: one Godhead, one Power. Have mercy on me, a sinner, and by the judgments which you know, save me, your unworthy servant. For you are blessed unto ages of ages. Amen.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><b>(Part III)</b></p>
+<p>Come, let us worship God, our King.</p>
+<p>Come, let us worship and fall down before Christ our King and God.</p>
+<p>Come, let us worship and fall down before Christ himself, our King and our God.</p>
+<p><i>Psalm 69</i></p>
+<p>O God, make haste to deliver me; O Lord, make haste to help me.</p>
+<p>Let them be put to shame and confusion who seek my life; let them be turned back and brought to dishonor who desire my hurt.</p>
+<p>Let them turn back because of their shame who say, "Aha, Aha!"</p>
+<p>May all who seek you rejoice and be glad in you; may those who love your salvation say evermore, "God is great!"</p>
+<p>But I am poor and needy; hasten to me, O God! You are my help and my deliverer; O Lord, do not delay.</p>
+<p><i>Psalm 142</i></p>
+<p>Hear my prayer, O Lord; give ear to my pleas for mercy; in your faithfulness answer me, in your righteousness.</p>
+<p>Enter not into judgment with your servant, for no one living is righteous before you.</p>
+<p>For the enemy has pursued my soul; he has crushed my life to the ground; he has made me sit in darkness like those long dead.</p>
+<p>Therefore my spirit faints within me; my heart within me is appalled.</p>
+<p>I remember the days of old; I meditate on all that you have done; I ponder the work of your hands.</p>
+<p>I stretch out my hands to you; my soul thirsts for you like a parched land.</p>
+<p>Answer me quickly, O Lord; my spirit fails; hide not your face from me, lest I be like those who go down to the pit.</p>
+<p>Let me hear in the morning of your steadfast love, for in you I trust; make me know the way I should go, for to you I lift up my soul.</p>
+<p>Deliver me from my enemies, O Lord; I have fled to you for refuge.</p>
+<p>Teach me to do your will, for you are my God; let your good Spirit lead me on level ground.</p>
+<p>For your name's sake, O Lord, preserve my life; in your righteousness bring my soul out of trouble.</p>
+<p>And in your steadfast love cut off my enemies, and destroy all the adversaries of my soul, for I am your servant.</p>
+<p><b><i>Lesser Doxology</i></b></p>
+<p>Glory to God in the highest, and on earth peace, goodwill among men.</p>
+<p>We praise you, we bless you, we worship you, we glorify you, we give thanks to you for your great glory.</p>
+<p>O Lord, heavenly King, God the Father Almighty; O Lord, only-begotten Son Jesus Christ, and Holy Spirit.</p>
+<p>O Lord God, Lamb of God, Son of the Father, who take away the sin of the world, have mercy on us.</p>
+<p>You who take away the sins of the world, receive our prayer.</p>
+<p>You who sit at the right hand of the Father, have mercy on us.</p>
+<p>For you alone are holy; you alone are the Lord; you alone are the Most High, O Jesus Christ, to the glory of God the Father. Amen.</p>
+<p>Every night I will bless you and praise your name forever and ever.</p>
+<p>O Lord, you have been our refuge from generation to generation.</p>
+<p>I said: O Lord, be merciful to me; heal my soul, for I have sinned against you.</p>
+<p>O Lord, I have fled to you; teach me to do your will, for you are my God.</p>
+<p>For in you is the fountain of life; in your light we shall see light.</p>
+<p>Continue your steadfast love to those who know you.</p>
+<p>Grant, O Lord, to keep us this night without sin.</p>
+<p>Blessed are you, O Lord, God of our fathers, and praised and glorified is your name unto ages. Amen.</p>
+<p>Let your mercy, O Lord, be upon us, as we hope in you.</p>
+<p>Blessed are you, O Lord; teach me your statutes.</p>
+<p>Blessed are you, O Master; make me understand your statutes.</p>
+<p>Blessed are you, O Holy One; enlighten me with your statutes.</p>
+<p>O Lord, your mercy endures forever; do not forsake the work of your hands.</p>
+<p>To you belongs praise; to you belongs song.</p>
+<p>To you belongs glory: to the Father, and to the Son, and to the Holy Spirit.</p>
+<p>Now and ever, and unto ages of ages. Amen.</p>
+<p><b><i>Canon to the Most Holy Theotokos, Tone 6</i></b> <i>(Tuesday evening)</i></p>
+<p><i>Ode 1 — Irmos:</i> As Israel walked on dry ground through the deep, seeing Pharaoh the pursuer overwhelmed in the sea, they sang a hymn of victory to God, O Christ, let us sing to you alone.</p>
+<p><i>Refrain throughout the Canon:</i> Most holy Theotokos, save us!</p>
+<p>I lament over my defiled life and the countless multitude of my boundless sins; what shall I confess to you, O Pure One? I do not understand, but before the end I fall down before you, O Lady, and I cry: Grant me repentance before my end.</p>
+<p>Where shall I begin to tell of my evil and terrible falls, I who am full of passion? Woe is me, what will happen to me? But before the end accept my repentance, O Pure One.</p>
+<p><i>Glory:</i> I always think of the hour of death and of the dread judgment seat, O most pure one, yet by sinful habits I am deceived. Bestow on me, O Lady, tears of compunction, so that I may wash away my stain before the end.</p>
+<p><i>Now and ever:</i> The destroyer of all good, seeing me deprived of divine grace and having strayed and fallen far from God, hastens to devour me; but before the end intercede for me, O Bride of God, and grant me repentance.</p>
+<p><i>Ode 3 — Irmos:</i> There is none holy as you, O Lord my God, who have exalted the horn of your faithful and established us upon the rock of your confession, O Good One.</p>
+<p>I have defiled my soul with countless sins, O Lady and Theotokos; and where shall I go further, seized with great despair? Grant me the amendment of life, O Sovereign One.</p>
+<p>The divine image in me I have defiled by fornication and vainglory, O Virgin; and the likeness I have wrought into wickedness; woe to me, O Pure One, heal me before the end.</p>
+<p><i>Glory:</i> There is no other among men born into the world who has committed such abomination as I, darkened in mind; but grant me, O Lady, repentance before the end.</p>
+<p><i>Now and ever:</i> I have attained the heights of sin, O most holy Virgin; help me quickly, for heaven and earth cry bitterly over me. Grant me repentance, O most pure one.</p>
+<p><i>Ode 4 — Irmos:</i> Christ is my power, God and Lord; the holy Church sings hymns with reverence, crying out from a pure mind: Lord, glory to you.</p>
+<p>The angelic orders and the hosts of the heavenly powers tremble before the power of your Son, O Pure One; yet I am in despair, seized with countless sins. Heal me, O Lady, before the end.</p>
+<p>All the earth was amazed and was aghast at my terrible, evil, and mindless deeds, and marvels at your great compassion toward me, O Theotokos. Grant me repentance before the end.</p>
+<p><i>Glory:</i> I have defiled the temple of my body with sin, and the temple of the Lord into which men enter with trembling, I, the prodigal, enter with impurity. O Lady, grant me repentance before the end.</p>
+<p><i>Now and ever:</i> Do not, do not show me, O Lady, as one who has gone out from the house of your Son as unworthy; but wash away my filth and lead me in repentance, so that I may glorify you before the end.</p>
+<p><i>Ode 5 — Irmos:</i> With your divine light, O Good One, enlighten the souls of those who seek you with love at dawn, I pray; let them know you, O Word of God, as the true God, who calls all from the darkness of sin.</p>
+<p>With your divine radiance, O Good One, heal my soul's passions, which the adversary has sown in me, and deliver me from his snares, O Theotokos, and guide me to repentance before the end.</p>
+<p>Adam transgressed the single commandment of your Son, O Virgin, and was expelled; how then shall I weep, I who am a lawbreaker, falling into the abyss of my sins? O Lady, grant me repentance before the end.</p>
+<p><i>Glory:</i> I became a murderer from of old, and like Cain, a fratricide, and was cursed by God; what then shall I do now, evil one, having slain my soul by the passions of the flesh? O Lady, grant me repentance before the end.</p>
+<p><i>Now and ever:</i> I have rivaled evil Esau in gluttony and excess; I have defiled my soul with drunkenness and sensual pleasure — a life ruined by indulgence. O Lady, grant me repentance before the end.</p>
+<p><i>Ode 6 — Irmos:</i> Seeing the sea of life surge with the storm of temptations, I run to your calm harbor and cry out to you: Raise up my life from corruption, O greatly merciful One.</p>
+<p>My life is dissolute, my soul is defiled, all my life is wretched, and my body is entirely dirty with sins; therefore I hasten to you, O Most Pure One — grant me repentance and the amendment of life before the end.</p>
+<p>The end draws near and I cannot endure; my conscience convicts me, for I have wrought evil deeds, and my life is dissolute and wretched. Grant me, O Good One, repentance before the end.</p>
+<p><i>Glory:</i> The burning of my flesh awaits me in truth: the terrible, unquenchable river of fire, and the undying worm. But before the end, intercede for me, O Theotokos, with your Son, that I may gain repentance.</p>
+<p><i>Now and ever:</i> Now seized with trembling, O Good One, I fear the evil snares of the enemy; for before the end, the adversary desires to destroy me. But before the end intercede for me, O Bride of God, and grant me repentance.</p>
+<p><i>Lord, have mercy. (3 times) Glory, now and ever.</i></p>
+<p><i>Sessional hymn, Tone 6:</i></p>
+<p>You who are the hope and refuge of men, O Virgin, through you the Savior of all was born without pain; intercede with him for all who worship you in faith, that through you we may be delivered from all sufferings.</p>
+<p><i>Ode 7 — Irmos:</i> The angel made the furnace dewy for the holy youths, while the commandment of God burned the Chaldeans; the tyrant was compelled to cry: Blessed are you, O God of our fathers.</p>
+<p>The evil one has seventy times seven kindled the flame of my passions and always puts my heart to death with fornication; therefore I hasten to you, O Lady, deliver me, O Pure One, and grant me repentance before the end.</p>
+<p>Do not cast me away, defiled as I am with the mud of my sins, O Lady and Good One; for the adversary, seeing me in despair, mocks me and draws me down to the depths. Grant me repentance before the end.</p>
+<p><i>Glory:</i> The dreadful judgment seat, O my passionate and insensate soul, brings torments that are endless and terrible; but draw near now to the Mother of the Good One, and beg before the end to obtain repentance.</p>
+<p><i>Now and ever:</i> I am darkened, being full of passion, with the multitude of countless sins, and have defiled soul, body, and mind; therefore, O most pure one, intercede for me, that the Judge may grant me repentance before the end.</p>
+<p><i>Ode 8 — Irmos:</i> From the flame you poured dew upon the holy ones, and the righteous man's sacrifice you burned with water; for you do all things by will alone, O Christ; we exalt you unto all ages.</p>
+<p>You who bore the one God of the Trinity made flesh, and carried him in your arms, O Virgin Mother, quench the blazing fire of my passions, and grant me, the poor one, tears, that I may pass my life well, and glorify you unto all ages.</p>
+<p>I tremble at the coming of death, O most pure one, and I now fear the judgment; yet committing sin, I am not at all ashamed; be merciful to me, O Lady, and grant me tears of compunction and repentance, that I may glorify you unto all ages.</p>
+<p><i>Glory:</i> Grant me unceasing groaning and pour clouds of tears upon me, that I may wash away my many sins and incurable wounds, and that the great Physician of souls may grant me healing through you; for I glorify you unto all ages.</p>
+<p><i>Now and ever:</i> I confess to you, O Lady, the multitude of my sins, for none in all the world has provoked God, your Son and Lord, as I have; but in your love for mankind, intercede for me, that he may grant me repentance before the end, and I will glorify him unto all ages.</p>
+<p><i>Ode 9 — Irmos:</i> It is impossible for men to behold God upon whom the angelic orders dare not gaze; but through you, O most pure one, the incarnate Word appeared to us; glorifying him with the heavenly hosts, we call you blessed.</p>
+<p>Behold, I come to you, O most pure one, with great fear and love, for your servant knows the power of your prayer, since truly you are the Mother of God; and I trust in your mediation, O Lady, grant me tears before the end.</p>
+<p>Accept the ranks of archangels and the multitude of the heavenly hosts of my Creator; the choirs of apostles and prophets, and martyrs, and all the saints; through them, O pure one, intercede for me before the end, that I may gain repentance.</p>
+<p><i>Glory and now:</i> Now and when my spirit departs, may I find your help, O pure one; quickly deliver me from the demons who come against me, and from eternal torment, and deem me worthy of the Kingdom of Heaven, O most pure one, and grant me repentance before the end.</p>
+<p><i>To you, O Theotokos:</i> I await the merciful judgment of your compassionate Son, O pure one; do not despise me, but make him favorable to me, who stand before him in fear; deem me worthy of your right hand and grant me repentance before the end, that I may glorify you.</p>
+<p>It is truly meet to call you blessed, O Theotokos, ever-blessed and most pure and the Mother of our God. More honorable than the cherubim, and more glorious beyond compare than the seraphim; without corruption you gave birth to God the Word; true Theotokos, we magnify you.</p>
+<p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <i>(3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>O Most Holy Trinity, have mercy on us. O Lord, cleanse us of our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for your name's sake.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.</p>
+<p><i>Priest:</i> For Thine is the kingdom, and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><b><i>Lord of Hosts</i></b></p>
+<p><i>Troparion, Tone 6:</i></p>
+<p>O Lord of Hosts, be with us, for in times of distress we have no other helper but you. O Lord of Hosts, have mercy on us. <i>(with small bows)</i></p>
+<p><i>Verse:</i> Praise God in his sanctuary; praise him in his mighty firmament.</p>
+<p><i>After each verse:</i> O Lord of Hosts, be with us...</p>
+<p><i>Verse:</i> Praise him for his mighty deeds; praise him according to his excellent greatness.</p>
+<p><i>Verse:</i> Praise him with the sound of a trumpet; praise him with lute and harp.</p>
+<p><i>Verse:</i> Praise him with timbrel and dance; praise him with strings and pipe.</p>
+<p><i>Verse:</i> Praise him with sounding cymbals; praise him with loud clashing cymbals. Let everything that has breath praise the Lord. Alleluia.</p>
+<p><i>Glory:</i> O Lord, had we not had your saints praying for us, and your grace taking pity on us, how could we dare, O Lord, to praise you, we who are wholly unworthy? We do not despair, for you have commanded us to approach you with boldness.</p>
+<p><i>Now and ever:</i> The multitude of my sins, O Theotokos, I fall before you, O Pure One, pleading for salvation. Visit my ailing soul and intercede before your Son and our God for the forgiveness of the evil deeds I have committed.</p>
+<p>O Most Holy Lady Theotokos! As long as I live, do not forsake me; commit me not to human protection; but yourself intercede for me, and have mercy on me. <i>(with a small bow)</i></p>
+<p>All my hope I place in you, O Mother of God; keep me under your protection. <i>(with a small bow)</i></p>
+<p><i>Lord, have mercy. (40 times)</i></p>
+<p><i>Priest:</i> You who at all times and at every hour, both in heaven and on earth, are worshiped and glorified, O Christ God, who are long-suffering, great in mercy and compassion, who love the just and show mercy to sinners, who call all to salvation through the promise of good things to come: O Lord, in this hour receive our supplications, and direct our lives according to your commandments. Sanctify our souls, cleanse our bodies, correct our thoughts, purify our intentions, and deliver us from every grief, evil, and pain. Surround us with your holy angels, so that guided and guarded by their company, we may attain to the unity of the faith and to the knowledge of your unapproachable glory; for you are blessed unto ages of ages. Amen.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>More honorable than the cherubim, and more glorious beyond compare than the seraphim, who without corruption gave birth to God the Word, the true Theotokos — we magnify you.</p>
+<p>In the name of the Lord, bless, O father.</p>
+<p><i>Priest:</i> God, have mercy on us and bless us, shine the light of his face upon us, and have mercy on us.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><b><i>Prayer of Saint Ephrem the Syrian</i></b></p>
+<p>O Lord and Master of my life, take from me the spirit of sloth, despondency, lust for power, and idle talk. <i>(prostration)</i></p>
+<p>But grant to me, your servant, a spirit of chastity, humility, patience, and love. <i>(prostration)</i></p>
+<p>Yes, O Lord and King, grant me to see my own faults and not to judge my brother, for you are blessed unto ages of ages. Amen. <i>(prostration)</i></p>
+<p><i>Twelve small bows, each with the prayer:</i></p>
+<p>O God, be merciful to me, a sinner!</p>
+<p>O God, cleanse my sins and have mercy on me!</p>
+<p>Without number have I sinned, O Lord; forgive me!</p>
+<p><i>Then the Prayer of Saint Ephrem once more:</i></p>
+<p>O Lord and Master of my life, take from me the spirit of sloth, despondency, lust for power, and idle talk. But grant to me, your servant, a spirit of chastity, humility, patience, and love. Yes, O Lord and King, grant me to see my own faults and not to judge my brother, for you are blessed unto ages of ages. Amen. <i>(prostration)</i></p>
+<p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <i>(3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>O Most Holy Trinity, have mercy on us. O Lord, cleanse us of our sins. O Master, pardon our iniquities. O Holy One, visit and heal our infirmities for your name's sake.</p>
+<p><i>Lord, have mercy. (3 times)</i></p>
+<p>Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p>Our Father, who art in heaven, hallowed be Thy name; Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.</p>
+<p><i>Priest:</i> For Thine is the kingdom, and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Lord, have mercy. (12 times)</i></p>
+<p><i>Prayer to the Most Holy Theotokos:</i></p>
+<p><i>Priest:</i> O immaculate, undefiled, incorruptible, most pure Virgin, Bride of God and Lady: who united God the Word with mankind through your most glorious childbearing, and joined together the fallen nature of our race with the heavenly; who are the only hope of the hopeless, the helper of the oppressed, the ready protection of those who flee to you, the refuge of all Christians: do not abhor me, a sinner and defiled, who with shameful thoughts, words, and deeds have made myself utterly unprofitable, and through indolence have become a slave to the pleasures of life. But as the Mother of the God who loves mankind, have compassion and show mercy to me, who am a sinner and prodigal, and accept my prayer offered from unclean lips; and using your motherly boldness intercede with your Son and our God to grant me, before the end, a turning away from my sins, and amendment of life, and the attainment of heaven — with all the saints unto ages. Amen.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><i>Prayer to Jesus Christ:</i></p>
+<p><i>Priest:</i> And grant us, O Master, as we go to sleep, rest for our bodies and souls, and protect us from the dark sleep of sin and from every dark and nocturnal pleasure. Calm the impulses of the passions, quench the burning arrows of the evil one which are craftily cast at us. Repress the rebellions of the flesh, and put to sleep every earthly and material thought. And grant us, O God, a watchful mind, a sound conscience, a wakeful heart, a light sleep, and freedom from every satanic dream. And raise us up again at the hour of prayer, established in your commandments and holding firm in your memory within us. Grant us to glorify, praise, and thank your goodness throughout the night, that we may offer praise and blessing and thanksgiving to you, the Father, and to your only-begotten Son, and to your all-holy and good and life-giving Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Choir:</i> Amen.</p>
+<p><b><i>Dismissal</i></b></p>
+<p><i>Choir:</i> Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Lord, have mercy. (3 times) Bless.</i></p>
+<p>O O Most Glorious Ever-Virgin Theotokos! Bear our prayers to your Son and our God, and may he save our souls through you.</p>
+<p>Our hope is the Father; our refuge is the Son; our protection is the Holy Spirit; O Holy Trinity, glory to you.</p>
+<p><i>Mutual Forgiveness:</i></p>
+<p>O most merciful Lord Jesus Christ our God, through the prayers of your most pure Mother, our Lady Theotokos and Ever-Virgin Mary, and of all the saints, lead us, your sinners and unworthy servants, to the peaceful and quiet haven of your most holy will, for you are the true God, who loves mankind, and to you we send up glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.</p>
+<p><i>Faithful:</i> Amen.</p>
+<p><i>Priest:</i> Bless us, fathers and brothers, and forgive me, a sinner, for whatever I have sinned this day <i>(or: tonight)</i> and throughout all the days of my life, in word, deed, and thought, and in all my senses.</p>
+<p><i>Faithful:</i> May God forgive and have mercy on you, reverend father. Bless us and forgive us our sins, reverend father.</p>
+<p><i>Priest:</i> May the Lord God forgive your sins in his mercy and have mercy on you.</p>
+<p>By the prayers of our holy fathers, O Lord Jesus Christ our God, have mercy on us.</p>
+<p><i>Faithful:</i> Amen.</p>`;
+
+function buildComplineView() {
+  const lang = S.lang;
+  const serviceHtml = lang === 'uk' ? UK_COMPLINE_HTML : EN_COMPLINE_HTML;
+  const title = lang === 'uk' ? "Велике Повечір'я" : 'Great Compline';
+  const sub   = lang === 'uk' ? 'Great Compline · After supper' : "Повечір'я · Після вечері";
+  const note  = lang === 'uk'
+    ? '<p style="font-size:0.8em;color:var(--mt);text-align:center;margin:8px 0 0">Канон змінюється за днем тижня · цей: вівторок, глас 6</p>'
+    : '<p style="font-size:0.8em;color:var(--mt);text-align:center;margin:8px 0 0">Canon varies by weekday · shown: Tuesday, Tone 6</p>';
+
+  return `<div class="svc-wrap">
+    <div class="svc-header">
+      <button class="back-btn" onclick="S.view='home';render()">← Back</button>
+      <div>
+        <div class="svc-title">${title}</div>
+        <div class="svc-sub">${sub}</div>
+      </div>
+    </div>
+    ${note}
+    <div class="compline-body">${serviceHtml}</div>
+  </div>`;
+}
+
+function buildHome() {
+  const d = S.date;
+  const m = getMeta(d);
+  const saint = getSaint(d, S.lang);
+  const badges = getPeriodBadges(d, S.lang);
+  const isFeast = m.rank==='#'||m.rank==='@';
+  const period = getLitPeriod(m.fast, S.lang);
+  const fs = S.fontSize;
+
+  const badgesHtml = badges.map(b =>
+    `<span class="badge ${b.cls}" style="font-size:${fs*0.68}px">${b.text}</span>`
+  ).join('');
+
+  const calHtml = buildCalStrip(d);
+
+  const services = [
+    {id:'vespers', en:'Vespers', uk:'Вечірня', icon:'☾', time:'Sunset (~5–6 PM)', ok:true},
+    {id:'compline',en:'Great Compline',uk:"Повечір'я",icon:'✦',time:'After supper',ok:true},
+    {id:'midnight',en:'Midnight Office',uk:'Опівнічна',icon:'·',time:'Midnight',ok:false},
+    {id:'matins',  en:'Matins',  uk:'Утреня',icon:'☉',time:'Dawn (~6 AM)',ok:false},
+    {id:'hours',   en:'The Hours',uk:'Часи',icon:'⏱',time:'1st, 3rd, 6th, 9th',ok:false},
+    {id:'presanctified',en:'Presanctified Liturgy',uk:'Літургія ПД',icon:'☩',time:'Wed & Fri of Lent',ok:false},
+  ];
+
+  const svcsHtml = services.map(s => {
+    const name = S.lang==='uk' ? s.uk : s.en;
+    const sub  = S.lang==='uk' ? `${s.en} · ${s.time}` : `${s.uk} · ${s.time}`;
+    const arr  = s.ok ? `<span class="svc-arr">›</span>`
+                      : `<span class="svc-soon">${S.lang==='uk'?'Скоро':'Coming soon'}</span>`;
+    const onclick = s.ok ? `onclick="openService('${s.id}')"` : '';
+    return `<button class="svc-btn${s.ok?'':' disabled'}" ${onclick}>
+      <span class="svc-icon">${s.icon}</span>
+      <div>
+        <div class="svc-name" style="font-size:${fs*0.95}px">${name}</div>
+        <div class="svc-ukr"  style="font-size:${fs*0.72}px">${sub}</div>
+      </div>
+      ${arr}
+    </button>`;
+  }).join('');
+
+  const crossStyle = isFeast ? 'color:var(--red)' : 'color:var(--gold)';
+
+  return `
+  <div class="day-card">
+    <div class="day-card-cross" style="${crossStyle}">☦</div>
+    <div class="day-card-saint${isFeast?' feast':''}" style="font-size:${fs*0.95}px">${saint||'—'}</div>
+    <div class="day-card-badges">${badgesHtml}</div>
+    ${period ? `<div style="font-size:${fs*0.72}px;color:var(--mt);margin-top:2px">${period}</div>` : ''}
+  </div>
+  ${calHtml}
+  <div class="section-label" style="font-size:${fs*0.68}px">${S.lang==='uk'?'Богослужіння':'Divine Services'}</div>
+  <div class="svc-list">${svcsHtml}</div>`;
+}
+
+// ── Calendar strip ─────────────────────────────────────────────
+function buildCalStrip(selDate) {
+  const mon = selDate.getMonth();
+  const year = 2026;
+  const daysInMon = new Date(year, mon+1, 0).getDate();
+  const monthName = S.lang==='uk' ? MONTHS_UK[mon] : MONTHS_EN[mon];
+  const wdLabels = S.lang==='uk' ? WD_UK : WD_EN;
+  const fs = S.fontSize;
+
+  let days = '';
+  for (let day=1; day<=daysInMon; day++) {
+    const dd = new Date(year, mon, day);
+    const key = dateKey(dd);
+    const meta = calMeta[key]||{};
+    const wd = wdLabels[dd.getDay()];
+    const sel = (dd.getDate()===selDate.getDate() && dd.getMonth()===selDate.getMonth());
+    const isToday = (dd.getDate()===TODAY.getDate() && dd.getMonth()===TODAY.getMonth());
+    const rank = meta.rank||'-';
+    const cls = ['cal-day',
+      sel?'selected':'',
+      rank==='#'?'feast':'',
+      isToday&&!sel?'today':''
+    ].filter(Boolean).join(' ');
+
+    let dotCls = 'dot-none';
+    if (rank==='#') dotCls='dot-feast';
+    else if (rank==='@'||rank==='+') dotCls='dot-major';
+    else if (meta.fast&&meta.fast.match(/0[1-6]p/)) dotCls='dot-lent';
+
+    days += `<button class="${cls}" onclick="selectDay(${mon},${day})"
+      aria-label="${fmtDate(dd, S.lang)}">
+      <span class="cal-day-wd" style="font-size:${fs*0.55}px">${wd}</span>
+      <span class="cal-day-n"  style="font-size:${fs*1.05}px">${day}</span>
+      <span class="cal-day-dot ${dotCls}"></span>
+    </button>`;
+  }
+
+  // Month navigation arrows
+  const prevMon = mon > 0 ? `<button class="hd-arrow" onclick="stripMonth(${mon-1})" style="color:var(--gold);background:none;border:none;cursor:pointer;font-size:1.2em">‹</button>` : '<span style="width:24px"></span>';
+  const nextMon = mon < 11 ? `<button class="hd-arrow" onclick="stripMonth(${mon+1})" style="color:var(--gold);background:none;border:none;cursor:pointer;font-size:1.2em">›</button>` : '<span style="width:24px"></span>';
+
+  return `<div class="cal-strip-wrap">
+    <div class="cal-strip-header">
+      ${prevMon}
+      <button onclick="toggleCalView()" class="cal-month-label" style="background:none;border:none;cursor:pointer;color:var(--mt);font-family:inherit;font-size:${fs*0.78}px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">
+        ${monthName} 2026 ▾
+      </button>
+      ${nextMon}
+    </div>
+    <div class="cal-strip" id="calStrip">${days}</div>
+  </div>`;
+}
+
+// ── Full Calendar view ─────────────────────────────────────────
+function buildCalFull() {
+  const mon  = S.calMonth;
+  const year = 2026;
+  const daysInMon = new Date(year, mon+1, 0).getDate();
+  const firstWd = new Date(year, mon, 1).getDay(); // 0=Sun
+  const monthName = S.lang==='uk' ? MONTHS_UK[mon] : MONTHS_EN[mon];
+  const wdLabels = S.lang==='uk' ? WD_UK : WD_EN;
+  const fs = S.fontSize;
+
+  const wdHeaders = wdLabels.map(w =>
+    `<div class="cal-wd-label" style="font-size:${fs*0.6}px">${w}</div>`
+  ).join('');
+
+  // Empty cells before first day
+  let cells = '';
+  for (let i=0; i<firstWd; i++)
+    cells += `<div class="cal-cell empty"></div>`;
+
+  for (let day=1; day<=daysInMon; day++) {
+    const dd = new Date(year, mon, day);
+    const key = dateKey(dd);
+    const meta = calMeta[key]||{};
+    const rank = meta.rank||'-';
+    const isSelected = S.date.getMonth()===mon && S.date.getDate()===day;
+    const isToday = TODAY.getMonth()===mon && TODAY.getDate()===day;
+    const inRange = hasData(dd);
+
+    let cls = 'cal-cell';
+    if (isSelected) cls += ' selected';
+    if (isToday && !isSelected) cls += ' today';
+    if (rank==='#') cls += ' great-feast';
+    else if (rank==='@'||rank==='+') cls += ' feast-day';
+    if (meta.fast&&meta.fast.match(/0[1-6]p/)) cls += ' lenten';
+    if (!inRange) cls += ' out-of-range';
+
+    const dot = (rank==='#'||rank==='@'||rank==='+') ? '<span class="cd-dot"></span>' : '';
+    const onclick = inRange ? `onclick="selectDay(${mon},${day})"` : '';
+
+    cells += `<button class="${cls}" ${onclick} style="font-size:${fs}px">
+      <span class="cd-n">${day}</span>${dot}
+    </button>`;
+  }
+
+  const prevBtn = mon > 0
+    ? `<button class="cal-month-nav" onclick="S.calMonth=${mon-1};render()">‹</button>`
+    : `<button class="cal-month-nav" disabled style="opacity:0.3">‹</button>`;
+  const nextBtn = mon < 11
+    ? `<button class="cal-month-nav" onclick="S.calMonth=${mon+1};render()">›</button>`
+    : `<button class="cal-month-nav" disabled style="opacity:0.3">›</button>`;
+
+  return `<div class="cal-full">
+    <div class="svc-view-header">
+      <button class="back-btn" onclick="S.view='home';render()">← ${S.lang==='uk'?'Назад':'Back'}</button>
+      <div style="font-size:${fs*0.78}px;color:var(--mt)">
+        ${S.lang==='uk'?'Лише Вечірня Jan–Берез':'Vespers available Jan–Mar'}
+      </div>
+    </div>
+    <div class="cal-full-header">
+      ${prevBtn}
+      <span class="cal-full-month" style="font-size:${fs*1.05}px">${monthName} 2026</span>
+      ${nextBtn}
+    </div>
+    <div class="cal-grid">
+      ${wdHeaders}${cells}
+    </div>
+    <div style="padding:16px 4px 0;font-size:${fs*0.68}px;color:var(--mt);text-align:center;line-height:1.7">
+      <span style="display:inline-block;width:10px;height:10px;border:1px solid var(--feast-ring);border-radius:2px;margin-right:4px;vertical-align:middle"></span>${S.lang==='uk'?'Велике свято':'Great Feast'} &nbsp;
+      <span style="display:inline-block;width:6px;height:6px;background:var(--lent-dot);border-radius:50%;margin-right:4px;vertical-align:middle"></span>${S.lang==='uk'?'Великий Піст':'Great Lent'}
+    </div>
+  </div>`;
+}
+
+// ── Vespers view ───────────────────────────────────────────────
+async function buildVespersView(main) {
+  const d = S.date;
+  const key = dateKey(d);
+  const m = getMeta(d);
+  const fs = S.fontSize;
+  const leng = S.lang;
+
+  const dateLabel = fmtDate(d, leng);
+  const toneLabel = m.tone ? (leng==='uk'?`Глас ${m.tone}`:`Tone ${m.tone}`) : '';
+  const periodLabel = getLitPeriod(m.fast, leng);
+  const saintLabel = getSaint(d, leng);
+  const subLine = [periodLabel, toneLabel].filter(Boolean).join(' — ');
+
+  const headerHtml = `
+  <div class="svc-view-header">
+    <button class="back-btn" onclick="S.view='home';render()">← ${leng==='uk'?'Назад':'Back'}</button>
+    <button class="print-btn" onclick="window.print()">⊞ ${leng==='uk'?'Друк':'Print'}</button>
+  </div>`;
+
+  const dayHeaderHtml = `
+  <div class="svc-day-header">
+    <div class="svc-day-date" style="font-size:${fs*0.78}px">${dateLabel}</div>
+    ${subLine ? `<div class="svc-day-tone" style="font-size:${fs*0.82}px">${subLine}</div>` : ''}
+    ${saintLabel ? `<div class="svc-day-saint" style="font-size:${fs*0.85}px">${saintLabel}</div>` : ''}
+  </div>`;
+
+  // English mode — load EN moveable data first
+  if (leng === 'en') {
+    if (!S.moveableEN && !S.moveableLoading) {
+      main.innerHTML = headerHtml +
+        `<div class="svc-content"><div>${dayHeaderHtml}<div class="loading-spinner"></div><p style="text-align:center;color:var(--mt);font-size:${fs*0.85}px">Loading prayer text...</p></div></div>`;
+      const ok = await loadMoveableEN();
+      if (ok || !S.moveableLoading) buildVespersView(main);
+      return;
+    }
+    if (S.moveableLoading) {
+      main.innerHTML = headerHtml +
+        `<div class="svc-content"><div>${dayHeaderHtml}<div class="loading-spinner"></div></div></div>`;
+      return;
+    }
+    const blocks = buildEnVespers(d);
+    const content = blocks.map(renderBlock).join('');
+    main.innerHTML = headerHtml + `<div class="svc-content"><div>${dayHeaderHtml}${content}</div></div>`;
+    return;
+  }
+
+  // Ukrainian mode — need moveable data
+  if (!S.moveableUK && !S.moveableLoading) {
+    main.innerHTML = headerHtml +
+      `<div class="svc-content"><div>${dayHeaderHtml}<div class="loading-spinner"></div><p style="text-align:center;color:var(--mt);font-size:${fs*0.85}px">Завантаження тексту…<br>Loading Ukrainian text…</p></div></div>`;
+    const ok = await loadMoveableUK();
+    if (ok) buildVespersView(main);
+    else {
+      main.innerHTML = headerHtml +
+        `<div class="svc-content"><div>${dayHeaderHtml}
+        <div class="blk-moveable-placeholder">
+          <strong>Ukrainian text unavailable</strong><br>
+          Place <code>data/vespers-moveable-uk.json</code> alongside <code>index.html</code>.
+        </div></div></div>`;
+    }
+    return;
+  }
+
+  if (S.moveableLoading) {
+    main.innerHTML = headerHtml +
+      `<div class="svc-content"><div>${dayHeaderHtml}<div class="loading-spinner"></div></div></div>`;
+    return;
+  }
+
+  // We have moveable data
+  const moveableHtml = S.moveableUK ? (S.moveableUK[key]||'') : '';
+  if (!moveableHtml) {
+    main.innerHTML = headerHtml +
+      `<div class="svc-content"><div>${dayHeaderHtml}
+      <div class="blk-moveable-placeholder">
+        Ukrainian Vespers text for ${dateLabel} is not yet available.<br>
+        ${S.lang==='uk'?'Текст відсутній для цієї дати.':'Data available for January–March 2026.'}
+      </div></div></div>`;
+    return;
+  }
+
+  // Combine fixed opening + moveable
+  const ukContent = `<div class="uk-vespers" style="font-size:${fs}px">`
+    + UK_FIXED_OPENING_HTML
+    + moveableHtml
+    + `</div>`;
+
+  main.innerHTML = headerHtml + `<div class="svc-content">${dayHeaderHtml}${ukContent}</div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CONTROLS
+// ═══════════════════════════════════════════════════════════════
+
+function toggleDark() {
+  S.dark = !S.dark;
+  document.documentElement.toggleAttribute('data-dark', S.dark);
+  render();
+}
+
+function toggleLang() {
+  S.lang = S.lang==='en' ? 'uk' : 'en';
+  render();
+}
+
+function adjFont(delta) {
+  S.fontSize = Math.max(14, Math.min(26, S.fontSize + delta*2));
+  render();
+}
+
+function shiftDay(delta) {
+  const nd = new Date(S.date);
+  nd.setDate(nd.getDate() + delta);
+  if (nd.getFullYear() === 2026) {
+    S.date = nd;
+    S.calMonth = nd.getMonth();
+    render();
+    // Scroll the day into view in the strip
+    setTimeout(() => {
+      const strip = document.getElementById('calStrip');
+      if (strip) {
+        const sel = strip.querySelector('.selected');
+        if (sel) sel.scrollIntoView({inline:'center', behavior:'smooth'});
+      }
+    }, 50);
+  }
+}
+
+function selectDay(mon, day) {
+  S.date = new Date(2026, mon, day);
+  S.calMonth = mon;
+  S.view = 'home';
+  render();
+  setTimeout(() => {
+    const strip = document.getElementById('calStrip');
+    if (strip) {
+      const sel = strip.querySelector('.selected');
+      if (sel) sel.scrollIntoView({inline:'center', behavior:'smooth'});
+    }
+  }, 50);
+}
+
+function stripMonth(mon) {
+  S.date = new Date(2026, mon, 1);
+  S.calMonth = mon;
+  render();
+}
+
+function toggleCalView() {
+  S.calMonth = S.date.getMonth();
+  S.view = S.view==='cal' ? 'home' : 'cal';
+  render();
+}
+
+function openService(id) {
+  if (id === 'vespers') {
+    S.view = 'vespers';
+    render();
+    window.scrollTo(0, 0);
+  } else if (id === 'compline') {
+    S.view = 'compline';
+    render();
+    window.scrollTo(0, 0);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+
+// Restore preferences
+try {
+  const prefs = JSON.parse(localStorage.getItem('potc-prefs')||'{}');
+  if (prefs.dark)     { S.dark = true; document.documentElement.setAttribute('data-dark',''); }
+  if (prefs.lang)     S.lang = prefs.lang;
+  if (prefs.fontSize) S.fontSize = prefs.fontSize;
+} catch(e) {}
+
+// Save prefs on change
+function savePrefs() {
+  try { localStorage.setItem('potc-prefs', JSON.stringify({dark:S.dark, lang:S.lang, fontSize:S.fontSize})); } catch(e) {}
+}
+const _toggleDark = toggleDark;
+const _toggleLang = toggleLang;
+const _adjFont    = adjFont;
+
+window.toggleDark = () => { _toggleDark(); savePrefs(); };
+window.toggleLang = () => { _toggleLang(); savePrefs(); };
+window.adjFont    = (d) => { _adjFont(d); savePrefs(); };
+
+// Initial render + data load
+render();
+loadCalData();
+
+// Scroll selected day into view after first render
+setTimeout(() => {
+  const strip = document.getElementById('calStrip');
+  if (strip) {
+    const sel = strip.querySelector('.selected');
+    if (sel) sel.scrollIntoView({inline:'center', behavior:'instant'});
+  }
+}, 100);
+
+</script>
+
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then(
+      reg => console.log('SW registered:', reg.scope),
+      err => console.warn('SW failed:', err)
+    );
+  });
+}
+</script>
+</body>
+</html>

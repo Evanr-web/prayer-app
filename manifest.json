@@ -1,7 +1,7 @@
 {
   "name": "Prayer of the Church",
   "short_name": "Prayer",
-  "description": "Byzantine daily prayers — Ukrainian Greek-Catholic Church",
+  "description": "Byzantine daily prayers",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f4efe4",

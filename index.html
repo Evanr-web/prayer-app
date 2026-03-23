@@ -655,22 +655,371 @@ function getMeta(d) {
 
 // ── English Saints (a small subset of key feasts for English display) ──
 const EN_SAINTS = {
-  '0101': 'Circumcision of the Lord & St. Basil the Great',
-  '0106': 'Holy Theophany of Our Lord Jesus Christ',
-  '0107': 'Afterfeast of Theophany & John the Baptist',
-  '0202': 'Meeting of the Lord in the Temple (Candlemas)',
-  '0218': 'Sunday of the Prodigal Son',
-  '0225': 'Sunday of the Last Judgment (Meatfare)',
-  '0301': 'Sunday of Forgiveness (Cheesefare)',
-  '0307': 'Saturday of the Departed (1st Lenten)',
-  '0308': 'Sunday of Orthodoxy (1st Lenten)',
-  '0311': 'St. Sophronius, Patriarch of Jerusalem',
-  '0315': 'Sunday of the Veneration of the Cross (3rd Lenten)',
-  '0319': 'St. John of the Ladder (4th Lenten Sunday theme)',
-  '0322': 'Sunday of St. John Climacus (4th Lenten)',
-  '0324': 'St. Mary of Egypt (5th Lenten Sunday theme)',
-  '0325': 'Annunciation of the Most-Holy Theotokos',
-  '0329': 'Palm Sunday — Entry of the Lord into Jerusalem',
+  "0101": "Circumcision of our Lord, God and Savior Jesus Christ. St. Basil the Great, Archbishop of Caesarea in Cappadocia",
+  "0102": "Forefeast of Theophany. St. Sylvester, Pope of Rome",
+  "0103": "Saturday before Theophany. Forefeast of Theophany. St. Prophet Malachi. St. Martyr Gordius",
+  "0104": "Sunday before Theophany. Forefeast of Theophany. Synaxis of the Holy Seventy Apostles. Ven. Theoktistos, Hegumen of Kukumos in Sicily",
+  "0105": "Eve of Theophany. Sts. Martyrs Theopemptos & Theonas. Ven. Syncletike of Alexandria",
+  "0106": "Holy Theophany of our Lord, God and Savior Jesus Christ",
+  "0107": "Synaxis of the Holy, Glorious Prophet, Forerunner and Baptist of the Lord, John",
+  "0108": "Ven. George the Chozebite. St. Emilian the Confessor. Ven. Domnica",
+  "0109": "St. Martyr Polyeuctus",
+  "0110": "Saturday after Theophany. St. Gregory, Bishop of Nyssa. Ven. Dometian, Bishop of Melitene. Ven. Marcian, Presbyter and Steward of the Great Church",
+  "0111": "Sunday after Theophany. Ven. Theodosius the Cenobiarch",
+  "0112": "St. Martyr Tatiana",
+  "0113": "Sts. Martyrs Hermylus & Stratonicus",
+  "0114": "Ven. Fathers slain at Sinai and Raithu. Repose of St. Equal-to-the-Apostles Nina, Enlightener of Georgia. Leave-taking of Theophany",
+  "0115": "Ven. Paul of Thebes & Ven. John the Hut-Dweller",
+  "0116": "Veneration of the Precious Chains of the Holy and All-Praised Apostle Peter",
+  "0117": "Ven. and God-bearing Anthony the Great",
+  "0118": "32nd Sunday after Pentecost. Sts. Archbishops of Alexandria, Athanasius & Cyril",
+  "0119": "Ven. Macarius of Egypt",
+  "0120": "Ven. and God-bearing Euthymius the Great",
+  "0121": "Ven. Maximus the Confessor. St. Martyr Neophytus. Sts. Martyrs Eugene, Candidus, Valerian & Aquila",
+  "0122": "St. Apostle Timothy. Ven. Hieromartyr Anastasius of Persia",
+  "0123": "Blessed Pratulin Martyrs. Hieromartyr Clement, Bishop of Ancyra. St. Martyr Agathangelus",
+  "0124": "Ven. Xenia of Rome",
+  "0125": "Sunday of Zacchaeus. St. Gregory the Theologian, Archbishop of Constantinople",
+  "0126": "Ven. Xenophon and his wife Maria",
+  "0127": "Translation of the Relics of St. John Chrysostom",
+  "0128": "Ven. Ephrem the Syrian",
+  "0129": "Translation of the Relics of Hieromartyr Ignatius the God-Bearer",
+  "0130": "Sts. Three Holy Hierarchs, Great Archpriests: Basil the Great, Gregory the Theologian & John Chrysostom. Hieromartyr Hippolytus",
+  "0131": "Sts. Unmercenaries and Wonderworkers Cyrus & John. Ven. John Bosco",
+  "0201": "Sunday of the Publican and the Pharisee. Forefeast of the Meeting of our Lord, God and Savior Jesus Christ. St. Martyr Tryphon",
+  "0202": "Meeting of our Lord, God and Savior Jesus Christ",
+  "0203": "St. and Righteous Simeon the God-Receiver & Anna the Prophetess",
+  "0204": "Ven. Isidore of Pelusium",
+  "0205": "St. Martyr Agatha",
+  "0206": "Ven. Bucolus, Bishop of Smyrna. Hieromartyr Silvanus, Bishop of Emesa, and those with him",
+  "0207": "Ven. Parthenius, Bishop of Lampsacus. Blessed Hieromartyr Peter Verhun, Presbyter",
+  "0208": "Sunday of the Prodigal Son. St. Great Martyr Theodore Stratelates. St. Prophet Zechariah of the Sickle-Vision",
+  "0209": "Meatfare Week. Leave-taking of the Meeting of the Lord. St. Martyr Nicephorus",
+  "0210": "St. Martyr Charalampius",
+  "0211": "Hieromartyr Blaise, Bishop of Sebastia",
+  "0212": "St. Meletius, Archbishop of Antioch",
+  "0213": "Ven. Martinianus. Sts. Women Zoe & Photina (Svetlana)",
+  "0214": "Memorial Saturday. Repose of Ven. Constantine the Philosopher, in monasticism Cyril, Teacher of the Slavs. Ven. Auxentius. Ven. Maron the Hermit, Wonderworker",
+  "0215": "Meatfare Sunday, of the Last Judgment. St. Apostle Onesimus",
+  "0216": "Cheesefare Week. Sts. Martyrs Pamphilus the Priest, Porphyrius, and those with them",
+  "0217": "St. Great Martyr Theodore Tyro",
+  "0218": "St. Leo, Pope of Rome",
+  "0219": "St. Apostle Archippus",
+  "0220": "Ven. Leo, Bishop of Catania",
+  "0221": "Cheesefare Saturday, of All Venerable Fathers Who Shone in Asceticism. Ven. Timothy of Symbola. St. Eustathius, Archbishop of Great Antioch",
+  "0222": "Cheesefare Sunday, of Forgiveness. Finding of the Relics of Sts. Martyrs at Eugenius",
+  "0223": "Beginning of the Holy Great Lent. Hieromartyr Polycarp, Bishop of Smyrna",
+  "0224": "First and Second Finding of the Precious Head of the Holy, Glorious Prophet, Forerunner and Baptist of the Lord, John",
+  "0225": "St. Tarasius, Archbishop of Constantinople",
+  "0226": "St. Porphyrius, Bishop of Gaza. Blessed Edigna",
+  "0227": "Ven. Confessor Procopius of Decapolis",
+  "0228": "Commemoration of Great Martyr Theodore Tyro. Ven. Confessor Basil, companion of Procopius",
+  "0301": "1st Sunday of Great Lent, Sunday of Orthodoxy. Ven. Protomartyr Eudocia",
+  "0302": "Hieromartyr Theodotus (Bohdan), Bishop of Cyrenia",
+  "0303": "Sts. Martyrs Eutropius, Cleonicus & Basiliscus",
+  "0304": "Ven. Gerasimus of the Jordan",
+  "0305": "St. Martyr Conon",
+  "0306": "Sts. Forty-Two Martyrs of Amorium",
+  "0307": "Memorial Saturday. Hieromartyrs and Bishops of Chersonesus: Basil, Ephrem, Capiton, Eugene, Etherius, and others. Blessed Hieromartyr Leonid-Leontiy Fedorov",
+  "0308": "2nd Sunday of Great Lent. Ven. Confessor Theophylact, Bishop of Nicomedia",
+  "0309": "Sts. Forty Martyrs who suffered in the Lake of Sebastia",
+  "0310": "St. Martyr Codratus and those with him: Cyprian, Nice, Galina, and others",
+  "0311": "St. Sophronius, Patriarch of Jerusalem",
+  "0312": "Ven. Confessor Theophanes of Sigiane. St. Gregory the Dialogist, Pope of Rome",
+  "0313": "Translation of the Relics of St. Nicephorus, Patriarch of Constantinople",
+  "0314": "Memorial Saturday. Ven. Benedict",
+  "0315": "3rd Sunday of Great Lent, Sunday of the Veneration of the Cross. St. Martyr Agapius and six Martyrs with him",
+  "0316": "Sts. Martyrs Sabinus & Papas",
+  "0317": "Ven. Alexius, Man of God",
+  "0318": "St. Cyril, Archbishop of Jerusalem",
+  "0319": "Sts. Martyrs Chrysanthus & Daria",
+  "0320": "Ven. Fathers slain by the Saracens at the Lavra of St. Sabbas",
+  "0321": "Memorial Saturday. Ven. Confessor James, Bishop of Catania",
+  "0322": "4th Sunday of Great Lent, of Ven. John of the Ladder. Hieromartyr Basil, Presbyter of Ancyra",
+  "0323": "Ven. Protomartyr Nicon and 200 of his disciples martyred with him",
+  "0324": "Forefeast of the Annunciation of the Most Holy Theotokos. Ven. Zachariah. St. Artemon, Bishop of Seleucia in Pisidia",
+  "0325": "Annunciation of our Most Holy Lady, the Theotokos and Ever-Virgin Mary. Blessed Hieromartyr Omelian Kovch, Presbyter",
+  "0326": "Great Canon. Synaxis of the Archangel Gabriel. Leave-taking of the Annunciation",
+  "0327": "St. Matrona of Thessalonica",
+  "0328": "Saturday of the Akathist. Ven. Hilarion the New. St. Stephen the Wonderworker",
+  "0329": "5th Sunday of Great Lent, of Ven. Mary of Egypt. Ven. Mark, Bishop of Arethusa, & Cyril the Deacon, and others who suffered with him under Julian",
+  "0330": "Ven. John, Author of the Ladder",
+  "0331": "Ven. Hypatius, Bishop of Gangra",
+  "0401": "Ven. Mary of Egypt",
+  "0402": "Ven. Titus the Wonderworker",
+  "0403": "Ven. Confessor Nicetas, Hegumen of the Monastery of Medikion",
+  "0404": "Lazarus Saturday. Ven. Joseph the Hymnographer & George of Malea",
+  "0405": "6th Sunday of Great Lent, Palm Sunday. Entry of the Lord into Jerusalem. Sts. Martyrs Theodulus & Agathopodus, and those with them",
+  "0406": "Passion Week. Great Monday. Repose of St. Methodius, Teacher of the Slavs. St. Eutychius, Archbishop of Constantinople",
+  "0407": "Great Tuesday. Ven. George, Bishop of Mytilene",
+  "0408": "Great Wednesday. Sts. Apostles Herodion, Agabus, Rufus, Asyncritus, Phlegon & Hermas",
+  "0409": "Great Thursday. St. Martyr Eupsychius",
+  "0410": "Great Friday. Sts. Martyrs Terentius, Pompius, and those with them",
+  "0411": "Great Saturday. Hieromartyr Antipas, Bishop of Pergamum in Asia",
+  "0412": "Sunday of Pascha. The Resurrection of Christ. Ven. Confessor Basil, Bishop of Parium",
+  "0413": "Bright Monday. Hieromartyr Artemon and those with him",
+  "0414": "Bright Tuesday. St. Martin the Confessor, Pope of Rome. Sts. Martyrs of Vilnius: Anthony, John & Eustathius",
+  "0415": "Bright Wednesday. Sts. Apostles Aristarchus, Pudens & Trophimus",
+  "0416": "Bright Thursday. Sts. Virgin Martyrs Agape, Irene & Chionia",
+  "0417": "Bright Friday. Ven. Simeon of Persia. Ven. Acacius, Bishop of Melitene",
+  "0418": "Bright Saturday. Ven. John, Disciple of St. Gregory of Decapolis",
+  "0419": "2nd Sunday after Pascha, Thomas Sunday. Antipascha. Ven. John of the Kyiv Caves",
+  "0420": "Ven. Theodore Trichinas",
+  "0421": "Hieromartyr Januarius and those with him. St. Martyr Theodore of Perge",
+  "0422": "Ven. Theodore of Sykeon",
+  "0423": "St. Glorious Great Martyr, Victor and Wonderworker George",
+  "0424": "St. Martyr Sabbas Stratelates",
+  "0425": "St. Apostle and Evangelist Mark",
+  "0426": "3rd Sunday after Pascha, of the Myrrh-Bearing Women. Hieromartyr Basil, Bishop of Amasia",
+  "0427": "Hieromartyr Simeon, Kinsman of the Lord. Ven. Stephen, Bishop of Vladimir",
+  "0428": "Sts. Apostles Jason & Sosipater. Sts. Martyrs Dadas, Maximus & Quintilian. St. Cyril, Bishop of Turov",
+  "0429": "Sts. Nine Martyrs of Cyzicus. Ven. Memnon the Wonderworker",
+  "0430": "St. Apostle James, Brother of St. John the Theologian",
+  "0501": "St. Prophet Jeremiah. Blessed Hieromartyr Klementiy Sheptytsky, Archimandrite of Univ",
+  "0502": "St. Athanasius the Great, Archbishop of Alexandria",
+  "0503": "4th Sunday after Pascha, of the Paralytic. Repose of Ven. Theodosius, Hegumen of the Monastery of the Caves, Cenobiarch. Sts. Martyrs Timothy & Maura",
+  "0504": "St. Martyr Pelagia",
+  "0505": "St. Glorious Martyr Irene. Ven. Nicephorus, Hegumen of the Monastery of Medikion",
+  "0506": "Mid-Pentecost. St. and Righteous and Much-Suffering Job",
+  "0507": "Commemoration of the Apparition of the Sign of the Precious Cross in the Holy City of Jerusalem. St. Martyr Acacius",
+  "0508": "St. Apostle and Evangelist John the Theologian. Ven. Arsenius the Great",
+  "0509": "Translation of the Relics of St. Nicholas the Wonderworker from Myra to Bari. St. Prophet Isaiah. St. Martyr Christopher",
+  "0510": "5th Sunday after Pascha, of the Samaritan Woman. St. Apostle Simon the Zealot",
+  "0511": "Sts. Equal-to-the-Apostles Cyril & Methodius, Teachers of the Slavs. Hieromartyr Mocius",
+  "0512": "Sts. Epiphanius, Bishop of Cyprus, & Germanus, Patriarch of Constantinople",
+  "0513": "Leave-taking of Mid-Pentecost. St. Martyr Glyceria",
+  "0514": "St. Martyr Isidore",
+  "0515": "Ven. Pachomius the Great",
+  "0516": "Ven. Theodore the Sanctified, Disciple of St. Pachomius. Blessed Hieromartyrs Severian Baranyk, Joachim Senkivsky, Vitaly Bayrak",
+  "0517": "6th Sunday after Pascha, of the Man Born Blind. St. Apostle Andronicus and those with him. Blessed Hieromartyr John Ziatyk",
+  "0518": "St. Martyr Theodotus (Bohdan) of Ancyra. Sts. Martyrs Peter, Dionysius, and those with them. Sts. Seven Virgins",
+  "0519": "Hieromartyr Patrick, Bishop of Prusa, and those with him",
+  "0520": "Leave-taking of Pascha. St. Martyr Thalalaeus",
+  "0521": "Ascension of the Lord. Sts. Great and Equal-to-the-Apostles Sovereigns Constantine & Helen",
+  "0522": "St. Martyr Basiliscus",
+  "0523": "Ven. Euphrosyne of Polotsk, Hegumenia of the Monastery of the Holy Savior. Ven. Confessor Michael, Bishop of Synnada",
+  "0524": "7th Sunday after Pascha, of the Holy Fathers of the First Ecumenical Council. Ven. Nicetas the Stylite, Wonderworker of Pereyaslav. Ven. Simeon of the Wondrous Mountain",
+  "0525": "Third Finding of the Precious Head of the Holy, Glorious Prophet, Forerunner and Baptist of the Lord, John. Blessed Hieromartyr Mykola Tsehelsky, Presbyter",
+  "0526": "St. Apostle Carpus, One of the Seventy",
+  "0527": "Hieromartyr Therapon",
+  "0528": "Ven. Nicetas, Bishop of Chalcedon",
+  "0529": "Leave-taking of the Ascension. Ven. Protomartyr Theodosia the Virgin",
+  "0530": "Memorial Saturday. Ven. Isaac, Hegumen of the Dalmatian Monastery",
+  "0531": "Pentecost. Descent of the Holy Spirit. St. Apostle Hermias. St. Martyr Hermeas",
+  "0601": "Monday of the Holy Spirit. St. Martyr Justin the Philosopher, and those with him",
+  "0602": "St. Nicephorus the Confessor",
+  "0603": "St. Martyr Lucillian and those with him",
+  "0604": "St. Metrophanes, Patriarch of Constantinople",
+  "0605": "Hieromartyr Dorotheus, Bishop of Tyre. St. Martyr Cosmas, Armenian Presbyter",
+  "0606": "Ven. Bessarion the Wonderworker. Ven. Hilarion the New, Hegumen of the Dalmatian Monastery, Confessor",
+  "0607": "1st Sunday after Pentecost. Sunday of All Saints. Hieromartyr Theodotus (Bohdan), Bishop of Ancyra",
+  "0608": "Translation of the Relics of St. Great Martyr Theodore Tyro",
+  "0609": "St. Cyril, Archbishop of Alexandria",
+  "0610": "Hieromartyr Timothy, Bishop of Prusa",
+  "0611": "Solemn Veneration of the Most Pure Mysteries of the Body and Blood of our Lord Jesus Christ. Sts. Apostles Bartholomew & Barnabas",
+  "0612": "Ven. Onuphrius the Great. Ven. Peter of Athos",
+  "0613": "St. Martyr Aquilina. St. Triphyllius, Bishop of Leucosia in Cyprus. Ven. Anthony of Padua",
+  "0614": "2nd Sunday after Pentecost. All Saints of the Ukrainian Nation. St. Prophet Elisha. St. Methodius, Patriarch of Constantinople",
+  "0615": "St. Prophet Amos. Ven. Jerome, Presbyter of Stridon",
+  "0616": "St. Tychon the Wonderworker of Amathous",
+  "0617": "Sts. Martyrs Manuel, Sabel & Ishmael. Ven. Hypatius, Hegumen of Rufinianum",
+  "0618": "St. Martyr Leontius",
+  "0619": "Feast of the Most Sweet Lord, God and Savior Jesus Christ, Lover of Mankind. St. Apostle Jude, Brother of the Lord",
+  "0620": "Compassion of the Most Holy Theotokos. Hieromartyr Methodius, Bishop of Patara",
+  "0621": "3rd Sunday after Pentecost. St. Martyr Julian of Tarsus",
+  "0622": "Hieromartyr Eusebius, Bishop of Samosata",
+  "0623": "St. Martyr Agrippina",
+  "0624": "Nativity of the Honorable and Glorious Prophet, Forerunner and Baptist of the Lord, John",
+  "0625": "Ven. Protomartyr Febronia",
+  "0626": "Ven. David of Thessalonica. Blessed Hieromartyr Andrew Ishchak, Presbyter. Blessed Hieromartyr Mykola Konrad, Presbyter, and Martyr Volodymyr Pryima, Cantor",
+  "0627": "Blessed Hieromartyr Mykola Charnetsky and Twenty-Four Fellow Martyrs; Blessed Hieromartyr Omelian Kovch. Ven. Sampson the Hospitable",
+  "0628": "4th Sunday after Pentecost. Translation of the Relics of Sts. Unmercenaries Cyrus & John",
+  "0629": "Sts. Glorious and All-Praised Chief Apostles Peter & Paul",
+  "0630": "Synaxis of the Holy, Glorious and All-Praised Twelve Apostles. Blessed Hieromartyr Vasyl Velychkovsky",
+  "0701": "Sts. Unmercenaries and Wonderworkers Cosmas & Damian",
+  "0702": "Placing of the Precious Robe of our Most Holy Lady the Theotokos at Blachernae",
+  "0703": "St. Martyr Hyacinth",
+  "0704": "St. Andrew, Archbishop of Crete, of Jerusalem. Ven. Martha, Mother of St. Simeon of the Wondrous Mountain",
+  "0705": "Feast of the Theotokos of Perpetual Help. Ven. Athanasius of Athos",
+  "0706": "Ven. Sisoes the Great",
+  "0707": "Ven. Thomas of Malea & Ven. Acacius, mentioned in the Ladder",
+  "0708": "St. Great Martyr Procopius",
+  "0709": "Hieromartyr Pancratius, Bishop of Tauromenium",
+  "0710": "Ven. Anthony of the Caves of Kyiv. Sts. Forty-Five Martyrs of Nicopolis in Armenia. Sts. Brother-Martyrs Francis, Mutius & Raphael, and those with them",
+  "0711": "Repose of Blessed Olga, Princess of Kyiv, named Helen in Baptism. St. Martyr and All-Praised Euphemia",
+  "0712": "6th Sunday after Pentecost. Sts. Martyrs Proclus & Hilary. Ven. Michael of Malea",
+  "0713": "Synaxis of the Holy Archangel Gabriel. Ven. Stephen the Sabbaite. St. Julian, Bishop of Le Mans",
+  "0714": "St. Apostle Aquila",
+  "0715": "St. Equal-to-the-Apostles, Grand Prince Vladimir, named Basil in Holy Baptism. Sts. Martyrs Cyricus & Julitta",
+  "0716": "Hieromartyr Athenogenes and his ten disciples",
+  "0717": "St. Great Martyr Marina. Blessed Hieromartyr Paul Gojdich, Bishop of Presov",
+  "0718": "St. Martyr Hyacinth of Amastris. St. Martyr Emilian. Blessed Venerable Martyr Tarsykia Matskiv",
+  "0719": "7th Sunday, of the Holy Fathers of the Six Ecumenical Councils. Ven. Macrina, Sister of St. Basil the Great. Ven. Dius",
+  "0720": "St. Glorious Prophet Elijah",
+  "0721": "Ven. Simeon, Fool-for-Christ, & John his Companion. St. Prophet Ezekiel",
+  "0722": "St. Myrrh-Bearer and Equal-to-the-Apostles Mary Magdalene. Return of the Relics of Hieromartyr Phocas",
+  "0723": "Sts. Martyrs Trophimus, Theophilus, and those with them. Blessed Hieromartyr Vasyl Hopko, Bishop",
+  "0724": "Sts. Martyrs Boris & Gleb, named Roman & David in Baptism. St. Great Martyr Christina. Ven. Sharbel",
+  "0725": "Dormition of St. Anna, Mother of the Most Holy Theotokos. Commemoration of Sts. Women Olympias & Eupraxia",
+  "0726": "8th Sunday after Pentecost. Hieromartyr Hermolaus and those with him. Ven. Protomartyr Parasceva",
+  "0727": "St. Great Martyr and Healer Panteleimon. St. Clement, Archbishop of Ohrid, Wonderworker",
+  "0728": "Sts. Apostles and Deacons Prochorus, Nicanor, Timon & Parmenas",
+  "0729": "St. Martyr Callinicus",
+  "0730": "Sts. Apostles Silas & Silvanus, and those with them",
+  "0731": "Forefeast of the Procession of the Precious and Life-Giving Cross of the Lord. St. and Righteous Eudocimus",
+  "0801": "Procession of the Precious Wood of the Precious and Life-Giving Cross. Sts. Seven Maccabee Martyrs, their Mother Solomone & Elder Eleazar. Ven. Alphonsus Liguori. Beginning of the Dormition Fast",
+  "0802": "9th Sunday after Pentecost. Translation of the Relics of the Holy Protomartyr and Archdeacon Stephen",
+  "0803": "Ven. Isaac, Dalmatus & Faustus",
+  "0804": "Sts. Seven Youths of Ephesus. Ven. Protomartyr Eudocia",
+  "0805": "Forefeast of the Transfiguration of our Lord Jesus Christ. St. Martyr Eusignius",
+  "0806": "Holy Transfiguration of our Lord, God and Savior Jesus Christ",
+  "0807": "Ven. Protomartyr Dometius",
+  "0808": "St. Emilian the Confessor, Bishop of Cyzicus",
+  "0809": "10th Sunday after Pentecost. St. Apostle Matthias",
+  "0810": "St. Martyr and Archdeacon Laurence",
+  "0811": "St. Martyr and Archdeacon Euplus",
+  "0812": "Sts. Martyrs Photius & Anicetas",
+  "0813": "Ven. Maximus the Confessor. Leave-taking of the Transfiguration",
+  "0814": "Translation of the Relics of Ven. Theodosius, Hegumen of the Caves. Forefeast of the Dormition of the Most Holy Theotokos. St. Prophet Micah",
+  "0815": "Dormition of our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+  "0816": "11th Sunday after Pentecost. Translation from Edessa to Constantinople of the Not-Made-by-Hands Image of our Lord, God and Savior Jesus Christ",
+  "0817": "St. Martyr Myron",
+  "0818": "Commemoration of the Consecration of the Patriarchal Cathedral of the Resurrection of Christ in Kyiv. Sts. Martyrs Florus & Laurus",
+  "0819": "St. Martyr Andrew Stratelates and those with him",
+  "0820": "St. Prophet Samuel",
+  "0821": "St. Apostle Thaddaeus. St. Martyr Bassa",
+  "0822": "St. Martyr Agathonicus and those with him. Blessed Hieromartyr Symeon Lukach",
+  "0823": "12th Sunday after Pentecost. St. Martyr Lupus. Hieromartyr Irenaeus, Bishop of Lyon. Leave-taking of the Dormition of the Most Holy Theotokos",
+  "0824": "Hieromartyr Eutychius",
+  "0825": "Return of the Relics of St. Apostle Bartholomew. St. Apostle Titus",
+  "0826": "Sts. Martyrs Adrian & Natalia",
+  "0827": "Ven. Pimen. Blessed Venerable Martyrs Laurentia Herasymiv & Olympia Bida",
+  "0828": "Synaxis of the Ven. Fathers of the Kyiv Caves Who Repose in the Far Caves. Ven. Moses the Ethiopian. St. Augustine, Bishop of Hippo. St. Martyr Gebre Michael, Ethiopian Presbyter",
+  "0829": "Beheading of the Precious Head of the Honorable and Glorious Prophet, Forerunner and Baptist John",
+  "0830": "13th Sunday after Pentecost. Sts. Patriarchs of Constantinople: Alexander, John & Paul the New",
+  "0831": "Placing of the Precious Cincture of our Most Holy Lady the Theotokos",
+  "0901": "Beginning of the Indiction, the New Year. Commemoration of Ven. Simeon the Stylite and his Mother Martha. Synaxis of the Most Holy Theotokos at Miasena",
+  "0902": "St. Martyr Mamas. Ven. John the Faster, Patriarch of Constantinople",
+  "0903": "Hieromartyr Anthimus, Bishop of Nicomedia. Ven. Theoktistos, Companion of Ven. Euthymius the Great",
+  "0904": "Hieromartyr Babylas, Bishop of Antioch. St. Prophet and God-Seer Moses",
+  "0905": "Sts. Prophet Zechariah & Righteous Elizabeth, Parents of the Honorable John the Forerunner. Ven. Teresa of Calcutta",
+  "0906": "14th Sunday after Pentecost. Commemoration of the Miracle at Colossae (Chonae) by the Archangel Michael. St. Martyr Eudoxius and those with him. Ven. Archippus",
+  "0907": "Forefeast of the Nativity of the Most Holy Theotokos. St. Martyr Sozon",
+  "0908": "Nativity of our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+  "0909": "Sts. Righteous Ancestors of God, Joachim & Anna. St. Martyr Severian",
+  "0910": "Sts. Martyrs Menodora, Metrodora & Nymphodora",
+  "0911": "Ven. Theodora of Alexandria",
+  "0912": "Saturday before the Exaltation. Hieromartyr Autonomus. Leave-taking of the Nativity of the Most Holy Theotokos",
+  "0913": "Sunday before the Exaltation. Commemoration of the Dedication of the Church of the Holy Resurrection of Christ our God. Forefeast of the Exaltation of the Precious and Life-Giving Cross. Hieromartyr Cornelius",
+  "0914": "Universal Exaltation of the Precious and Life-Giving Cross",
+  "0915": "St. Great Martyr Nicetas",
+  "0916": "St. Great Martyr Euphemia the All-Praised",
+  "0917": "St. Martyr Sophia and her three daughters: Faith, Hope & Love",
+  "0918": "Ven. Eumenius, Bishop of Gortyna, Wonderworker",
+  "0919": "Saturday after the Exaltation. Sts. Martyrs Trophimus, Sabbatius & Dorymedon",
+  "0920": "Sunday after the Exaltation. Sts. Martyrs and Confessors, Grand Prince Michael and his Boyar Theodore, Wonderworkers of Chernihiv. St. Great Martyr Eustathius and those with him",
+  "0921": "St. Apostle Codratus of Magnesia. Leave-taking of the Exaltation of the Precious and Life-Giving Cross",
+  "0922": "Hieromartyr Phocas, Bishop of Sinope. St. Prophet Jonah. Ven. Jonah the Presbyter",
+  "0923": "Conception of the Honorable, Glorious Prophet, Forerunner and Baptist of the Lord, John",
+  "0924": "St. Protomartyr and Equal-to-the-Apostles Thecla",
+  "0925": "Ven. Euphrosyne",
+  "0926": "Repose of St. Apostle and Evangelist John the Theologian",
+  "0927": "17th Sunday after Pentecost. St. Martyr Callistratus and those with him. Ven. Nilus, Founder and Hegumen of the Monastery of Grottaferrata",
+  "0928": "Ven. Confessor Chariton. St. Martyr Ludmila & St. Wenceslaus, Prince of Bohemia. Synaxis of the Ven. Fathers of the Kyiv Caves Who Repose in the Near Caves of Ven. Anthony. Blessed Hieromartyr Mykyta",
+  "0929": "Ven. Cyriacus the Hermit",
+  "0930": "Hieromartyr Gregory, Bishop of Greater Armenia",
+  "1001": "Protection of the Most Holy Theotokos. St. Apostle Ananias, One of the Seventy. Ven. Romanos the Melodist",
+  "1002": "Hieromartyr Cyprian. St. Martyr Justina. St. Andrew, Fool-for-Christ",
+  "1003": "Hieromartyr Dionysius the Areopagite",
+  "1004": "18th Sunday after Pentecost. Hieromartyr Hierotheus, Bishop of Athens. Ven. Francis of Assisi",
+  "1005": "St. Martyr Charitina",
+  "1006": "St. Glorious Apostle Thomas",
+  "1007": "Sts. Martyrs Sergius & Bacchus",
+  "1008": "Ven. Pelagia",
+  "1009": "St. Apostle James of Alphaeus. Ven. Andronicus and his wife Athanasia",
+  "1010": "Sts. Martyrs Eulampius & Eulampia",
+  "1011": "19th Sunday, of the Holy Fathers of the Seventh Ecumenical Council. St. Apostle Philip, One of the Seven Deacons. Ven. Theophanes the Branded, Bishop of Nicaea and Hymnographer",
+  "1012": "Sts. Martyrs Probus, Tarachus & Andronicus. Ven. Cosmas of the Holy City, Bishop of Maiuma and Hymnographer. Commemoration of St. Martin the Merciful, Bishop of Tours",
+  "1013": "Sts. Martyrs Carpus, Papylus & Agathonica",
+  "1014": "Sts. Martyrs Nazarius, Gervasius, Protasius & Celsus. Ven. Parasceva of Tarnovo. Blessed Hieromartyr Roman Lysko, Presbyter",
+  "1015": "Ven. Euthymius the New. Ven. Protomartyr Lucian, Presbyter of Great Antioch",
+  "1016": "St. Martyr Longinus the Centurion",
+  "1017": "St. Prophet Hosea. Ven. Protomartyr Andrew of Crete",
+  "1018": "20th Sunday after Pentecost. St. Apostle and Evangelist Luke",
+  "1019": "St. Prophet Joel. St. Martyr Varus. Ven. John of Rila",
+  "1020": "St. Great Martyr Artemius",
+  "1021": "Ven. Hilarion the Great",
+  "1022": "St. John Paul II, Pope. St. Equal-to-the-Apostles Abercius, Bishop of Hierapolis, Wonderworker. Sts. Seven Youths of Ephesus",
+  "1023": "St. Apostle James, Brother of the Lord",
+  "1024": "St. Martyr Arethas and those with him",
+  "1025": "21st Sunday after Pentecost. Sts. Martyrs and Notaries Marcian & Martyrius",
+  "1026": "St. Glorious Great Martyr Demetrius the Myrrh-Streamer",
+  "1027": "St. Martyr Nestor. Sts. Martyrs Capitolina and her servant Erotheis",
+  "1028": "St. Martyr Parasceva of Iconium, called \"Friday\". Sts. Martyrs Terentius & Neonilla. Ven. Stephen the Sabbaite, Hymnographer",
+  "1029": "Ven. Abramius, Archimandrite, Wonderworker of Rostov. Ven. Protomartyr Anastasia of Rome. Ven. Abramius the Recluse",
+  "1030": "Sts. Martyrs Zenobius & Zenobia his sister. Blessed Hieromartyr Oleksiy Zarytsky, Presbyter",
+  "1031": "Sts. Apostles Stachys, Amplias, and those with them. St. Martyr Epimachus",
+  "1101": "22nd Sunday after Pentecost. Hieromartyr Theodore Romzha, Bishop of Mukachevo. Sts. Unmercenaries and Wonderworkers Cosmas & Damian",
+  "1102": "Sts. Martyrs Acindynus, Pegasius, Aphthonius, Elpidephorus & Anempodistus",
+  "1103": "Sts. Martyrs Acepsimas the Bishop, Joseph the Presbyter & Aithala the Deacon. Dedication of the Church of St. Great Martyr George at Lydda, where his precious body rests",
+  "1104": "Ven. Joannicius the Great. St. Martyr Nicander, Bishop of Myra. St. Hermeas the Presbyter",
+  "1105": "Sts. Martyrs Galaction & Episteme",
+  "1106": "St. Paul, Archbishop of Constantinople, Confessor",
+  "1107": "Sts. Thirty-Three Martyrs of Melitene. Ven. Wonderworker Lazarus, Who Fasted on Mount Galesion",
+  "1108": "23rd Sunday after Pentecost. Synaxis of the Holy Archangel Michael and the Other Bodiless Powers",
+  "1109": "Sts. Martyrs Onesiphorus & Porphyrius. Ven. Matrona. Ven. Theoktiste of Lesbos",
+  "1110": "Sts. Apostles Erastus, Olympas, Rhodion, and those with them",
+  "1111": "Sts. Martyrs Menas, Victor & Vincent. St. Martyr Stephanida. Ven. Confessor Theodore the Studite",
+  "1112": "Hieromartyr Josaphat, Archbishop of Polotsk. St. John the Merciful, Patriarch of Alexandria. Ven. Nilus. Blessed Hieromartyr Gregory Lakota, Bishop",
+  "1113": "St. John Chrysostom, Archbishop of Constantinople",
+  "1114": "St. and All-Praised Apostle Philip",
+  "1115": "24th Sunday after Pentecost. Sts. Martyrs and Confessors Gurias, Samonas & Abibus. Beginning of the Nativity Fast",
+  "1116": "St. Apostle and Evangelist Matthew",
+  "1117": "St. Gregory, Bishop of Neocaesarea, Wonderworker. Blessed Hieromartyr Josaphat Kotsylovsky, Bishop of Peremyshl",
+  "1118": "Sts. Martyrs Plato & Romanus",
+  "1119": "St. Prophet Obadiah. St. Martyr Barlaam",
+  "1120": "Ven. Josaphata Hordashevska. Forefeast of the Entry of the Most Holy Theotokos into the Temple. Ven. Gregory of Decapolis. St. Proclus, Archbishop of Constantinople",
+  "1121": "Entry into the Temple of our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+  "1122": "25th Sunday after Pentecost. St. Apostle Philemon and those with him",
+  "1123": "Sts. Amphilochius, Bishop of Iconium, & Gregory, Bishop of Agrigentum",
+  "1124": "St. Great Martyr Catherine. St. Great Martyr Mercurius",
+  "1125": "Hieromartyrs Clement, Pope of Rome, & Peter, Bishop of Alexandria. Leave-taking of the Entry of the Most Holy Theotokos into the Temple",
+  "1126": "Ven. Alypius the Stylite. Commemoration of the Consecration of the Church of St. Great Martyr George in Kyiv before the Gates of Holy Sophia",
+  "1127": "St. Great Martyr James the Persian. Ven. Palladius",
+  "1128": "Venerable Martyr Stephen the New. St. Martyr Irenarchus",
+  "1129": "26th Sunday after Pentecost. St. Martyr Paramon. St. Martyr Philumenus. Ven. Acacius, mentioned in the Ladder",
+  "1130": "St. All-Praised Apostle Andrew the First-Called",
+  "1201": "St. Prophet Nahum",
+  "1202": "St. Prophet Habakkuk. Blessed Hieromartyr Ivan Sleziuk, Bishop",
+  "1203": "St. Prophet Zephaniah",
+  "1204": "St. Great Martyr Barbara. Ven. John of Damascus",
+  "1205": "Ven. and God-Bearing Sabbas the Sanctified",
+  "1206": "27th Sunday after Pentecost. St. Nicholas, Archbishop of Myra in Lycia, Wonderworker",
+  "1207": "St. Ambrose, Bishop of Milan",
+  "1208": "Ven. Patapius",
+  "1209": "Immaculate Conception of the Most Holy Theotokos by St. Anna",
+  "1210": "Sts. Martyrs Menas, Hermogenes & Eugraphus",
+  "1211": "Ven. Daniel the Stylite",
+  "1212": "Ven. Spyridon the Wonderworker, Bishop of Trimythous",
+  "1213": "28th Sunday after Pentecost. Sts. Martyrs Eustratius, Auxentius, Eugene, Mardarius & Orestes. St. Martyr Lucy the Virgin",
+  "1214": "Sts. Martyrs Thyrsus, Leucius, Philemon, Apollonius & Callinicus",
+  "1215": "St. Stephen the Confessor, Archbishop of Surozh. Hieromartyr Eleutherius. Ven. Paul of Latros",
+  "1216": "St. Prophet Haggai",
+  "1217": "St. Prophet Daniel. Sts. Three Youths: Ananias, Azarias & Misael",
+  "1218": "St. Martyr Sebastian and those with him",
+  "1219": "Saturday before the Nativity. St. Martyr Boniface",
+  "1220": "Sunday before the Nativity, of the Holy Fathers. Forefeast of the Nativity of our Lord, God and Savior Jesus Christ. Hieromartyr Ignatius the God-Bearer",
+  "1221": "Forefeast of the Nativity of Christ. St. Martyr Juliana",
+  "1222": "Forefeast of the Nativity of Christ. St. Great Martyr Anastasia",
+  "1223": "Forefeast of the Nativity of Christ. Sts. Ten Martyrs of Crete",
+  "1224": "Eve of the Nativity of Christ. Ven. Protomartyr Eugenia",
+  "1225": "Nativity of our Lord, God and Savior Jesus Christ",
+  "1226": "Saturday after the Nativity. Synaxis of the Most Holy Theotokos. Hieromartyr Euthymius, Bishop of Sardis",
+  "1227": "Sunday after the Nativity. Commemoration of the Holy and Righteous Joseph the Betrothed, David the King & James the Brother of God. St. Apostle, Protomartyr and Archdeacon Stephen. Ven. Confessor Theodore",
+  "1228": "Sts. Twenty Thousand Martyrs burned at Nicomedia. Blessed Hieromartyr Hryhoriy Khomyshyn, Bishop of Stanyslaviv",
+  "1229": "Holy Innocents, the Children slain for Christ in Bethlehem. Ven. Marcellus, Hegumen of the Monastery of the Unsleeping Ones",
+  "1230": "St. Martyr Anysia. Ven. Zoticus, Presbyter and Feeder of Orphans",
+  "1231": "Ven. Melania of Rome. Leave-taking of the Nativity of Christ"
 };
 
 function getSaint(d, lang) {
@@ -817,6 +1166,140 @@ const EN_FIXED_EPHREM = [
 {t:'p',   x:'Fear the Lord, you His saints, for there is no want to those who fear Him. The rich have become poor and hungry, but those who seek the Lord shall not lack any good thing.'},
 ];
 
+// ── Fixed Liturgical Sections (conditionally included) ────────
+const EN_BLESSED_MAN = [
+{t:'sec', x:"Blessed is the Man"},
+{t:'p',   x:"Blessed is the man — Alleluia — who walks not in the counsel of the ungodly. (Ps. 1:1) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"For the Lord watches over the way of the righteous, but the way of the ungodly shall perish. (Ps. 1:6) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Serve the Lord with fear and rejoice in Him with trembling. (Ps. 2:11) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Blessed are all who put their trust in Him. (Ps. 2:12) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Arise, O Lord, save me, O my God. (Ps. 3:8) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Salvation belongs to the Lord, and Your blessing is upon Your people. (Ps. 3:9) Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Glory to the Father, and to the Son, and to the Holy Spirit. Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Now and ever, and forever. Amen. Alleluia, alleluia, alleluia."},
+{t:'p',   x:"Alleluia, alleluia, alleluia, glory to You, O God. (3×)"},
+];
+
+const EN_SMALL_LITANY = [
+{t:'sec', x:"Small Litany"},
+{t:'lit', x:[
+  ["Again and again, in peace let us pray to the Lord.","Lord, have mercy."],
+  ["Help us, save us, have mercy on us, and protect us, O God, by Your grace.","Lord, have mercy."],
+  ["Remembering our most holy, most pure, most blessed and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves, one another, and our whole life to Christ our God.","To You, O Lord."],
+]},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"For Yours is the dominion, and Yours is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and forever."},
+{t:'resp',x:"Amen."},
+];
+
+const EN_ENTRANCE = [
+{t:'sec', x:"Entrance"},
+{t:'r',   x:"Deacon:"},
+{t:'p',   x:"Let us pray to the Lord."},
+{t:'r',   x:"The priest says quietly the prayer of the entrance:"},
+{t:'p',   x:"O gracious and loving King, bless our entrances and our exits, O Christ our true God. For Your advent and ascension protect us. Your arrival is the salvation and redemption of our souls and bodies, for You are the repose of all who are weary."},
+{t:'r',   x:"The deacon says to the priest:"},
+{t:'p',   x:"Bless, Master, the holy entrance."},
+{t:'r',   x:"The priest blesses toward the east:"},
+{t:'p',   x:"Blessed is the entrance of Your holy ones, now and ever, and forever."},
+{t:'p',   x:"Wisdom! Let us attend!"},
+];
+
+const EN_FERVENT_LITANY = [
+{t:'sec', x:"Litany of Fervent Supplication"},
+{t:'lit', x:[
+  ["Let us all say with our whole soul and with our whole mind, let us say:","Lord, have mercy."],
+  ["O Lord Almighty, God of our fathers, we pray to You: hear us and have mercy.","Lord, have mercy."],
+  ["Have mercy on us, O God, according to Your great mercy, we pray to You: hear us and have mercy.","Lord, have mercy. (3×)"],
+  ["We also pray for the most holy universal Hierarch, Leo, Pope of Rome, and for our most blessed Patriarch Sviatoslav, and for our most reverend Archbishop and Metropolitan, and for our God-loving Bishop, and for our reverend priests, deacons in Christ, and all the clergy and the people.","Lord, have mercy. (3×)"],
+  ["We also pray for our God-protected nation, for its government, and for all its military.","Lord, have mercy. (3×)"],
+  ["We also pray for the people here present who await from You great and abundant mercy, for those who show us mercy, and for all Orthodox Christians.","Lord, have mercy. (3×)"],
+]},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"For You are a merciful and loving God, and to You we give glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever."},
+{t:'resp',x:"Amen."},
+];
+
+const EN_GREAT_DISMISSAL = [
+{t:'sec', x:"Dismissal"},
+{t:'p',   x:"Wisdom!"},
+{t:'resp',x:"Father, bless."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Blessed is Christ our God, always, now and ever, and forever."},
+{t:'resp',x:"Amen. Confirm, O God, the holy Orthodox faith forever and ever."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Most holy Theotokos, save us."},
+{t:'resp',x:"More honorable than the Cherubim and beyond compare more glorious than the Seraphim; without corruption you gave birth to God the Word; true Theotokos, we magnify you."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Glory to You, O Christ our God, our hope, glory to You!"},
+{t:'resp',x:"Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever. Amen. Lord, have mercy. (3×) Father, bless."},
+{t:'r',   x:"The priest gives the dismissal with commemorations of the saints of the day."},
+{t:'resp',x:"Amen."},
+];
+
+const EN_MIDDLE_DISMISSAL = [
+{t:'sec', x:"Dismissal"},
+{t:'p',   x:"Wisdom!"},
+{t:'resp',x:"Father, bless."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Blessed is Christ our God, always, now and ever, and forever."},
+{t:'resp',x:"Amen. Confirm, O God, the holy Orthodox faith forever and ever."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Most holy Theotokos, save us."},
+{t:'resp',x:"More honorable than the Cherubim and beyond compare more glorious than the Seraphim; without corruption you gave birth to God the Word; true Theotokos, we magnify you."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Glory to You, O Christ our God, our hope, glory to You!"},
+{t:'resp',x:"Glory to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever. Amen. Lord, have mercy. (3×) Father, bless."},
+{t:'r',   x:"The priest gives the dismissal."},
+{t:'resp',x:"Amen."},
+];
+
+const EN_LITIA_PRAYERS = [
+{t:'sec', x:"Litia Prayers"},
+{t:'r',   x:"The deacon chants:"},
+{t:'p',   x:"Save, O God, Your people and bless Your inheritance; visit Your world with mercy and compassion; exalt the horn of Orthodox Christians and send down upon us Your abundant mercies: through the prayers of our all-pure Lady, the Theotokos and ever-virgin Mary; by the power of the precious and life-giving Cross; through the protection of the honorable bodiless powers of heaven..."},
+{t:'resp',x:"Lord, have mercy. (12×)"},
+{t:'p',   x:"We also pray for the most holy universal Hierarch, Leo, Pope of Rome; for our most blessed Patriarch Sviatoslav; and for our most reverend Metropolitan; and for our God-loving Bishop; and for our reverend priests, deacons in Christ, and all the clergy and the people."},
+{t:'resp',x:"Kyrie eleison. (12×)"},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Hear us, O God our Savior, hope of all the ends of the earth and of those far off at sea; and be merciful, be merciful, O Master, to our sins, and have mercy on us. For You are a merciful and loving God, and to You we give glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and forever."},
+{t:'resp',x:"Amen."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"Peace to all."},
+{t:'resp',x:"And to your spirit."},
+{t:'p',   x:"Bow your heads before the Lord."},
+{t:'resp',x:"To You, O Lord."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"O Master most merciful, Lord Jesus Christ our God! Through the prayers of our most pure Lady, the Theotokos and ever-virgin Mary, and of all the saints — make our prayer acceptable, grant us forgiveness of our transgressions, cover us with the shelter of Your wings, drive far from us every enemy and adversary, grant peace to our lives..."},
+{t:'resp',x:"Amen."},
+];
+
+const EN_BLESSING_LOAVES = [
+{t:'sec', x:"Blessing of Loaves"},
+{t:'p',   x:"Let us pray to the Lord."},
+{t:'resp',x:"Lord, have mercy."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"O Lord Jesus Christ our God, who blessed the five loaves and fed the five thousand! Bless these loaves, wheat, wine and oil, and multiply them in this city; and sanctify Your faithful who partake of them. For You bless and sanctify all things, O our God, and to You we give glory, together with Your eternal Father and Your all-holy, gracious, and life-giving Spirit, now and ever, and forever."},
+{t:'resp',x:"Amen. Blessed be the name of the Lord, from now and forevermore. (3×)"},
+];
+
+const EN_PSALM_33 = [
+{t:'sec', x:"Psalm 33 (34)"},
+{t:'p',   x:"I will bless the Lord at all times; His praise shall continually be on my lips."},
+{t:'p',   x:"My soul shall glory in the Lord; let the humble hear and be glad."},
+{t:'p',   x:"O magnify the Lord with me, and let us exalt His name together."},
+{t:'p',   x:"I sought the Lord, and He heard me, and delivered me from all my fears."},
+{t:'p',   x:"Look to Him and be radiant, and let your faces not be ashamed."},
+{t:'p',   x:"This poor man cried, and the Lord heard him, and saved him from all his troubles."},
+{t:'p',   x:"The angel of the Lord encamps around those who fear Him, and delivers them."},
+{t:'p',   x:"O taste and see that the Lord is good; blessed is the one who takes refuge in Him."},
+{t:'p',   x:"Fear the Lord, you His saints, for there is no want among those who fear Him."},
+{t:'p',   x:"The rich have become poor and hungry, but those who seek the Lord shall not lack any good thing."},
+{t:'r',   x:"Priest:"},
+{t:'p',   x:"The blessing of the Lord be upon you, by His grace and love for mankind, always, now and ever, and forever."},
+{t:'resp',x:"Amen."},
+];
+
 // ── March 11 moveable parts (complete) ───────────────────────
 const EN_311_MOVEABLE = {
   stichera: [
@@ -903,6 +1386,12 @@ function buildEnVespers(d) {
   let subline = [wkLabel, toneLabel].filter(Boolean).join(' — ');
 
   const enDay = S.moveableEN ? (S.moveableEN[key] || null) : null;
+
+  // Annunciation (Mar 26) — special combined Vespers + Liturgy service
+  if (key === '0326' && enDay && enDay.annunciationService) {
+    return enDay.annunciationService;
+  }
+
   const blocks = [];
   blocks.push({t:'title', x:'VESPERS'});
   blocks.push({t:'sub',   x: subline || fmtDate(d,'en')});
@@ -910,7 +1399,13 @@ function buildEnVespers(d) {
   // Opening (fixed, same every day)
   blocks.push(...EN_FIXED_OPENING);
 
-  // MOVEABLE: Stichera
+  // Blessed is the Man (Sundays/feasts only)
+  if (enDay && enDay.hasBlessedMan) {
+    blocks.push(...EN_BLESSED_MAN);
+    blocks.push(...EN_SMALL_LITANY);
+  }
+
+  // MOVEABLE: Stichera (Psalm 140 + stichera — always present)
   if (key === '0311') {
     blocks.push(...EN_311_MOVEABLE.stichera);
   } else if (enDay && enDay.stichera) {
@@ -919,8 +1414,15 @@ function buildEnVespers(d) {
     blocks.push({t:'moveable', section:'stichera', tone: meta.tone, date: fmtDate(d,'en')});
   }
 
-  // O Gladsome Light (fixed)
-  blocks.push(...EN_FIXED_GLADSOME);
+  // Entrance (Sundays/feasts) — includes O Gladsome Light
+  if (enDay && enDay.hasEntrance) {
+    blocks.push(...EN_ENTRANCE);
+    // O Gladsome Light is sung as part of the entrance
+    blocks.push(...EN_FIXED_GLADSOME);
+  } else {
+    // Weekdays: O Gladsome Light without entrance
+    blocks.push(...EN_FIXED_GLADSOME);
+  }
 
   // MOVEABLE: Prokeimenon
   if (key === '0311') {
@@ -938,8 +1440,21 @@ function buildEnVespers(d) {
     blocks.push(...enDay.readings);
   }
 
+  // Fervent Litany (some days)
+  if (enDay && enDay.hasFerventLitany) {
+    blocks.push(...EN_FERVENT_LITANY);
+  }
+
   // Vouchsafe + Litany of Supplication (fixed)
   blocks.push(...EN_FIXED_VOUCHSAFE);
+
+  // Litia (Great Feasts only)
+  if (enDay && enDay.hasLitia) {
+    if (enDay.litiaStichera) {
+      blocks.push(...enDay.litiaStichera);
+    }
+    blocks.push(...EN_LITIA_PRAYERS);
+  }
 
   // MOVEABLE: Aposticha
   if (key === '0311') {
@@ -962,10 +1477,32 @@ function buildEnVespers(d) {
     blocks.push({t:'moveable', section:'troparia', tone: meta.tone, date: fmtDate(d,'en')});
   }
 
-  // Prayer of Ephrem + Psalm 33 (Lenten weekdays, fixed)
+  // Blessing of Loaves (Great Feasts after Litia)
+  if (enDay && enDay.hasBlessingOfLoaves) {
+    blocks.push(...EN_BLESSING_LOAVES);
+  }
+
+  // Prayer of St. Ephrem (Lenten weekdays — includes Psalm 33)
   const needsEphrem = enDay ? enDay.hasEphrem : (lenten && !isSun);
   if (needsEphrem) {
     blocks.push(...EN_FIXED_EPHREM);
+  }
+
+  // Psalm 33 standalone (Great Feasts after Blessing of Loaves — only when Ephrem not already added, since EN_FIXED_EPHREM includes Psalm 33)
+  if (enDay && enDay.hasPsalm33 && !needsEphrem) {
+    blocks.push(...EN_PSALM_33);
+  }
+
+  // Dismissal
+  if (enDay && enDay.dismissalType === 'great') {
+    blocks.push(...EN_GREAT_DISMISSAL);
+  } else if (enDay && enDay.dismissalType === 'middle') {
+    blocks.push(...EN_MIDDLE_DISMISSAL);
+  }
+
+  // After Vespers
+  if (enDay && enDay.afterVespers && enDay.afterVespers.length > 0) {
+    blocks.push(...enDay.afterVespers);
   }
 
   blocks.push({t:'end', x:'☦'});
@@ -2120,7 +2657,11 @@ function buildCalStrip(selDate) {
       </button>
       ${nextMon}
     </div>
-    <div class="cal-strip" id="calStrip">${days}</div>
+    <div style="display:flex;align-items:center;gap:2px">
+      <button onclick="scrollStrip(-1)" style="background:none;border:none;cursor:pointer;color:var(--gold);font-size:1.4em;padding:4px 2px;flex-shrink:0">◀</button>
+      <div class="cal-strip" id="calStrip" style="flex:1">${days}</div>
+      <button onclick="scrollStrip(1)" style="background:none;border:none;cursor:pointer;color:var(--gold);font-size:1.4em;padding:4px 2px;flex-shrink:0">▶</button>
+    </div>
   </div>`;
 }
 
@@ -2215,6 +2756,7 @@ async function buildVespersView(main) {
   <div class="svc-view-header">
     <button class="back-btn" onclick="S.view='home';render()">← ${leng==='uk'?'Назад':'Back'}</button>
     <button class="print-btn" onclick="window.print()">⊞ ${leng==='uk'?'Друк':'Print'}</button>
+    <a class="print-btn" href="docs/Vespers_${key}_EN.docx" download style="text-decoration:none;color:inherit">📄 ${leng==='uk'?'Завантажити':'Download'}</a>
   </div>`;
 
   const dayHeaderHtml = `
@@ -2338,6 +2880,11 @@ function selectDay(mon, day) {
       if (sel) sel.scrollIntoView({inline:'center', behavior:'smooth'});
     }
   }, 50);
+}
+
+function scrollStrip(dir) {
+  const strip = document.getElementById('calStrip');
+  if (strip) strip.scrollBy({ left: dir * 200, behavior: 'smooth' });
 }
 
 function stripMonth(mon) {

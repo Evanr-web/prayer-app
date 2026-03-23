@@ -194,7 +194,75 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": true,
+    "hasBlessingOfLoaves": true,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "litiaStichera": [
+      {
+        "t": "sec",
+        "x": "Litia Stichera"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 3):"
+      },
+      {
+        "t": "p",
+        "x": "O divinely-manifest Basil!* By your pure life you received into your soul Christ,* who is the fountain of life,* and you poured forth for the world rivers of pious teachings.* Nourished by them, the faithful children of the Church* with praising lips offer thanksgiving to God,* who has glorified your memory unto ages of ages."
+      },
+      {
+        "t": "p",
+        "x": "The myrrh of grace poured out upon you* anointed you to minister the Gospel of the Kingdom of Heaven,* O divinely-manifest Basil.* For, having become the fragrance of Christ,* you filled the world with the aroma of the knowledge of Him.* Therefore, graciously receiving the voices of your household,* entreat for us who honor you great mercy."
+      },
+      {
+        "t": "p",
+        "x": "Clothed in hierarchical vestments, O Basil, champion of the Trinity,* you stood at the tribunal for the persecuted faith,* showing readiness for suffering,* and thereby put to shame the wrath of the ruler,* inflamed by the power of impiety, who threatened you with cruel punishment.* You, O Father, having wisely deliberated beforehand,* became a voluntary martyr,* and therefore received the crown of victory from Christ,* who grants great mercy."
+      },
+      {
+        "t": "r",
+        "x": "Glory: (Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Grace was poured out from your lips,* O venerable Father,* and you became the shepherd of the Church of Christ,* teaching the spiritual sheep to believe* in the Trinity consubstantial in one Godhead."
+      },
+      {
+        "t": "r",
+        "x": "Now and ever: (Tone 8):"
+      },
+      {
+        "t": "p",
+        "x": "Descending to the human race, our Savior,* eight days old according to His Mother and without beginning according to the Father,* allowed Himself to be wrapped in swaddling clothes* and did not refuse to accept bodily circumcision.* To Him, O faithful, let us sing:* You are our God, have mercy on us!"
+      }
+    ],
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 3):"
+      },
+      {
+        "t": "p",
+        "x": "The Lord of all endures circumcision* and as the Good One cuts away the sins of mortals;* He grants salvation to the world;* and in the highest the Creator’s hierarch also rejoices,* the light-bearing and divine initiate of Christ — Basil."
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You appeared as an unshakable foundation of the Church,* granting to all mankind a lordship that cannot be stolen,* sealing it with your teachings,* O venerable Basil, revealer of heaven."
+      }
+    ]
   },
   "0102": {
     "prokeimenon": [
@@ -351,7 +419,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0103": {
     "prokeimenon": [
@@ -508,7 +598,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "In the streams of the Jordan today the Lord was present,* and says to John:* Do not be afraid to baptize Me,* for I have come to save Adam, the first-created."
+      }
+    ]
   },
   "0104": {
     "prokeimenon": [
@@ -708,7 +820,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0105": {
     "prokeimenon": [
@@ -865,7 +999,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "In the streams of the Jordan today the Lord was present,* and says to John:* Do not be afraid to baptize Me,* for I have come to save Adam, the first-created."
+      }
+    ]
   },
   "0106": {
     "prokeimenon": [
@@ -1005,7 +1161,15 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": false,
+    "hasPsalm33": true
   },
   "0107": {
     "prokeimenon": [
@@ -1170,7 +1334,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "The Jordan was afraid at Your coming in the flesh* and turned back in fear;* and John, fulfilling his prophetic ministry, trembled with awe;* the angelic hosts were struck with fear, seeing You baptized bodily in the waves,* and all who were in darkness were illumined, praising You who appeared and enlightened all things."
+      }
+    ]
   },
   "0108": {
     "prokeimenon": [
@@ -1327,7 +1513,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0109": {
     "prokeimenon": [
@@ -1488,7 +1696,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0110": {
     "prokeimenon": [
@@ -1653,7 +1883,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0111": {
     "prokeimenon": [
@@ -1857,7 +2109,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0112": {
     "prokeimenon": [
@@ -2014,7 +2288,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0113": {
     "prokeimenon": [
@@ -2179,7 +2475,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0114": {
     "prokeimenon": [
@@ -2336,7 +2654,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "You have appeared today to the whole world,* and Your light, O Lord, has been signed upon us* who with understanding sing to You:* You have come and revealed Yourself — O Light unapproachable."
+      }
+    ]
   },
   "0115": {
     "prokeimenon": [
@@ -2497,7 +2837,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0116": {
     "prokeimenon": [
@@ -2658,7 +3020,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0117": {
     "prokeimenon": [
@@ -2823,7 +3207,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 2):"
+      },
+      {
+        "t": "p",
+        "x": "Having cast aside the tumult of life, you ended your days in stillness,* imitating the Baptist in every way, O venerable one;* therefore we honor you with him, O leader of the fathers, Anthony."
+      }
+    ]
   },
   "0118": {
     "prokeimenon": [
@@ -3027,7 +3433,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0119": {
     "prokeimenon": [
@@ -3159,7 +3587,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0120": {
     "prokeimenon": [
@@ -3324,7 +3774,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 8):"
+      },
+      {
+        "t": "p",
+        "x": "In your honorable birth* creation found joy,* and in your divine memorial, O venerable one,* it received the bounty of your many miracles.* From these, grant generously to our souls* and cleanse the defilement of our sins,* that we may sing: Alleluia."
+      }
+    ]
   },
   "0121": {
     "prokeimenon": [
@@ -3485,7 +3957,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0122": {
     "prokeimenon": [
@@ -3646,7 +4140,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0123": {
     "prokeimenon": [
@@ -3811,7 +4327,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 2):"
+      },
+      {
+        "t": "p",
+        "x": "Having become radiant lamps,* O divine martyrs, you illumine all creation with the light of miracles,* healing illnesses and ever dispelling the deep darkness;* and you unceasingly pray to Christ God for us all."
+      }
+    ]
   },
   "0124": {
     "prokeimenon": [
@@ -3968,7 +4506,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0125": {
     "prokeimenon": [
@@ -4172,7 +4732,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0126": {
     "prokeimenon": [
@@ -4329,7 +4911,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0127": {
     "prokeimenon": [
@@ -4494,7 +5098,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 1):"
+      },
+      {
+        "t": "p",
+        "x": "The honorable Church mystically rejoiced* at the return of your venerable relics,* and hiding them as precious gold,* she grants unfailing grace of healing to those who sing to you* through your prayers, O John Chrysostom."
+      }
+    ]
   },
   "0128": {
     "prokeimenon": [
@@ -4655,7 +5281,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0129": {
     "prokeimenon": [
@@ -4816,7 +5464,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0130": {
     "prokeimenon": [
@@ -4997,7 +5667,71 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": true,
+    "hasBlessingOfLoaves": true,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "litiaStichera": [
+      {
+        "t": "sec",
+        "x": "Litia Stichera"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 2):"
+      },
+      {
+        "t": "p",
+        "x": "Come, O worshippers of the heavenly Trinity,* let us glorify on earth the three holy hierarchs:* Basil, who bears a royal name,* Gregory, distinguished in theology,* and John, who is a true symbol of grace.* They fathomed the depths of the wisdom of the Spirit;* they are ocean currents, abundant springs, living fountains,* sparkling jewels, earthly luminaries, helmsmen of the Church,* trees laden with good fruits, bestowers of grace,* mouths of Christ and defenders of the Holy Trinity, which directly enlightens them,* and constant intercessors for our souls."
+      },
+      {
+        "t": "p",
+        "x": "Let us faithfully glorify* those radiant flashes of unquenchable fire* that illumine us.* For, set ablaze by it, they became lamps to the world,* became a life-giving force for the weak,* and openly and piously proclaimed the Father, the Son, and the Holy Spirit.* Therefore let us sing to them:* Rejoice, O thrice-blessed trio, wise in the things of God, of the Most Holy Trinity!"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Rejoice, O hierarchical Triad:* Gregory the Theologian, wise Basil, and John Chrysostom!* You are the suns of the earth's surface,* the rays and luminaries of the thrice-radiant splendor, the enlightenment of the dim-sighted,* the finest fragrant flowers of paradise,* the divinely-inscribed tablets of the Spirit,* breasts that give the milk of salvation, the adornment of wisdom!* Entreat Christ to grant our souls great mercy."
+      },
+      {
+        "t": "r",
+        "x": "Glory:"
+      },
+      {
+        "t": "p",
+        "x": "Gathered in festivity,* let us glorify with songs of praise the hierarchs of Christ and the glory of the Fathers,* the pillars of the faith, faithful teachers and protectors, proclaiming:* Rejoice, O most wise Basil,* lamp of the Church and immovable pillar!* Rejoice, O Gregory the Theologian, mind reaching heaven and great hierarch!* Rejoice, O John Chrysostom, radiant preacher of repentance!* O most glorious Fathers, cease not to pray to Christ at all times for those* who with faith and love celebrate your divine and solemn feast."
+      },
+      {
+        "t": "r",
+        "x": "Now and ever:"
+      },
+      {
+        "t": "p",
+        "x": "Gathered together, O faithful,* let us extol with songs of praise the virginal beauty* and joy of the spirit, the only Theotokos,* the unshakable protection of the faithful,* and let us say: Rejoice, O pure Virgin Mother,* radiant lamp and heavenly gate!* Rejoice, O All-Pure One, sacred ark,* for you contained God in your womb!* Rejoice, you who are incomparably higher than all the heavenly choirs!* Therefore, O immaculate Mother and Lady,* cease not to protect your servants,* who constantly with faith and love sing of you and worship* your seedless childbearing."
+      }
+    ],
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 2):"
+      },
+      {
+        "t": "p",
+        "x": "The sacred and divinely eloquent preachers,* the foremost of teachers, O Lord, You have received into the enjoyment of Your good things and repose,* for You accepted their labors and death above all offerings,* O only One who glorifies Your saints."
+      }
+    ]
   },
   "0131": {
     "prokeimenon": [
@@ -5158,7 +5892,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0201": {
     "prokeimenon": [
@@ -5362,7 +6118,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0202": {
     "prokeimenon": [
@@ -5531,7 +6309,59 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": true,
+    "hasBlessingOfLoaves": true,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "litiaStichera": [
+      {
+        "t": "sec",
+        "x": "Litia Stichera"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 1):"
+      },
+      {
+        "t": "p",
+        "x": "The eternal God, who once on Mount Sinai gave the Law to Moses,* today appears as a child.* He, the Lawgiver, fulfills the Law:* He is brought to the temple and given to the elder.* The righteous Simeon, receiving Him in his arms* and seeing that the promise was fulfilled, joyfully cried out:* My eyes have seen the mystery hidden from the ages,* but in these last days revealed:* a Light that dispels the darkness of the unbelieving nations and reveals the glory to the new Israel.* Therefore release your servant from the bonds of this body* and send him to eternal life that grows not old,* granting to the world great mercy."
+      },
+      {
+        "t": "p",
+        "x": "He who on Sinai of old gave the Law to Moses* today in His mercy submits to the ordinances of the Law.* Now the pure God, as a holy child, is born of the Pure One,* and as God offers Himself to Himself,* freeing us from the curse of the Law* and enlightening our souls."
+      },
+      {
+        "t": "p",
+        "x": "Now the Creator of heaven and earth* is carried in the priestly arms of the elder Simeon,* and he, moved by the Holy Spirit, exclaims:* Now I am set free, for I have seen my Savior."
+      },
+      {
+        "t": "r",
+        "x": "Glory, now and ever: (Tone 5):"
+      },
+      {
+        "t": "p",
+        "x": "The Pre-eternal One took flesh and became a little child.* His Virgin Mother brings Him to the temple* to fulfill the promise of His own Law,* and Simeon receives Him* in his arms and exclaims:* Now, O Holy One, according to Your word,* You release in peace Your servant,* for my eyes have seen Your salvation."
+      }
+    ],
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 1):"
+      },
+      {
+        "t": "p",
+        "x": "By Your birth You sanctified the Virgin’s womb* and blessed the hands of Simeon as was fitting;* and now You have come and saved us, O Christ God.* But grant peace to Your people in time of war* and strengthen the nation that You have loved,* O only Lover of mankind."
+      }
+    ]
   },
   "0203": {
     "prokeimenon": [
@@ -5688,7 +6518,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0204": {
     "prokeimenon": [
@@ -5845,7 +6697,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0205": {
     "prokeimenon": [
@@ -6006,7 +6880,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0206": {
     "prokeimenon": [
@@ -6163,7 +7059,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0207": {
     "prokeimenon": [
@@ -6320,7 +7238,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0208": {
     "prokeimenon": [
@@ -6524,7 +7464,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0209": {
     "prokeimenon": [
@@ -6681,7 +7643,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 1):"
+      },
+      {
+        "t": "p",
+        "x": "By Your birth You sanctified the Virgin’s womb* and blessed the hands of Simeon as was fitting;* and now You have come and saved us, O Christ God.* But grant peace to Your people in time of war* and strengthen the nation that You have loved,* O only Lover of mankind."
+      }
+    ]
   },
   "0210": {
     "prokeimenon": [
@@ -6838,7 +7822,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0211": {
     "prokeimenon": [
@@ -6995,7 +8001,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0212": {
     "prokeimenon": [
@@ -7152,7 +8180,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0213": {
     "prokeimenon": [
@@ -7309,7 +8359,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0214": {
     "prokeimenon": [
@@ -7474,7 +8546,15 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": false,
+    "hasPsalm33": false
   },
   "0215": {
     "prokeimenon": [
@@ -7662,7 +8742,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0216": {
     "prokeimenon": [
@@ -7819,7 +8921,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0217": {
     "prokeimenon": [
@@ -7976,7 +9100,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "middle",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0218": {
     "prokeimenon": [
@@ -8133,7 +9279,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0219": {
     "prokeimenon": [
@@ -8290,7 +9458,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0220": {
     "prokeimenon": [
@@ -8451,7 +9641,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0221": {
     "prokeimenon": [
@@ -8608,7 +9820,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0222": {
     "prokeimenon": [
@@ -8812,7 +10046,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0223": {
     "prokeimenon": [
@@ -9029,7 +10285,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0224": {
     "prokeimenon": [
@@ -9218,7 +10496,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0225": {
     "prokeimenon": [
@@ -9403,7 +10703,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0226": {
     "prokeimenon": [
@@ -9588,7 +10910,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0227": {
     "prokeimenon": [
@@ -9777,7 +11121,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0228": {
     "prokeimenon": [
@@ -9937,7 +11303,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0301": {
     "prokeimenon": [
@@ -10133,7 +11521,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0302": {
     "prokeimenon": [
@@ -10350,7 +11760,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0303": {
     "prokeimenon": [
@@ -10535,7 +11967,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0304": {
     "prokeimenon": [
@@ -10720,7 +12174,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0305": {
     "prokeimenon": [
@@ -10909,7 +12385,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0306": {
     "prokeimenon": [
@@ -11094,7 +12592,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0307": {
     "prokeimenon": [
@@ -11251,7 +12771,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0308": {
     "prokeimenon": [
@@ -11447,7 +12989,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0309": {
     "prokeimenon": [
@@ -11672,7 +13236,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Kontakion (Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Having left behind all the army of the world,* you clung to the Master in heaven, O forty passion-bearers of the Lord:* for having passed through fire and water, O blessed ones,* you worthily received glory from heaven and a multitude of crowns."
+      }
+    ]
   },
   "0310": {
     "prokeimenon": [
@@ -11861,7 +13447,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0311": {
     "prokeimenon": [
@@ -12046,7 +13654,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0312": {
     "prokeimenon": [
@@ -12231,7 +13861,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0313": {
     "prokeimenon": [
@@ -12416,7 +14068,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0314": {
     "prokeimenon": [
@@ -12573,7 +14247,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0315": {
     "prokeimenon": [
@@ -12773,7 +14469,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0316": {
     "prokeimenon": [
@@ -12990,7 +14708,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0317": {
     "prokeimenon": [
@@ -13175,7 +14915,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0318": {
     "prokeimenon": [
@@ -13360,7 +15122,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0319": {
     "prokeimenon": [
@@ -13545,7 +15329,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0320": {
     "prokeimenon": [
@@ -13730,7 +15536,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0321": {
     "prokeimenon": [
@@ -13887,7 +15715,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0322": {
     "prokeimenon": [
@@ -14091,7 +15941,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0323": {
     "prokeimenon": [
@@ -14308,7 +16180,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0324": {
     "prokeimenon": [
@@ -14661,7 +16555,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0325": {
     "prokeimenon": [
@@ -14826,7 +16742,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "(Tone 8): To You, the invincible Leader,* in thanksgiving for deliverance from evil,* we Your servants inscribe hymns of victory,* O Mother of God.* Since You have power unconquerable,* free us from all dangers,* that we may cry to You:* Rejoice, O Bride unwedded."
+      }
+    ]
   },
   "0326": {
     "prokeimenon": [
@@ -15031,7 +16969,2525 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": false,
+    "hasPsalm33": false,
+    "annunciationService": [
+      {
+        "t": "title",
+        "x": "VESPERS WITH THE LITURGY OF ST. JOHN CHRYSOSTOM"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "p",
+        "x": "Come, let us worship* our King and God."
+      },
+      {
+        "t": "p",
+        "x": "Come, let us worship* Christ, our King and God."
+      },
+      {
+        "t": "p",
+        "x": "Come, let us worship and fall down* before the very Lord Jesus Christ, our King and God."
+      },
+      {
+        "t": "sec",
+        "x": "Psalm 103"
+      },
+      {
+        "t": "p",
+        "x": "Bless the Lord, O my soul!* O Lord my God, Thou art exceedingly great!"
+      },
+      {
+        "t": "p",
+        "x": "Thou hast clothed Thyself with majesty and beauty,* Thou hast wrapped Thyself with light as with a garment."
+      },
+      {
+        "t": "p",
+        "x": "Thou hast stretched out the heavens like a tent,* Thou hast built Thy upper chambers upon the waters."
+      },
+      {
+        "t": "p",
+        "x": "Thou makest the clouds Thy chariot,* Thou walkest upon the wings of the wind."
+      },
+      {
+        "t": "p",
+        "x": "Thou makest the winds Thy messengers,* the flaming fire Thy servants."
+      },
+      {
+        "t": "p",
+        "x": "Thou hast established the earth upon its foundations;* it shall not be shaken unto ages of ages."
+      },
+      {
+        "t": "p",
+        "x": "With the deep, as with a garment, Thou hast covered it;* above the mountains the waters stood."
+      },
+      {
+        "t": "p",
+        "x": "At Thy rebuke they fled,* at the voice of Thy thunder they trembled."
+      },
+      {
+        "t": "p",
+        "x": "The mountains rose, the valleys descended* to the place that Thou hast appointed for them."
+      },
+      {
+        "t": "p",
+        "x": "Thou hast set a boundary that they shall not pass,* that they might not again cover the earth."
+      },
+      {
+        "t": "p",
+        "x": "Thou dost send forth springs into the streams,* which flow between the mountains."
+      },
+      {
+        "t": "p",
+        "x": "They give drink to every beast of the field;* the wild donkeys quench their thirst."
+      },
+      {
+        "t": "p",
+        "x": "Above them the birds of heaven nest;* from amid the branches they give their voice."
+      },
+      {
+        "t": "p",
+        "x": "Thou dost water the mountains from Thy upper chambers;* the earth is satisfied with the fruit of Thy works."
+      },
+      {
+        "t": "p",
+        "x": "Thou dost cause grass to grow for the cattle, and plants for the service of man,* that he may bring forth bread from the earth:"
+      },
+      {
+        "t": "p",
+        "x": "Wine that gladdens the heart of man, oil to make his face shine,* and bread that strengthens the heart of man."
+      },
+      {
+        "t": "p",
+        "x": "The trees of the Lord are satisfied,* the cedars of Lebanon which He planted."
+      },
+      {
+        "t": "p",
+        "x": "There the birds make their nests;* the stork has its dwelling in the cypresses."
+      },
+      {
+        "t": "p",
+        "x": "The high mountains are for the deer,* the rocks are a refuge for the hares."
+      },
+      {
+        "t": "p",
+        "x": "Thou hast made the moon to mark the seasons;* the sun knows its setting."
+      },
+      {
+        "t": "p",
+        "x": "Thou dost bring darkness and night comes,* in which all the beasts of the forest stir."
+      },
+      {
+        "t": "p",
+        "x": "The young lions roar for their prey,* seeking their food from God."
+      },
+      {
+        "t": "p",
+        "x": "They hide when the sun rises,* and lie down in their dens."
+      },
+      {
+        "t": "p",
+        "x": "Man goes forth to his work,* and to his labor until the evening."
+      },
+      {
+        "t": "p",
+        "x": "How great are Thy works, O Lord!* In wisdom Thou hast made them all; the earth is full of Thy creatures."
+      },
+      {
+        "t": "p",
+        "x": "Behold, the great and wide sea,* in it are creeping things without number, creatures both small and great."
+      },
+      {
+        "t": "p",
+        "x": "There ships pass through,* and Leviathan, which Thou hast made to play therein."
+      },
+      {
+        "t": "p",
+        "x": "All of them wait upon Thee,* that Thou mayest give them food in due season."
+      },
+      {
+        "t": "p",
+        "x": "When Thou givest it to them, they gather it;* when Thou openest Thy hand, they are filled with good things."
+      },
+      {
+        "t": "p",
+        "x": "They are troubled when Thou hidest Thy face;* when Thou takest away their breath, they perish and return to their dust."
+      },
+      {
+        "t": "p",
+        "x": "Thou shalt send forth Thy Spirit, and they shall be created,* and Thou shalt renew the face of the earth."
+      },
+      {
+        "t": "p",
+        "x": "Let the glory of the Lord endure forever;* let the Lord rejoice in His works."
+      },
+      {
+        "t": "p",
+        "x": "He looks upon the earth, and it trembles;* He touches the mountains, and they smoke."
+      },
+      {
+        "t": "p",
+        "x": "I will sing to the Lord as long as I live;* I will chant psalms as long as I have being."
+      },
+      {
+        "t": "p",
+        "x": "Let my song be pleasing to Him;* I will rejoice in the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Let sinners vanish from the earth, and let the lawless be no more.* Bless the Lord, O my soul."
+      },
+      {
+        "t": "p",
+        "x": "The sun knows its setting;* Thou dost bring darkness, and night comes."
+      },
+      {
+        "t": "p",
+        "x": "How great are Thy works, O Lord!* In wisdom Thou hast made them all."
+      },
+      {
+        "t": "p",
+        "x": "Glory to the Father, and to the Son, and to the Holy Spirit,* both now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "Alleluia, alleluia, alleluia, glory to Thee, O God. (3x)"
+      },
+      {
+        "t": "r",
+        "x": "During Psalm 103, the priest recites the Vespers prayers before the holy doors."
+      },
+      {
+        "t": "sec",
+        "x": "Vespers Prayers"
+      },
+      {
+        "t": "p",
+        "x": "1. O Lord, compassionate and merciful, long-suffering and plenteous in mercy! Hear our prayers and attend to the voice of our supplication and show us a sign of Thy mercy. Guide us upon Thy way, that we may walk in Thy truth. Gladden our hearts, that we may fear Thy holy name, for Thou art great and workest wonders; Thou alone art God and there is none like Thee among the gods, O Lord. Thou art mighty in mercy and good in strength, to help and comfort and save all who hope in Thy holy name. For to Thee belongs all glory, honor, and worship: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "2. O Lord, rebuke us not in Thine anger, nor chasten us in Thy wrath, but deal with us according to Thy mercy, O Physician and Healer of our souls. Guide us to Thy desired haven, enlighten the eyes of our hearts unto the knowledge of Thy truth, and grant us the remainder of the present day peaceful and sinless, and all the time of our life, through the prayers of the holy Theotokos and of all the saints. For Thine is the dominion and Thine is the kingdom, and the power, and the glory: of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "3. O Lord our God! Remember us, sinful and unworthy servants, when we call upon Thy holy name, and put us not to shame in the expectation of Thy mercy, but hear, O Lord, all our petitions unto salvation, and make us worthy to love and fear Thee with all our heart, and to do Thy will in all things. For Thou art a good and man-loving God, and to Thee we ascribe glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "4. O Thou Who art hymned with unceasing songs and continual glorification by the holy powers, fill our mouths with Thy praise, that we may give glory to Thy holy name; and give us a portion and inheritance with all who fear Thee in truth and keep Thy commandments, through the prayers of the holy Theotokos and of all Thy saints. For to Thee belongs all glory, honor, and worship: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "5. Blessed art Thou, O Lord God Almighty, Who knowest the minds of men, Who knowest what we need, far more than what we ask or understand. O King of kings and Lord of lords, Who alone possessest immortality and dwellest in unapproachable light: hearken to us, through the prayers of Thy holy Mother and of all Thy saints, and grant us Thy grace and peace, for Thou art a good and man-loving God, and to Thee we ascribe glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "6. O Lord, Lord, Who holdest all things in Thine immaculate hand, Who art long-suffering toward us all and repentest of our wickedness! Remember Thy compassions and Thy mercy; visit us in Thy goodness and grant that we may avoid the manifold snares of the evil one for the remainder of the present day, and keep our life unassailed by his every scheme, through the grace of Thine All-Holy Spirit. Through the mercy and love for mankind of Thine Only-begotten Son, with Whom Thou art blessed, together with Thine All-Holy, Good, and Life-giving Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "7. O God, great and wondrous, Who with unspeakable goodness and rich providence governest all things, and hast bestowed upon us earthly goods and assured us of the promised kingdom through the blessings already granted us: Thou Who hast made us shun every evil during the past part of this day, grant us also to complete the remainder blamelessly before Thy holy glory, praising Thee, our only good and man-loving God. For Thou art our God, and to Thee we ascribe glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "8. O God, great and most high, Who alone possessest immortality and dwellest in unapproachable light. Thou hast fashioned all creation in wisdom, dividing the light from the darkness, appointing the sun to rule the day and the moon and stars to rule the night. Thou hast granted us sinners also at this present hour to come before Thy face with confession and to offer Thee our evening praise. O man-loving Lord, direct our prayer as incense before Thee and accept it as a sweet fragrance. Grant us a peaceful evening and night; clothe us with the armor of light; deliver us from the terror of the night and from everything that walks in darkness; and give us sleep, which Thou hast appointed for the rest of our weakness, free from every fantasy of the devil. Yea, O Master of all, Bestower of blessings, may we, being moved to compunction upon our beds, remember Thy name in the night, and, enlightened by meditation on Thy commandments, rise in joyfulness of soul to glorify Thy goodness, offering prayers and supplications to Thy tender love for our own sins and for those of all Thy people, whom do Thou visit in mercy, through the prayers of the holy Theotokos. For Thou art a good and man-loving God, and to Thee we ascribe glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Great Litany"
+      },
+      {
+        "t": "p",
+        "x": "In peace, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For the peace from on high and the salvation of our souls, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For the peace of the whole world, the good estate of the holy churches of God, and the union of all, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For this holy temple and for those who enter it with faith, reverence, and the fear of God, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For His Holiness, the Ecumenical Hierarch Leo, Pope of Rome, and for His Beatitude, our Patriarch Sviatoslav, and for our most reverend Bishop (Name), for the venerable priesthood, the diaconate in Christ, and for all the clergy and the people, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For our God-protected nation, for the government, and for all the armed forces, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For this city (or: for this village, or: for this holy monastery), and for every city, town, and country, and for the faithful who dwell therein, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For favorable weather, an abundance of the fruits of the earth, and for peaceful times, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For those who travel by sea, by land, and by air, for the sick, the suffering, the captives, and for their salvation, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "That we may be delivered from all tribulation, wrath, and need, let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Commemorating our most holy, most pure, most blessed and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and one another, and all our life to Christ our God."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "r",
+        "x": "[O Lord, compassionate and merciful, long-suffering and plenteous in mercy! Hear our prayers and attend to the voice of our supplication... For Thou art a merciful and man-loving God, and to Thee we ascribe glory.]"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "For to Thee belongs all glory, honor, and worship, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Psalm 140"
+      },
+      {
+        "t": "r",
+        "x": "The first two verses of Psalm 140, Tone 8."
+      },
+      {
+        "t": "p",
+        "x": "O Lord, I have cried unto Thee, hear me.* Hear me, O Lord.* O Lord, I have cried unto Thee, hear me;* attend to the voice of my prayer* when I cry unto Thee.* Hear me, O Lord."
+      },
+      {
+        "t": "p",
+        "x": "Let my prayer be set forth* as incense before Thee;* the lifting up of my hands* as an evening sacrifice.* Hear me, O Lord."
+      },
+      {
+        "t": "p",
+        "x": "Set a guard, O Lord, before my mouth;* keep watch at the door of my lips!"
+      },
+      {
+        "t": "p",
+        "x": "Let not my heart incline* to anything evil."
+      },
+      {
+        "t": "p",
+        "x": "Nor to practice wicked deeds with men who work iniquity;* I will not partake of their delicacies."
+      },
+      {
+        "t": "p",
+        "x": "Let the righteous one strike me in kindness and correct me,* but let not the oil of the sinful anoint my head."
+      },
+      {
+        "t": "p",
+        "x": "I shall still pray,* despite their evil deeds."
+      },
+      {
+        "t": "p",
+        "x": "If their judges are cast down into the clefts of the rock,* they shall hear that my words are sweet."
+      },
+      {
+        "t": "p",
+        "x": "As though one had plowed and broken the earth,* their bones are scattered before the grave."
+      },
+      {
+        "t": "p",
+        "x": "For to Thee, O Lord, Lord, are my eyes;* in Thee I take refuge, destroy not my soul."
+      },
+      {
+        "t": "p",
+        "x": "Keep me from the snare they have set for me,* and from the traps of those who work iniquity."
+      },
+      {
+        "t": "p",
+        "x": "Let the wicked fall into their own nets together,* while I pass through safely."
+      },
+      {
+        "t": "sec",
+        "x": "Psalm 141"
+      },
+      {
+        "t": "p",
+        "x": "With my voice I cry to the Lord,* with my voice I pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "I pour out my complaint before Him,* I reveal my trouble before Him."
+      },
+      {
+        "t": "p",
+        "x": "When my spirit is troubled within me, Thou knowest my path.* On the way where I walk they have hidden a snare for me."
+      },
+      {
+        "t": "p",
+        "x": "Look to the right and see:* there is no one who cares for me."
+      },
+      {
+        "t": "p",
+        "x": "There is no place for me to flee;* no one takes care of my soul."
+      },
+      {
+        "t": "p",
+        "x": "I cry to Thee, O Lord, and say:* Thou art my refuge, my portion in the land of the living!"
+      },
+      {
+        "t": "p",
+        "x": "Attend to my supplication,* for I am brought very low."
+      },
+      {
+        "t": "p",
+        "x": "Deliver me from my persecutors,* for they are stronger than I."
+      },
+      {
+        "t": "sec",
+        "x": "Stichera"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Bring my soul out of prison,* that I may give thanks to Thy name."
+      },
+      {
+        "t": "r",
+        "x": "(Tone 8)"
+      },
+      {
+        "t": "p",
+        "x": "In my thoughts I fell among thieves,* and they stripped me, wretched one, of reason and beat me terribly.* All my soul was wounded,* and I lay on the road of life, stripped.* A priest passed by and, seeing me, passed on the other side;* a Levite, too, looked upon my suffering and avoided me.* But Thou, O Jesus, Who appeared not from Samaria but Who wast incarnate from Mary,* through Thy love for mankind, grant me mercy."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "The righteous shall surround me,* for Thou shalt deal bountifully with me."
+      },
+      {
+        "t": "p",
+        "x": "If there is any virtue and if there is any praise,* it belongs to the saints!* For they bowed their necks beneath the sword* for the sake of Thee Who bowed the heavens and came down.* They shed their blood for Thee Who emptied Thyself* and took the form of a servant.* Through their humility they imitated Thy humility.* Through the prayers of the Theotokos, O Most Merciful One, have mercy on us."
+      },
+      {
+        "t": "sec",
+        "x": "Psalm 129"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Out of the depths I cry to Thee, O Lord.* Lord, hear my voice."
+      },
+      {
+        "t": "r",
+        "x": "(Tone 8, similar to: Lord, though Thou didst stand before the judgment seat)"
+      },
+      {
+        "t": "p",
+        "x": "O Lord, Thy sacred disciples* Thou hast shown to be verbal Heavens* who proclaim the glory of Thy divine Incarnation,* who brought all nations to Thy worship.* Blessed art Thou, O Savior,* Who hast shown them to be like the heavens."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Let Thine ears be attentive* to the voice of my supplication."
+      },
+      {
+        "t": "p",
+        "x": "Having always the time of fasting,* which cooperates with divine benefactions,* let us weep with all our heart* and cry out to the Savior:* Have mercy, O Master,* on Thy servants who have sinned much,* and by the prayers of the Theotokos,* O only Merciful One, have mercy on us."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "If Thou, O Lord, shouldst mark iniquities,* who could stand, O Lord? But with Thee there is forgiveness."
+      },
+      {
+        "t": "r",
+        "x": "(Tone 8)"
+      },
+      {
+        "t": "p",
+        "x": "O all-praised Apostles, intercessors for the world,* healers of the sick, guardians of health,* who protect on every side,* pray for us diligently to the Lord* who grants great mercy."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "For Thy name's sake I wait upon Thee, O Lord;* my soul waits upon Thy word; my soul hopes in the Lord."
+      },
+      {
+        "t": "r",
+        "x": "(Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "In the sixth month the archangel was sent to the Pure Virgin,* and he told her to rejoice,* and he announced to her that the Redeemer would spring from her,* saying: 'Blessed one, accept this greeting,* for God is being born from thee.* Thou art a palace full of grace,* receiving God within.* He will come to thee as rain upon the fleece,* and will be born from thee.*' Then Mary said to the archangel:* 'How shall this be to me?* For I know not a man.* How can I be the Mother of my Creator?'* And the angel again addressed her:* 'O Holy One, accept this with faith.'* And she, in answer, said: 'Behold the handmaid of the Lord.* Let it be unto me according to thy word.'"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "From the morning watch until night,* from the morning watch let Israel hope in the Lord."
+      },
+      {
+        "t": "p",
+        "x": "The Theotokos heard a strange speech* when the archangel pronounced to her the words of annunciation.* She conceived Thee, the pre-eternal God,* accepting the greeting without fear,* and with faith cried out:* 'Let it be unto me according to thy word.'"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "For with the Lord there is mercy and with Him is plenteous redemption;* He will redeem Israel from all its iniquities."
+      },
+      {
+        "t": "p",
+        "x": "Behold, today is the Annunciation for us:* Beyond all understanding, God is united with man!* The voice of the archangel dispels doubt,* for the Virgin, having heard 'Rejoice,' conceived God;* and the shadow of the Father appeared over the Son who knows no beginning.* Truly it is not through seed that a child is born;* the womb is not drained.* God, when He wills, overcomes the order of nature,* for He is almighty."
+      },
+      {
+        "t": "sec",
+        "x": "Psalm 116"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Praise the Lord, all nations!* Extol Him, all peoples!"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 1, similar to: O glorious martyrs):"
+      },
+      {
+        "t": "p",
+        "x": "Great Gabriel, seer of God,* who brings light and salvation,* beholds the throne of the Almighty* and serves as minister of divine wonders,* was sent from heaven as God's archangel* to reveal to the Virgin the mystery of the Conception."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "For great is His mercy toward us, and the faithfulness of the Lord endures forever."
+      },
+      {
+        "t": "p",
+        "x": "The great mystery, unknown before to angels* and guarded from eternity,* was entrusted to thee alone, O Gabriel,* and thou, coming to Nazareth, didst deliver it.* With awe thou didst serve the mystery, marveling:* How can the Most High, Whom heaven cannot contain, be born from a Virgin?"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Thou makest Thy angels spirits,* and Thy ministers a flaming fire."
+      },
+      {
+        "t": "p",
+        "x": "Thou, ever full of light,* performest the desires and executest the commands of the Almighty,* O chief of the angels, most wondrous Gabriel.* Serve the divine mystery:* the Virgin conceives and gives birth to the Son Most High,* by whose power the universe was established."
+      },
+      {
+        "t": "r",
+        "x": "Glory, both now."
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "The archangel Gabriel was sent from heaven* to announce to the Virgin the conception.* And coming to Nazareth,* he pondered within himself, marveling at the wonder:* How is it that He who is incomprehensible on high* is born of a Virgin?* He who has heaven for His throne* and the earth as His footstool* is contained in the womb of a maiden!* He upon whom the six-winged Seraphim and the many-eyed Cherubim cannot gaze* is pleased to be incarnate from her by a single word.* It is the will of God that is present!* Therefore I shall cry to her:* 'Rejoice, O Full of Grace, the Lord is with thee,* who hast great mercy!'"
+      },
+      {
+        "t": "sec",
+        "x": "Entrance with the Gospel"
+      },
+      {
+        "t": "p",
+        "x": "Let us pray to the Lord."
+      },
+      {
+        "t": "r",
+        "x": "And the priest quietly recites the prayer of the entrance:"
+      },
+      {
+        "t": "p",
+        "x": "O good and man-loving King who blessest all things! We earnestly pray to Thee with a contrite heart and a spirit of humility: Bless our entrance and exit. May our entrance be an entrance of holy angels who concelebrate with us and glorify Thy goodness. For to Thee is due all glory, honor, and worship: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "r",
+        "x": "After the prayer of entrance, the deacon, pointing with the orarion to the east, says to the priest:"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master, the holy entrance."
+      },
+      {
+        "t": "r",
+        "x": "The priest blesses toward the east and says:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed is the entrance of Thy holy ones, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "p",
+        "x": "Wisdom! Aright!"
+      },
+      {
+        "t": "resp",
+        "x": "O Gladsome Light of the holy glory of the immortal, heavenly, holy, blessed Father, O Jesus Christ! Having come to the setting of the sun, having beheld the evening light, we praise the Father, and the Son, and the Holy Spirit, God. Thou art worthy at every moment to be praised with reverent voices, O Son of God, Giver of life. Therefore the world glorifies Thee."
+      },
+      {
+        "t": "r",
+        "x": "After the censing and the end of the hymn, the deacon, approaching the holy doors and looking at the people, exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Let us attend!"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto all."
+      },
+      {
+        "t": "p",
+        "x": "Wisdom, let us attend!"
+      },
+      {
+        "t": "sec",
+        "x": "Prokeimenon (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "O God, rise up, O Lord!* O God, rise up, and shine forth in splendor. (Ps. 93:1)."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Rise up, O judge of the earth, repay the proud as they deserve (Ps. 93:2)."
+      },
+      {
+        "t": "r",
+        "x": "A reading from the Book of Genesis:"
+      },
+      {
+        "t": "p",
+        "x": "When Abram was ninety-nine years old, the Lord appeared to Abram and said to him: I am God Almighty. Walk before Me and be blameless. I will establish My covenant between Me and you, and I will multiply you exceedingly. Abram fell on his face, and God spoke with him, saying: As for Me, behold, My covenant is with you, and you shall be the father of a multitude of nations. No longer shall your name be called Abram, but your name shall be Abraham, for I have made you the father of a multitude of nations. I will make you exceedingly fruitful, and I will make nations of you, and kings shall come forth from you. I will establish My covenant between Me and you and your offspring after you throughout their generations, for an everlasting covenant, to be God to you and to your offspring after you. And God said to Abraham: As for Sarai your wife, you shall not call her name Sarai, but Sarah shall be her name. I will bless her, and moreover I will give you a son by her. I will bless her, and she shall become nations; kings of peoples shall come from her."
+      },
+      {
+        "t": "sec",
+        "x": "Prokeimenon (Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "Sing to the Lord a new song (Ps. 95:1)."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Sing to the Lord, bless His name (Ps. 95:2)."
+      },
+      {
+        "t": "r",
+        "x": "A reading from the Book of Proverbs:"
+      },
+      {
+        "t": "p",
+        "x": "A wise son makes a father glad, but a foolish one despises his mother. Folly is joy to one without sense; a man of understanding walks a straight path. Plans fail for lack of counsel, but with many advisers they succeed. A man has joy in his apt reply, and a word in due season, how good it is! The path of life leads upward for the prudent, that he may turn from the netherworld below. The Lord tears down the house of the proud but maintains the boundary of the widow. Evil plans are an abomination to the Lord, but gracious words are pure. He who is greedy for gain troubles his own house, but he who hates bribes will live. The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil. The Lord is far from the wicked, but He hears the prayer of the righteous. The light of the eyes gladdens the heart, and good news fattens the bones. The ear that heeds wholesome admonition will dwell among the wise. He who ignores discipline despises himself, but he who heeds reproof gains understanding. The fear of the Lord is discipline of wisdom, and humility goes before honor."
+      },
+      {
+        "t": "sec",
+        "x": "Readings for the Feast"
+      },
+      {
+        "t": "p",
+        "x": "Wisdom."
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "A reading from the Book of Exodus."
+      },
+      {
+        "t": "p",
+        "x": "Let us attend."
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "Now Moses was keeping the flock of Jethro, his father-in-law, the priest of Midian. He led the flock beyond the wilderness and came to the mountain of God, Horeb. And the angel of the Lord appeared to him in a flame of fire out of the midst of a bush. He looked, and behold, the bush was burning, yet it was not consumed. And Moses said: I will turn aside and see this great sight, why the bush is not burned. When the Lord saw that he turned aside to see, God called to him out of the bush: Moses, Moses! And he said: Here I am. Then He said: Do not come near; take off your sandals from your feet, for the place on which you are standing is holy ground. And He said: I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob. And Moses hid his face, for he was afraid to look upon God. The Lord said: I have surely seen the affliction of My people who are in Egypt and have heard their cry because of their taskmasters. I know their sufferings, and I have come down to deliver them. Now therefore come, I will send you to Pharaoh, the king of Egypt, and you shall bring My people, the children of Israel, out of Egypt. And Moses said to God: Who am I that I should go to Pharaoh and bring the children of Israel out of Egypt? And God said to him: I will be with you. And the Lord said to him again: I am the Lord. I appeared to Abraham, to Isaac, and to Jacob, as God Almighty. And My name, the Lord, I did not reveal to them."
+      },
+      {
+        "t": "p",
+        "x": "Wisdom."
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "A reading from the Book of Proverbs."
+      },
+      {
+        "t": "p",
+        "x": "Let us attend."
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "The Lord created me at the beginning of His way, the first of His acts of old. I was established from everlasting, from the beginning, before the earth existed. When there were no depths, I was brought forth; when there were no springs abounding with water. Before the mountains were settled, before the hills, I was brought forth; when He had not yet made the earth and its fields, nor the first dust of the world. When He established the heavens, I was there; when He drew a circle on the face of the deep, when He made firm the skies above, when the fountains of the deep became strong, when He assigned to the sea its limit so that the waters might not transgress His command, when He marked out the foundations of the earth, then I was beside Him, like a master craftsman. I was daily His delight, rejoicing before Him at all times, rejoicing in His inhabited world, and my delight was with the children of men."
+      },
+      {
+        "t": "sec",
+        "x": "Little Litany"
+      },
+      {
+        "t": "p",
+        "x": "Again and again, in peace let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Commemorating our most holy, most pure, most blessed and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and one another, and all our life to Christ our God."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "For Thou art holy, O our God, and to Thee we ascribe glory, to the Father, and to the Son, and to the Holy Spirit, now and ever."
+      },
+      {
+        "t": "p",
+        "x": "And unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Trisagion"
+      },
+      {
+        "t": "p",
+        "x": "Holy God, Holy Mighty, Holy Immortal, have mercy on us (3x)."
+      },
+      {
+        "t": "p",
+        "x": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "p",
+        "x": "Holy Immortal, have mercy on us."
+      },
+      {
+        "t": "p",
+        "x": "Holy God, Holy Mighty, Holy Immortal, have mercy on us."
+      },
+      {
+        "t": "r",
+        "x": "Deacon to the priest:"
+      },
+      {
+        "t": "p",
+        "x": "Command, master."
+      },
+      {
+        "t": "r",
+        "x": "The priest, going to the high place:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed is he who comes in the name of the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master, the high throne."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed art Thou on the throne of the glory of Thy kingdom, Who sittest upon the Cherubim, always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Let us attend!"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto all."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Wisdom, let us attend!"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 4):"
+      },
+      {
+        "t": "p",
+        "x": "Proclaim from day to day the salvation of our God (Ps. 95:2)."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "Sing to the Lord a new song, sing to the Lord, all the earth! (Ps. 95:1)"
+      },
+      {
+        "t": "sec",
+        "x": "Apostle"
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Wisdom."
+      },
+      {
+        "t": "r",
+        "x": "The reader reads the heading of the Apostle:"
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "A reading from the Epistle of the holy Apostle Paul to the Hebrews."
+      },
+      {
+        "t": "p",
+        "x": "Let us attend."
+      },
+      {
+        "t": "r",
+        "x": "Reader:"
+      },
+      {
+        "t": "p",
+        "x": "Brethren, he who sanctifies and those who are sanctified all have one origin. That is why He is not ashamed to call them brethren, saying: 'I will proclaim Thy name to my brethren; in the midst of the congregation I will praise Thee.' And again: 'I will put my trust in Him.' And again: 'Behold, I and the children God has given me.' Since therefore the children share in flesh and blood, He Himself likewise partook of the same nature, that through death He might destroy him who has the power of death, that is, the devil, and deliver all those who through fear of death were subject to lifelong bondage. For surely it is not with angels that He is concerned but with the descendants of Abraham. Therefore He had to be made like His brethren in every respect, so that He might become a merciful and faithful high priest in the service of God, to make expiation for the sins of the people."
+      },
+      {
+        "t": "r",
+        "x": "When the Apostle reading is finished, the priest says:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto thee. Wisdom, let us attend."
+      },
+      {
+        "t": "sec",
+        "x": "Alleluia, Tone 1:"
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "He shall come down like rain upon the fleece, and like drops that fall upon the earth (Ps. 71:6)."
+      },
+      {
+        "t": "r",
+        "x": "Verse:"
+      },
+      {
+        "t": "p",
+        "x": "May His name be blessed forever; before the sun His name endures (Ps. 71:17)."
+      },
+      {
+        "t": "sec",
+        "x": "Prayer before the Gospel"
+      },
+      {
+        "t": "p",
+        "x": "Illumine our hearts, O man-loving Master, with the pure light of Thy divine knowledge, and open the eyes of our mind that we may comprehend the message of Thy Gospel. Instill in us also the fear of Thy blessed commandments, that trampling down all carnal desires, we may enter upon a spiritual way of living, both thinking and doing all that is well-pleasing to Thee."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "For Thou art the illumination of our souls and bodies, O Christ God, and to Thee we ascribe glory, together with Thy eternal Father and Thine all-holy, good, and life-giving Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master, the proclaimer of the holy apostle and evangelist Luke."
+      },
+      {
+        "t": "r",
+        "x": "The priest, blessing him:"
+      },
+      {
+        "t": "p",
+        "x": "God, through the prayers of the holy, glorious, and all-praised apostle and evangelist Luke, grant thee the word to proclaim with great power, unto the fulfillment of the Gospel of His beloved Son, our Lord Jesus Christ."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Gospel"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Wisdom! Aright! Let us hear the holy Gospel. Peace be unto all."
+      },
+      {
+        "t": "resp",
+        "x": "And to thy spirit."
+      },
+      {
+        "t": "p",
+        "x": "The reading is from the holy Gospel according to Luke."
+      },
+      {
+        "t": "resp",
+        "x": "Glory to Thee, O Lord, glory to Thee."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Let us attend."
+      },
+      {
+        "t": "p",
+        "x": "In those days, Elizabeth, the wife of Zechariah, conceived, and for five months she hid herself, saying: 'Thus the Lord has done for me in the days when He looked on me, to take away my reproach among people.' In the sixth month the angel Gabriel was sent from God to a city of Galilee named Nazareth, to a virgin betrothed to a man whose name was Joseph, of the house of David. And the virgin's name was Mary. And he came to her and said: 'Rejoice, O Full of Grace, the Lord is with thee! Blessed art thou among women.' But she was greatly troubled at the saying and considered in her mind what sort of greeting this might be. And the angel said to her: 'Do not be afraid, Mary, for thou hast found favor with God. And behold, thou shalt conceive in thy womb and bear a Son, and thou shalt call His name Jesus. He will be great and will be called the Son of the Most High. And the Lord God will give to Him the throne of His father David, and He will reign over the house of Jacob forever, and of His kingdom there will be no end.' And Mary said to the angel: 'How shall this be, since I know not a man?' And the angel answered her: 'The Holy Spirit will come upon thee, and the power of the Most High will overshadow thee; therefore the Child to be born will be called holy — the Son of God. And behold, thy relative Elizabeth in her old age has also conceived a son, and this is the sixth month with her who was called barren. For nothing will be impossible with God.' And Mary said: 'Behold, I am the handmaid of the Lord; let it be to me according to thy word.' And the angel departed from her."
+      },
+      {
+        "t": "r",
+        "x": "The priest says to the deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto thee who proclaimest the Gospel."
+      },
+      {
+        "t": "resp",
+        "x": "Glory to Thee, O Lord, glory to Thee."
+      },
+      {
+        "t": "sec",
+        "x": "Litany of Fervent Supplication"
+      },
+      {
+        "t": "p",
+        "x": "Let us all say with our whole soul and with our whole mind, let us say."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "O Lord Almighty, God of our fathers, we pray Thee, hear and have mercy."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Have mercy on us, O God, according to Thy great mercy, we pray Thee, hear and have mercy."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy (3x)."
+      },
+      {
+        "t": "r",
+        "x": "In parish churches:"
+      },
+      {
+        "t": "p",
+        "x": "Again we pray for His Holiness, the Ecumenical Hierarch Leo, Pope of Rome, and for His Beatitude, our Patriarch Sviatoslav, and for our most reverend Bishop (Name), and for our brethren: the priests, hieromonks, hierodeacons, deacons, monastics, and all our brethren in Christ."
+      },
+      {
+        "t": "r",
+        "x": "In monasteries:"
+      },
+      {
+        "t": "p",
+        "x": "Again we pray for His Holiness, the Ecumenical Hierarch Leo, Pope of Rome, and for His Beatitude, our Patriarch Sviatoslav, for our most reverend Bishop (Name), and for the reverend Father Superior of this monastery (Name) with all the brotherhood in Christ."
+      },
+      {
+        "t": "p",
+        "x": "Again we pray for our God-protected nation, for the government, and for all the armed forces."
+      },
+      {
+        "t": "r",
+        "x": "Here other special petitions may be added."
+      },
+      {
+        "t": "p",
+        "x": "Again we pray for the people here present who await from Thee great and abundant mercy, for those who show us charity, and for all orthodox Christians."
+      },
+      {
+        "t": "p",
+        "x": "O Lord our God, accept this fervent supplication from Thy servants, and have mercy on us according to Thy great mercy, and send down Thy bounties upon us and upon all Thy people who await from Thee abundant mercy."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "For Thou art a merciful and man-loving God, and to Thee we ascribe glory, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Litany for the Catechumens"
+      },
+      {
+        "t": "p",
+        "x": "Pray, catechumens, to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Faithful, let us pray for the catechumens, that the Lord may have mercy on them."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "That He may enlighten them with the word of truth."
+      },
+      {
+        "t": "p",
+        "x": "That He may reveal to them the Gospel of righteousness."
+      },
+      {
+        "t": "p",
+        "x": "That He may unite them to His holy, catholic, and apostolic Church."
+      },
+      {
+        "t": "p",
+        "x": "Save, have mercy, help, and protect them, O God, by Thy grace."
+      },
+      {
+        "t": "p",
+        "x": "Catechumens, bow your heads to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "O Lord our God, Who dwellest on high and regardest the humble, Who hast sent forth salvation to the human race through Thine Only-begotten Son, our God and Lord Jesus Christ: Look down upon Thy servants the catechumens, who have bowed their necks before Thee, and grant them in due time the laver of regeneration, the remission of sins, and the garment of incorruption. Unite them to Thy holy, catholic, and apostolic Church and number them with Thy chosen flock."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "That with us they also may glorify Thine all-honorable and majestic name, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "All catechumens, depart; catechumens, depart; all catechumens, depart. Let none of the catechumens remain."
+      },
+      {
+        "t": "p",
+        "x": "Only the faithful, again and again, in peace let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Wisdom."
+      },
+      {
+        "t": "sec",
+        "x": "First Prayer of the Faithful"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "We thank Thee, O Lord God of hosts, Who hast deemed us worthy to stand even now before Thy holy altar and to fall down before Thy compassions for our sins and for the errors of the people. Accept our supplication, O God; make us worthy to offer Thee prayers and supplications and bloodless sacrifices for all Thy people. And enable us, whom Thou hast placed in this Thy ministry, by the power of Thy Holy Spirit, to call upon Thee at every time and place without condemnation and without reproach, with the witness of a pure conscience, that hearing us, Thou mayest be merciful to us in the abundance of Thy goodness."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "For to Thee belongs all glory, honor, and worship, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "p",
+        "x": "Again and again, in peace let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Wisdom."
+      },
+      {
+        "t": "sec",
+        "x": "Second Prayer of the Faithful"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Again and many times we fall down before Thee and pray to Thee, O Good One and Lover of mankind, that having looked upon our prayer, Thou wouldest cleanse our souls and bodies from all defilement of flesh and spirit, and grant that we may stand before Thy holy altar without guilt or condemnation. Grant also, O God, to those who pray with us, increase of life and faith and spiritual understanding. Grant them always to worship Thee with fear and love, to partake of Thy Holy Mysteries without guilt or condemnation, and to be deemed worthy of Thy heavenly Kingdom."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "That, always guarded by Thy might, we may ascribe glory to Thee, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Cherubic Hymn"
+      },
+      {
+        "t": "p",
+        "x": "We who mystically represent the Cherubim and sing the thrice-holy hymn to the life-giving Trinity, let us now lay aside all earthly cares."
+      },
+      {
+        "t": "p",
+        "x": "No one bound by carnal desires and passions is worthy to approach or draw near or to serve Thee, O King of glory, for to minister to Thee is great and awesome even for the heavenly powers. Yet, through Thine unspeakable and immeasurable love for mankind, without change or alteration Thou didst become man and wast appointed our High Priest, and as Lord of all didst entrust to us the celebration of this liturgical and bloodless sacrifice. For Thou alone, O Lord our God, dost rule over those in heaven and on earth, Who art borne upon the throne of the Cherubim, Who art Lord of the Seraphim and King of Israel, Who alone art holy and restest among the holy."
+      },
+      {
+        "t": "p",
+        "x": "I therefore implore Thee, Who alone art good and inclined to hear: Look upon me, Thy sinful and unprofitable servant, and cleanse my soul and heart of an evil conscience, and by the power of Thy Holy Spirit, enable me, who am clothed with the grace of the priesthood, to stand before this Thy holy Table and to consecrate Thy holy and most pure Body and Thy precious Blood."
+      },
+      {
+        "t": "p",
+        "x": "For Thou art the One Who offers and is offered, Who accepts and is distributed, O Christ our God, and to Thee we ascribe glory, together with Thy eternal Father, and Thine all-holy, good, and life-giving Spirit, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "r",
+        "x": "After the prayer and censing, the priest and deacon recite the Cherubic Hymn three times, bowing each time:"
+      },
+      {
+        "t": "p",
+        "x": "We who mystically represent the Cherubim and sing the thrice-holy hymn to the life-giving Trinity, let us now lay aside all earthly cares."
+      },
+      {
+        "t": "p",
+        "x": "That we may receive the King of all, invisibly escorted by the angelic orders. Alleluia, alleluia, alleluia."
+      },
+      {
+        "t": "r",
+        "x": "Then they go to the table of preparation, and the priest censes the holy gifts, praying quietly:"
+      },
+      {
+        "t": "p",
+        "x": "O God, be merciful to me, a sinner."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Take up, master."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Lift up your hands to the sanctuary and bless the Lord."
+      },
+      {
+        "t": "sec",
+        "x": "Great Entrance with the Holy Gifts"
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "May the Lord God remember all of you, orthodox Christians, in His kingdom, always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "His Holiness, the Ecumenical Hierarch Leo, Pope of Rome, His Beatitude, our Patriarch Sviatoslav, our most reverend Metropolitan (Archbishop, Bishop) (Name), and all of you, orthodox Christians, may the Lord God remember in His kingdom, always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "p",
+        "x": "That we may receive the King of all, invisibly escorted by the angelic orders. Alleluia, alleluia, alleluia."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The noble Joseph, having taken Thy most pure Body down from the Tree, wrapped it in a clean shroud, and covered it with spices, and laid it in a new tomb. In the tomb bodily, in hades with the soul as God, in paradise with the thief, and on the throne with the Father and the Spirit wast Thou, O Christ, filling all things, Thyself uncircumscribed."
+      },
+      {
+        "t": "p",
+        "x": "Do good, O Lord, in Thy good pleasure unto Zion, and let the walls of Jerusalem be built. Then shalt Thou be pleased with a sacrifice of righteousness, with oblation and whole-burnt offerings; then shall they offer bullocks upon Thine altar."
+      },
+      {
+        "t": "r",
+        "x": "The priest to the deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Remember me, brother and fellow minister."
+      },
+      {
+        "t": "r",
+        "x": "The deacon to him:"
+      },
+      {
+        "t": "p",
+        "x": "May the Lord God remember thy priesthood in His kingdom."
+      },
+      {
+        "t": "p",
+        "x": "Pray for me, my fellow minister."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "The Holy Spirit shall come upon thee, and the power of the Most High shall overshadow thee."
+      },
+      {
+        "t": "p",
+        "x": "May the same Spirit act together with us all the days of our life."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Remember me, holy master."
+      },
+      {
+        "t": "p",
+        "x": "May the Lord God remember thee in His kingdom, always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen."
+      },
+      {
+        "t": "sec",
+        "x": "Litany for the Holy Gifts Offered"
+      },
+      {
+        "t": "p",
+        "x": "Let us complete our prayer to the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For the precious gifts here offered, let us pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "For this holy temple and for those who enter it with faith, reverence, and the fear of God, let us pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "That we may be delivered from all tribulation, wrath, and need, let us pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "sec",
+        "x": "Petitions"
+      },
+      {
+        "t": "p",
+        "x": "That the whole day may be perfect, holy, peaceful, and sinless, let us ask of the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Grant this, O Lord."
+      },
+      {
+        "t": "p",
+        "x": "An angel of peace, a faithful guide, a guardian of our souls and bodies, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Pardon and remission of our sins and offenses, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Things good and profitable for our souls and peace for the world, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "That we may complete the remainder of our life in peace and repentance, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "A Christian ending to our life — painless, blameless, peaceful — and a good defense before the dread judgment seat of Christ, let us ask."
+      },
+      {
+        "t": "p",
+        "x": "Commemorating our most holy, most pure, most blessed and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and one another, and all our life to Christ our God."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "sec",
+        "x": "Prayer of the Offering"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "O Lord God Almighty, Who alone art holy, Who dost accept the sacrifice of praise from those who call upon Thee with their whole heart: Accept also the prayer of us sinners, and bring it to Thy holy altar; enable us to offer Thee gifts and spiritual sacrifices for our sins and for the errors of the people; and make us worthy to find grace in Thy sight, that our sacrifice may be acceptable to Thee and that the good Spirit of Thy grace may rest upon us and upon these gifts here offered, and upon all Thy people."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Through the compassions of Thine Only-begotten Son, with Whom Thou art blessed, together with Thine all-holy, good, and life-giving Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto all."
+      },
+      {
+        "t": "resp",
+        "x": "And to thy spirit."
+      },
+      {
+        "t": "p",
+        "x": "Let us love one another, that with one mind we may confess."
+      },
+      {
+        "t": "resp",
+        "x": "The Father, and the Son, and the Holy Spirit — the Trinity, one in essence and undivided."
+      },
+      {
+        "t": "r",
+        "x": "The priest, crossing himself, bows three times, saying:"
+      },
+      {
+        "t": "p",
+        "x": "I will love Thee, O Lord, my strength. The Lord is my rock and my fortress."
+      },
+      {
+        "t": "p",
+        "x": "The doors! The doors! In wisdom let us attend!"
+      },
+      {
+        "t": "sec",
+        "x": "Creed"
+      },
+      {
+        "t": "p",
+        "x": "I believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible."
+      },
+      {
+        "t": "p",
+        "x": "And in one Lord Jesus Christ, the Son of God, the Only-begotten, begotten of the Father before all ages; Light of Light, true God of true God; begotten, not made; of one essence with the Father, through Whom all things were made."
+      },
+      {
+        "t": "p",
+        "x": "Who for us men and for our salvation came down from heaven, and was incarnate of the Holy Spirit and the Virgin Mary, and became man."
+      },
+      {
+        "t": "p",
+        "x": "And was crucified for us under Pontius Pilate, and suffered, and was buried."
+      },
+      {
+        "t": "p",
+        "x": "And rose again on the third day, according to the Scriptures. And ascended into heaven, and sits at the right hand of the Father. And shall come again with glory to judge the living and the dead; Whose kingdom shall have no end."
+      },
+      {
+        "t": "p",
+        "x": "And in the Holy Spirit, the Lord, the Giver of life, Who proceeds from the Father [and the Son]; Who together with the Father and the Son is worshipped and glorified; Who spoke through the prophets."
+      },
+      {
+        "t": "p",
+        "x": "In one, holy, catholic, and apostolic Church. I confess one baptism for the remission of sins. I look for the resurrection of the dead, and the life of the age to come. Amen."
+      },
+      {
+        "t": "p",
+        "x": "Let us stand aright, let us stand with fear, let us attend, that we may offer the holy oblation in peace."
+      },
+      {
+        "t": "resp",
+        "x": "A mercy of peace, a sacrifice of praise."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The grace of our Lord Jesus Christ, and the love of God the Father, and the communion of the Holy Spirit be with all of you."
+      },
+      {
+        "t": "resp",
+        "x": "And with thy spirit."
+      },
+      {
+        "t": "p",
+        "x": "Let us lift up our hearts."
+      },
+      {
+        "t": "resp",
+        "x": "We lift them up unto the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Let us give thanks unto the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "It is meet and right to worship the Father, and the Son, and the Holy Spirit — the Trinity, one in essence and undivided."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "It is meet and right to hymn Thee, to bless Thee, to praise Thee, to give thanks to Thee, to worship Thee in every place of Thy dominion. For Thou art God ineffable, inconceivable, invisible, incomprehensible, ever-existing and eternally the same, Thou and Thine Only-begotten Son, and Thy Holy Spirit."
+      },
+      {
+        "t": "p",
+        "x": "Thou hast brought us from non-existence into being, and when we had fallen away, Thou didst raise us up again, and didst not cease to do all things until Thou hadst brought us to heaven and granted us Thy Kingdom to come."
+      },
+      {
+        "t": "p",
+        "x": "For all these things we give thanks to Thee, and to Thine Only-begotten Son, and to Thy Holy Spirit; for all things of which we know and of which we know not, whether manifest or unseen; and we give thanks to Thee also for this liturgy which Thou hast deigned to accept from our hands, though thousands of archangels and ten-thousands of angels stand around Thee, the Cherubim and Seraphim, six-winged, many-eyed, soaring aloft on their wings."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Singing the triumphant hymn, shouting, crying aloud, and saying:"
+      },
+      {
+        "t": "resp",
+        "x": "Holy, holy, holy, Lord of Sabaoth, heaven and earth are full of Thy glory. Hosanna in the highest. Blessed is He Who comes in the name of the Lord. Hosanna in the highest."
+      },
+      {
+        "t": "r",
+        "x": "The priest prays:"
+      },
+      {
+        "t": "p",
+        "x": "With these blessed powers, O man-loving Master, we also cry and say: Holy art Thou, and all-holy — Thou, and Thine Only-begotten Son, and Thy Holy Spirit. Holy art Thou, and all-holy, and magnificent is Thy glory; Who so loved Thy world that Thou gavest Thine Only-begotten Son, that everyone who believes in Him should not perish but have everlasting life."
+      },
+      {
+        "t": "p",
+        "x": "He, having come and having fulfilled all the dispensation for us, in the night in which He was given up, or rather gave Himself up for the life of the world, took bread in His holy, pure, and blameless hands, and having given thanks, and blessed, and hallowed, and broken it, gave it to His holy disciples and apostles, saying:"
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Take, eat, this is My Body, which is broken for you, for the remission of sins."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Likewise, after supper, the cup, saying:"
+      },
+      {
+        "t": "p",
+        "x": "Drink of it, all of you, this is My Blood of the New Covenant, which is shed for you and for many, for the remission of sins."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Remembering, therefore, this saving commandment and all that has been done for our sake: the Cross, the Tomb, the Resurrection on the third day, the Ascension into heaven, the Sitting at the right hand, and the Second and glorious Coming again."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Thine own of Thine own we offer unto Thee, for all and in behalf of all."
+      },
+      {
+        "t": "resp",
+        "x": "We praise Thee, we bless Thee, we give thanks to Thee, O Lord, and we pray to Thee, O our God."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Again we offer to Thee this reasonable and bloodless worship, and we ask Thee, and pray Thee, and supplicate Thee: Send down Thy Holy Spirit upon us and upon these Gifts here offered."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master, the holy bread."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "And make this bread the precious Body of Thy Christ."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen. Bless, master, the holy cup."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "And that which is in this cup, the precious Blood of Thy Christ."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen. Bless, master, both."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Changing them by Thy Holy Spirit."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen. Amen. Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "That they may be to those who partake for vigilance of soul, for remission of sins, for the communion of Thy Holy Spirit, for the fullness of the Kingdom of heaven, for boldness before Thee, and not for judgment or condemnation."
+      },
+      {
+        "t": "p",
+        "x": "Again we offer to Thee this reasonable worship for those who have reposed in the faith: forefathers, fathers, patriarchs, prophets, apostles, preachers, evangelists, martyrs, confessors, ascetics, and every righteous spirit made perfect in faith."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Especially for our most holy, most pure, most blessed and glorious Lady, the Theotokos and ever-virgin Mary."
+      },
+      {
+        "t": "r",
+        "x": "The faithful, instead of 'It is truly meet...' sing:"
+      },
+      {
+        "t": "r",
+        "x": "Refrain:"
+      },
+      {
+        "t": "p",
+        "x": "Proclaim, O earth, a great joy; praise, O heavens, the glory of God."
+      },
+      {
+        "t": "r",
+        "x": "And the irmos, Tone 4:"
+      },
+      {
+        "t": "p",
+        "x": "Let no defiled hand touch the living Ark of God. But let the lips of the faithful, ceaselessly singing the Angel's greeting to the Theotokos, cry out in joy: Truly thou art higher than all, O Pure Virgin."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "For the holy John the Prophet, Forerunner, and Baptist; for the holy, glorious, and all-praised Apostles; for Saint (Name), whose memory we celebrate; and for all Thy saints, at whose supplications visit us, O God."
+      },
+      {
+        "t": "p",
+        "x": "And remember all who have fallen asleep in the hope of the resurrection to life eternal."
+      },
+      {
+        "t": "r",
+        "x": "(And he commemorates the departed by name.)"
+      },
+      {
+        "t": "p",
+        "x": "And grant them rest where the light of Thy face shines."
+      },
+      {
+        "t": "p",
+        "x": "Again we pray to Thee: Remember, O Lord, all the bishops of the orthodox who rightly teach the word of Thy truth, all the presbyters, the deacons in Christ, and every order of the clergy."
+      },
+      {
+        "t": "p",
+        "x": "Again we offer to Thee this reasonable worship for the whole world; for the holy, catholic, and apostolic Church; for those who live in purity and holiness; for our God-protected nation, for the government, and for the armed forces. Grant them, O Lord, peaceful governance, that in their peace we too may live a calm and tranquil life in all piety and dignity."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Above all, remember, O Lord, His Holiness, the Ecumenical Hierarch Leo, Pope of Rome, and His Beatitude, our Patriarch Sviatoslav, and our most reverend Metropolitan (Archbishop, Bishop) (Name); grant them to Thy holy churches in peace, safety, honor, health, and length of days, rightly teaching the word of Thy truth."
+      },
+      {
+        "t": "resp",
+        "x": "And each and every one."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Remember, O Lord, this city (this village, this monastery) in which we dwell, and every city, town, and country, and the faithful who dwell therein."
+      },
+      {
+        "t": "r",
+        "x": "(And he commemorates the living by name.)"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "And grant us with one mouth and one heart to glorify and praise Thine all-honorable and majestic name, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "And may the mercies of our great God and Savior Jesus Christ be with all of you."
+      },
+      {
+        "t": "resp",
+        "x": "And with thy spirit."
+      },
+      {
+        "t": "sec",
+        "x": "Litany for the Consecrated Holy Gifts"
+      },
+      {
+        "t": "p",
+        "x": "Having commemorated all the saints, again and again in peace let us pray to the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "For the precious gifts offered and sanctified, let us pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "That our man-loving God, Who has received them upon His holy, heavenly, and spiritual altar as a sweet spiritual fragrance, may send down upon us in return His divine grace and the gift of the Holy Spirit, let us pray."
+      },
+      {
+        "t": "p",
+        "x": "That we may be delivered from all tribulation, wrath, and need, let us pray to the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "p",
+        "x": "That the whole day may be perfect, holy, peaceful, and sinless, let us ask of the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Faithful, to each petition:"
+      },
+      {
+        "t": "resp",
+        "x": "Grant this, O Lord."
+      },
+      {
+        "t": "p",
+        "x": "An angel of peace, a faithful guide, a guardian of our souls and bodies, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Pardon and remission of our sins and offenses, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "Things good and profitable for our souls and peace for the world, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "That we may complete the remainder of our life in peace and repentance, let us ask of the Lord."
+      },
+      {
+        "t": "p",
+        "x": "A Christian ending to our life — painless, blameless, peaceful — and a good defense before the dread judgment seat of Christ, let us ask."
+      },
+      {
+        "t": "p",
+        "x": "Having asked for the unity of the faith and the communion of the Holy Spirit, let us commend ourselves and one another, and all our life to Christ our God."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "sec",
+        "x": "Prayer"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "We entrust our whole life and hope to Thee, O man-loving Master, and we ask, and pray, and supplicate: Grant us to partake of Thy heavenly and awesome Mysteries of this sacred and spiritual Table with a pure conscience, unto remission of sins, unto forgiveness of transgressions, unto the communion of the Holy Spirit, unto the inheritance of the Kingdom of heaven, unto boldness before Thee, and not unto judgment or condemnation."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "And make us worthy, O Master, that with boldness and without condemnation we may dare to call upon Thee, the heavenly God, as Father, and to say:"
+      },
+      {
+        "t": "resp",
+        "x": "Our Father, Who art in heaven, hallowed be Thy name. Thy Kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Peace be unto all."
+      },
+      {
+        "t": "resp",
+        "x": "And to Thy spirit."
+      },
+      {
+        "t": "p",
+        "x": "Bow your heads to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "We give thanks to Thee, O invisible King, Who by Thine immeasurable power hast fashioned all things and in the abundance of Thy mercy hast brought all things from non-existence into being. Look down from heaven, O Master, upon those who have bowed their heads before Thee; for they have not bowed to flesh and blood, but to Thee, the awesome God. Therefore, O Master, make smooth for us all what lies ahead, for our good, according to the need of each: sail with those who sail, travel with those who travel, heal the sick, O Physician of our souls and bodies."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "Through the grace and compassions and love for mankind of Thine Only-begotten Son, with Whom Thou art blessed, together with Thine all-holy, good, and life-giving Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Look down, O Lord Jesus Christ our God, from Thy holy dwelling place and from the throne of glory of Thy Kingdom, and come to sanctify us, O Thou Who sittest on high with the Father and art invisibly present here with us. And deign by Thy mighty hand to impart to us Thy most pure Body and precious Blood, and through us to all the people."
+      },
+      {
+        "t": "r",
+        "x": "The priest and deacon bow, saying three times:"
+      },
+      {
+        "t": "p",
+        "x": "O God, be merciful to me, a sinner."
+      },
+      {
+        "t": "sec",
+        "x": "Communion"
+      },
+      {
+        "t": "p",
+        "x": "Let us attend."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The Holy Things for the holy."
+      },
+      {
+        "t": "resp",
+        "x": "One is Holy, one is Lord, Jesus Christ, to the glory of God the Father. Amen."
+      },
+      {
+        "t": "r",
+        "x": "And they sing the Communion hymn."
+      },
+      {
+        "t": "r",
+        "x": "Communion hymn:"
+      },
+      {
+        "t": "p",
+        "x": "The Lord has chosen Zion, He has desired it for His dwelling (Ps. 131:13). Alleluia, alleluia, alleluia."
+      },
+      {
+        "t": "p",
+        "x": "I believe, O Lord, and I confess that Thou art truly the Christ, the Son of the living God, Who didst come into the world to save sinners, of whom I am the first. I also believe that this is truly Thine own most pure Body, and that this is truly Thine own precious Blood. Therefore I pray Thee: Have mercy on me and forgive my transgressions, voluntary and involuntary, in word and in deed, in knowledge and in ignorance. And make me worthy to partake without condemnation of Thy most pure Mysteries, for the remission of sins and unto life everlasting. Amen."
+      },
+      {
+        "t": "p",
+        "x": "Of Thy Mystical Supper, O Son of God, accept me today as a communicant, for I will not speak of Thy Mystery to Thine enemies, neither will I give Thee a kiss as did Judas, but like the thief I confess Thee: Remember me, O Lord, in Thy Kingdom."
+      },
+      {
+        "t": "p",
+        "x": "Remember me, O Lord, when Thou comest in Thy Kingdom."
+      },
+      {
+        "t": "p",
+        "x": "Remember me, O Master, when Thou comest in Thy Kingdom."
+      },
+      {
+        "t": "p",
+        "x": "Remember me, O Holy One, when Thou comest in Thy Kingdom."
+      },
+      {
+        "t": "p",
+        "x": "May the partaking of Thy Holy Mysteries, O Lord, be not unto judgment or condemnation for me, but unto the healing of soul and body."
+      },
+      {
+        "t": "p",
+        "x": "O God, be merciful to me, a sinner."
+      },
+      {
+        "t": "p",
+        "x": "O God, cleanse my sins and have mercy on me."
+      },
+      {
+        "t": "p",
+        "x": "Without number have I sinned, O Lord, forgive me."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Break, master, the holy Bread."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Broken and distributed is the Lamb of God, Who is broken yet not divided, Who is ever eaten and never consumed, but Who sanctifies those who partake."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Fill, master, the holy cup."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The fullness of the Holy Spirit."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Taking the warm water, the deacon says:"
+      },
+      {
+        "t": "p",
+        "x": "Bless, master, the warm water."
+      },
+      {
+        "t": "r",
+        "x": "The priest blesses it and says:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed is the fervor of Thy saints, always, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "r",
+        "x": "He pours a little warm water into the holy cup in the form of a cross, saying:"
+      },
+      {
+        "t": "p",
+        "x": "The fervor of faith, full of the Holy Spirit. Amen."
+      },
+      {
+        "t": "r",
+        "x": "***"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Deacon, approach."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Give me, master, the precious and holy Body of our Lord, God, and Savior Jesus Christ."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "To (Name), the sacred deacon, is given the precious, holy, and most pure Body of our Lord, God, and Savior Jesus Christ, for the remission of his sins and unto life everlasting."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "I believe, O Lord..."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The precious and most holy Body of our Lord, God, and Savior Jesus Christ is given to me, the priest (Name), for the remission of my sins and unto life everlasting."
+      },
+      {
+        "t": "p",
+        "x": "I believe, O Lord..."
+      },
+      {
+        "t": "r",
+        "x": "The priest partakes of the cup, saying:"
+      },
+      {
+        "t": "p",
+        "x": "Of the precious and holy Blood of our Lord, God, and Savior Jesus Christ, I, the servant of God, the priest (Name), partake, for the remission of my sins and unto life everlasting."
+      },
+      {
+        "t": "p",
+        "x": "Behold, this has touched my lips, and shall take away my iniquities, and cleanse my sins."
+      },
+      {
+        "t": "r",
+        "x": "Then he calls the deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Deacon, approach."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Behold, I approach the immortal King and our God. Give me, master, the precious and holy Blood of our Lord, God, and Savior Jesus Christ."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The servant of God, the deacon (Name), partakes of the precious and holy Blood of our Lord, God, and Savior Jesus Christ, for the remission of his sins and unto life everlasting."
+      },
+      {
+        "t": "p",
+        "x": "Behold, this has touched thy lips, and shall take away thine iniquities, and cleanse thy sins."
+      },
+      {
+        "t": "r",
+        "x": "***"
+      },
+      {
+        "t": "p",
+        "x": "With the fear of God and with faith, draw near."
+      },
+      {
+        "t": "resp",
+        "x": "Blessed is He Who comes in the name of the Lord. God is the Lord and has appeared to us."
+      },
+      {
+        "t": "r",
+        "x": "The priest, giving communion to each, says:"
+      },
+      {
+        "t": "p",
+        "x": "The servant of God (Name) partakes of the precious and most pure Body and Blood of our Lord, God, and Savior Jesus Christ, for the remission of sins and unto life everlasting."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Save, O God, Thy people and bless Thine inheritance."
+      },
+      {
+        "t": "resp",
+        "x": "We have seen the true light, we have received the heavenly Spirit, we have found the true faith. We worship the undivided Trinity, for the Trinity has saved us."
+      },
+      {
+        "t": "r",
+        "x": "The priest censes the holy gifts three times, saying:"
+      },
+      {
+        "t": "p",
+        "x": "Be exalted above the heavens, O God, and Thy glory over all the earth."
+      },
+      {
+        "t": "r",
+        "x": "The priest quietly:"
+      },
+      {
+        "t": "p",
+        "x": "Blessed is our God."
+      },
+      {
+        "t": "r",
+        "x": "And aloud:"
+      },
+      {
+        "t": "p",
+        "x": "Always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "p",
+        "x": "Let our mouths be filled with Thy praise, O Lord, that we may sing of Thy glory, for Thou hast deemed us worthy to partake of Thy holy, divine, immortal, and life-giving Mysteries. Preserve us in Thy holiness, that all the day we may meditate upon Thy righteousness. Alleluia, alleluia, alleluia."
+      },
+      {
+        "t": "p",
+        "x": "Aright! Having received the divine, holy, most pure, immortal, heavenly, and life-giving, awesome Mysteries of Christ, let us worthily give thanks to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Help us, save us, have mercy on us, and protect us, O God, by Thy grace."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "p",
+        "x": "Having asked that the whole day be perfect, holy, peaceful, and sinless, let us commend ourselves and one another, and all our life to Christ our God."
+      },
+      {
+        "t": "resp",
+        "x": "To Thee, O Lord."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "We give thanks to Thee, O man-loving Master, Benefactor of our souls, that even today Thou hast deemed us worthy of Thy heavenly and immortal Mysteries. Make straight our path, strengthen us all in Thy fear, guard our life, make firm our steps, through the prayers and supplications of the glorious Theotokos and ever-virgin Mary, and of all Thy saints."
+      },
+      {
+        "t": "r",
+        "x": "The priest exclaims:"
+      },
+      {
+        "t": "p",
+        "x": "For Thou art our sanctification, and to Thee we ascribe glory, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Let us go forth in peace."
+      },
+      {
+        "t": "resp",
+        "x": "In the name of the Lord."
+      },
+      {
+        "t": "r",
+        "x": "Deacon:"
+      },
+      {
+        "t": "p",
+        "x": "Let us pray to the Lord."
+      },
+      {
+        "t": "resp",
+        "x": "Lord, have mercy."
+      },
+      {
+        "t": "sec",
+        "x": "Prayer behind the Ambon"
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "O Lord, Who dost bless those who bless Thee and sanctify those who put their trust in Thee: Save Thy people and bless Thine inheritance. Preserve the fullness of Thy Church. Sanctify those who love the beauty of Thy house. Glorify them in return by Thy divine power, and forsake us not who hope in Thee."
+      },
+      {
+        "t": "p",
+        "x": "Grant peace to Thy world, to Thy churches, to the priests, to the authorities, to the armed forces, and to all Thy people. For every good gift and every perfect gift is from above, coming down from Thee, the Father of lights, and to Thee we ascribe glory, thanksgiving, and worship, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen. Blessed be the name of the Lord, from henceforth and forevermore (3x)."
+      },
+      {
+        "t": "sec",
+        "x": "Prayer for the Consumption of the Holy Gifts"
+      },
+      {
+        "t": "p",
+        "x": "The fulfillment of the Law and the Prophets art Thou Thyself, O Christ our God, Who didst fulfill the whole dispensation of the Father. Fill our hearts with joy and gladness, always, now and ever, and unto the ages of ages. Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "The blessing of the Lord be upon you, through His grace and love for mankind, always, now and ever, and unto the ages of ages."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "Glory to Thee, O Christ God, our hope, glory to Thee."
+      },
+      {
+        "t": "resp",
+        "x": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto the ages of ages. Amen. Lord, have mercy (3x). Bless."
+      },
+      {
+        "t": "r",
+        "x": "Priest:"
+      },
+      {
+        "t": "p",
+        "x": "May Christ, our true God, through the prayers of His most pure Mother, whose Annunciation we solemnly celebrate today, of the holy, glorious, and all-praised Apostles, and of all the saints, have mercy on us and save us, for He is good and loves mankind."
+      },
+      {
+        "t": "resp",
+        "x": "Amen."
+      }
+    ]
   },
   "0327": {
     "prokeimenon": [
@@ -15216,7 +19672,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0328": {
     "prokeimenon": [
@@ -15373,7 +19851,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   },
   "0329": {
     "prokeimenon": [
@@ -15586,7 +20086,29 @@
         "x": "Amen."
       }
     ],
-    "hasEphrem": false
+    "hasEphrem": false,
+    "hasBlessedMan": true,
+    "hasEntrance": true,
+    "hasFerventLitany": true,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "great",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "(Tone 6):"
+      },
+      {
+        "t": "p",
+        "x": "Your Resurrection, O Christ our Savior,* the angels sing in the heavens;* grant that we on earth* may with pure hearts* glorify You in song."
+      }
+    ]
   },
   "0330": {
     "prokeimenon": [
@@ -15803,7 +20325,29 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": false,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "We flee to your compassion, O Virgin Mother of God;* do not despise our prayers in our needs,* but deliver us from harm, O only pure and blessed one."
+      }
+    ]
   },
   "0331": {
     "prokeimenon": [
@@ -15988,6 +20532,28 @@
         "x": "Glory... Now and ever... Lord, have mercy. (3x) Father, bless."
       }
     ],
-    "hasEphrem": true
+    "hasEphrem": true,
+    "hasBlessedMan": false,
+    "hasEntrance": false,
+    "hasFerventLitany": false,
+    "hasLitia": false,
+    "hasBlessingOfLoaves": false,
+    "dismissalType": "none",
+    "hasAfterVespers": true,
+    "hasPsalm33": true,
+    "afterVespers": [
+      {
+        "t": "sec",
+        "x": "After Vespers"
+      },
+      {
+        "t": "r",
+        "x": "Faithful:"
+      },
+      {
+        "t": "resp",
+        "x": "O Lady, accept the prayers of your servants* and deliver us from all need and sorrow."
+      }
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Prayer of the Church \u2014 Edmonton Eparchy",
+  "name": "Prayer of the Church",
   "short_name": "Prayer",
-  "description": "Byzantine daily prayers for the Ukrainian Catholic Eparchy of Edmonton",
+  "description": "Byzantine daily prayers — Ukrainian Greek-Catholic Church",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f4efe4",

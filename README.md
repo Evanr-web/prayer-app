@@ -1,5 +1,5 @@
 # Prayer of the Church — PWA
-## Edmonton Eparchy of the Ukrainian Greek-Catholic Church
+## Ukrainian Greek-Catholic Church
 
 ### Project Files
 

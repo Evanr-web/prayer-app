@@ -168,7 +168,77 @@ body {
   font-size: 0.68em; font-weight: 700; letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.badge-tone { background: var(--blue); color: #fff; opacity: 0.85; }
+.badge-tone { background: var(--blue); color: #fff; opacity: 0.85; cursor: pointer; }
+.badge-tone:hover { opacity: 1; }
+
+/* ── Tone Reference Page ── */
+.tones-grid { display: flex; flex-direction: column; gap: 16px; padding: 12px 0; }
+.tone-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px; box-shadow: var(--shadow); cursor: pointer;
+  transition: border-color 0.2s;
+}
+.tone-card:hover, .tone-card.active { border-color: var(--gold); }
+.tone-card-header { display: flex; align-items: center; justify-content: space-between; }
+.tone-card-num {
+  font-size: 1.4em; font-weight: 700; color: var(--gold);
+  min-width: 2.2em; text-align: center;
+  border: 2px solid var(--gold); border-radius: 50%; width: 2.2em; height: 2.2em;
+  display: flex; align-items: center; justify-content: center;
+}
+.tone-card-title { flex: 1; margin-left: 12px; }
+.tone-card-name { font-weight: 700; color: var(--tx); }
+.tone-card-char { font-size: 0.82em; color: var(--mt); font-style: italic; margin-top: 2px; }
+.tone-card-arrow { color: var(--gold); font-size: 1.2em; transition: transform 0.2s; }
+.tone-card.active .tone-card-arrow { transform: rotate(90deg); }
+.tone-card-body { display: none; margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+.tone-card.active .tone-card-body { display: block; }
+.tone-card-desc { font-size: 0.9em; color: var(--tx); line-height: 1.6; margin-bottom: 12px; }
+.tone-sheet-music {
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; text-align: center; margin-bottom: 12px;
+}
+[data-dark] .tone-sheet-music { background: #1a1810; }
+.tone-audio-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border-radius: 8px; padding: 10px 14px;
+}
+.tone-play-btn {
+  background: var(--blue); color: #fff; border: none; border-radius: 50%;
+  width: 38px; height: 38px; font-size: 1.1em; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.tone-play-btn:disabled { opacity: 0.4; cursor: default; }
+.tone-audio-label { font-size: 0.82em; color: var(--mt); }
+.tone-sample { font-size: 0.88em; color: var(--tx); font-style: italic; line-height: 1.5; margin-top: 10px; padding: 10px; background: var(--bg2); border-radius: 6px; border-left: 3px solid var(--gold); }
+
+/* Tone badge today highlight */
+.tone-today-banner {
+  background: linear-gradient(135deg, var(--hd-from), var(--hd-to));
+  color: var(--hd-text); border-radius: 10px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+}
+.tone-today-num { font-size: 1.8em; font-weight: 700; color: var(--gold2); }
+.tone-today-label { font-size: 0.85em; opacity: 0.8; }
+.tone-today-name { font-weight: 700; font-size: 1.05em; }
+
+/* Inline tone modal (for service pages) */
+.tone-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;
+  display: flex; align-items: flex-end; justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+.tone-modal {
+  background: var(--card); border-radius: 16px 16px 0 0; padding: 20px 16px 28px;
+  max-width: 480px; width: 100%; max-height: 70vh; overflow-y: auto;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+  animation: slideUp 0.2s ease;
+}
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.tone-modal-handle { width: 36px; height: 4px; background: var(--border2); border-radius: 2px; margin: 0 auto 14px; }
+.tone-modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: var(--mt); font-size: 1.4em; cursor: pointer; }
 .badge-fast { background: var(--lent-dot); color: #fff; opacity: 0.85; }
 .badge-period { background: var(--gold); color: #fff; opacity: 0.9; }
 .badge-feast { background: var(--red); color: #fff; opacity: 0.9; }
@@ -325,7 +395,8 @@ body {
   padding-bottom: 12px; border-bottom: 1px solid var(--border);
 }
 .svc-day-date { font-size: 0.78em; color: var(--mt); margin-bottom: 2px; }
-.svc-day-tone { font-size: 0.82em; color: var(--gold); font-weight: 600; }
+.svc-day-tone { font-size: 0.82em; color: var(--gold); font-weight: 600; cursor: pointer; }
+.svc-day-tone:hover { text-decoration: underline; }
 .svc-day-saint { font-size: 0.85em; color: var(--red); font-weight: 700; margin-top: 3px; line-height: 1.3; }
 
 /* English service blocks */
@@ -1038,7 +1109,7 @@ function getPeriodBadges(d, lang) {
   const toneLabel = getToneLabel(tone, lang);
 
   if (rankLabel) badges.push({ cls:'badge-feast', text: rankLabel });
-  if (toneLabel) badges.push({ cls:'badge-tone',  text: toneLabel });
+  if (toneLabel) badges.push({ cls:'badge-tone',  text: toneLabel, tone: tone });
   if (period)    badges.push({ cls:'badge-period', text: period });
   else if (fastLabel) badges.push({ cls:'badge-fast', text: fastLabel });
 
@@ -1657,6 +1728,7 @@ function render() {
   else if (S.view==='vespers') buildVespersView(main);
   else if (S.view==='compline') { main.innerHTML = buildComplineView(); }
   else if (S.view==='matins') { main.innerHTML = buildMatinsView(); }
+  else if (S.view==='tones') { main.innerHTML = buildTonesView(); }
 }
 
 // ── Home view ─────────────────────────────────────────────────
@@ -3424,7 +3496,9 @@ function buildHome() {
   const fs = S.fontSize;
 
   const badgesHtml = badges.map(b =>
-    `<span class="badge ${b.cls}" style="font-size:${fs*0.68}px">${b.text}</span>`
+    b.tone
+      ? `<span class="badge ${b.cls}" style="font-size:${fs*0.68}px" onclick="event.stopPropagation();showToneModal(${b.tone})">${b.text}</span>`
+      : `<span class="badge ${b.cls}" style="font-size:${fs*0.68}px">${b.text}</span>`
   ).join('');
 
   const calHtml = buildCalStrip(d);
@@ -3436,6 +3510,7 @@ function buildHome() {
     {id:'matins',  en:'Matins',  uk:'Утреня',icon:'☉',time:'Dawn (~6 AM)',ok:true},
     {id:'hours',   en:'The Hours',uk:'Часи',icon:'⏱',time:'1st, 3rd, 6th, 9th',ok:false},
     {id:'presanctified',en:'Presanctified Liturgy',uk:'Літургія ПД',icon:'☩',time:'Wed & Fri of Lent',ok:false},
+    {id:'tones',en:'Octoechos — The Eight Tones',uk:'Октоїх — Вісім Гласів',icon:'🎵',time:'Learn the melodies',ok:true},
   ];
 
   const svcsHtml = services.map(s => {
@@ -3622,7 +3697,7 @@ async function buildVespersView(main) {
   const dayHeaderHtml = `
   <div class="svc-day-header">
     <div class="svc-day-date" style="font-size:${fs*0.78}px">${dateLabel}</div>
-    ${subLine ? `<div class="svc-day-tone" style="font-size:${fs*0.82}px">${subLine}</div>` : ''}
+    ${subLine ? `<div class="svc-day-tone" style="font-size:${fs*0.82}px;cursor:pointer" onclick="showToneModal(${m.tone})">${subLine} <span style="font-size:0.8em;opacity:0.7">ⓘ</span></div>` : ''}
     ${saintLabel ? `<div class="svc-day-saint" style="font-size:${fs*0.85}px">${saintLabel}</div>` : ''}
   </div>`;
 
@@ -3688,6 +3763,270 @@ async function buildVespersView(main) {
     + `</div>`;
 
   main.innerHTML = headerHtml + `<div class="svc-content">${dayHeaderHtml}${ukContent}</div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// OCTOECHOS — TONE REFERENCE DATA & VIEWS
+// ═══════════════════════════════════════════════════════════════
+
+const TONE_DATA = [
+  {
+    num: 1,
+    en: 'Tone 1', uk: 'Глас 1',
+    character_en: 'Solemn & Regal',
+    character_uk: 'Урочистий і величний',
+    desc_en: 'Tone 1 is majestic and joyful — the tone of Resurrection. It conveys triumph and confidence in God\'s victory over death. Often used for the most exalted hymns of Pascha and Sunday worship.',
+    desc_uk: 'Глас 1 — величний і радісний, глас Воскресіння. Передає тріумф і впевненість у Божій перемозі над смертю. Часто використовується для найвеличніших пасхальних і недільних гімнів.',
+    sample_en: '"Thy tomb, O Saviour, soldiers guarding, became as dead from the radiance of the Angel who appeared…"',
+    sample_uk: '"Гроб Твій, Спасе, воїни стерегучи, мертві були від сяйва Ангела, що з\'явився…"',
+    audio: null // placeholder — will be a path like 'data/tones/tone1.mp3'
+  },
+  {
+    num: 2,
+    en: 'Tone 2', uk: 'Глас 2',
+    character_en: 'Tender & Sorrowful',
+    character_uk: 'Ніжний і сумний',
+    desc_en: 'Tone 2 is gentle and contemplative, carrying a quality of repentance and tenderness. It moves the heart toward compunction and spiritual longing.',
+    desc_uk: 'Глас 2 — ніжний і споглядальний, з відтінком каяття і лагідності. Спонукає серце до зворушення і духовного прагнення.',
+    sample_en: '"When Thou didst descend unto death, O Life Immortal, then didst Thou slay Hades with the lightning of Thy Divinity…"',
+    sample_uk: '"Коли зійшов Ти до смерті, Життя безсмертне, тоді ад умертвив Ти блиском Божества Свого…"',
+    audio: null
+  },
+  {
+    num: 3,
+    en: 'Tone 3', uk: 'Глас 3',
+    character_en: 'Smooth & Flowing',
+    character_uk: 'Плавний і мелодійний',
+    desc_en: 'Tone 3 is lyrical and flowing, often described as sweet and harmonious. It carries a sense of peace and gentle joy, moving smoothly through its melodic phrases.',
+    desc_uk: 'Глас 3 — ліричний і плавний, часто описується як солодкий і гармонійний. Несе відчуття миру і тихої радості.',
+    sample_en: '"Let the heavens rejoice, let the earth be glad, for the Lord hath shown strength with His arm…"',
+    sample_uk: '"Нехай веселяться небеса, нехай радіє земля, бо Господь показав силу рукою Своєю…"',
+    audio: null
+  },
+  {
+    num: 4,
+    en: 'Tone 4', uk: 'Глас 4',
+    character_en: 'Bright & Festive',
+    character_uk: 'Яскравий і святковий',
+    desc_en: 'Tone 4 is perhaps the most frequently encountered tone — bright, uplifting, and celebratory. It is the tone of many beloved hymns and carries a sense of confident praise.',
+    desc_uk: 'Глас 4 — найчастіше вживаний глас — яскравий, піднесений і святковий. Це глас багатьох улюблених гімнів, сповнений впевненої хвали.',
+    sample_en: '"The soldiers guarding Thy tomb became as dead from the splendour of the Angel who appeared…"',
+    sample_uk: '"Воїни, що стерегли Гроб Твій, стали як мертві від сяйва Ангела, що з\'явився…"',
+    audio: null
+  },
+  {
+    num: 5,
+    en: 'Tone 5', uk: 'Глас 5',
+    character_en: 'Grave & Majestic',
+    character_uk: 'Поважний і величний',
+    desc_en: 'Tone 5 is weighty and dignified, with a quality of deep reverence. It conveys awe before the mystery of God and is often used for hymns of profound theological content.',
+    desc_uk: 'Глас 5 — вагомий і гідний, з якістю глибокої побожності. Передає побожний трепет перед таємницею Бога.',
+    sample_en: '"Let us, O faithful, praise and worship the Word, co-eternal with the Father and the Spirit…"',
+    sample_uk: '"Вірні, прославімо і поклонімося Слову, співвічному з Отцем і Духом…"',
+    audio: null
+  },
+  {
+    num: 6,
+    en: 'Tone 6', uk: 'Глас 6',
+    character_en: 'Penitential & Mournful',
+    character_uk: 'Покаянний і скорботний',
+    desc_en: 'Tone 6 is the most penitential of the tones — deeply moving and sorrowful. It is the tone of Great Lent par excellence, and of funeral hymns. It leads the soul to repentance.',
+    desc_uk: 'Глас 6 — найбільш покаянний з гласів — глибоко зворушливий і скорботний. Це глас Великого Посту і похоронних гімнів. Веде душу до каяття.',
+    sample_en: '"The angelic powers were at Thy tomb, and the guards became as dead men…"',
+    sample_uk: '"Ангельські сили були при Гробі Твоєму, і вартові стали як мертві…"',
+    audio: null
+  },
+  {
+    num: 7,
+    en: 'Tone 7', uk: 'Глас 7',
+    character_en: 'Bold & Triumphant',
+    character_uk: 'Сміливий і тріумфальний',
+    desc_en: 'Tone 7 is vigorous and bold, with a martial quality. It expresses strength and triumph, calling the faithful to spiritual battle and victory.',
+    desc_uk: 'Глас 7 — енергійний і сміливий, з войовничим характером. Виражає силу і тріумф, закликаючи вірних до духовної боротьби.',
+    sample_en: '"Thou hast destroyed death by Thy Cross; Thou hast opened Paradise to the thief…"',
+    sample_uk: '"Ти зруйнував смерть Хрестом Своїм; Ти відчинив рай розбійнику…"',
+    audio: null
+  },
+  {
+    num: 8,
+    en: 'Tone 8', uk: 'Глас 8',
+    character_en: 'Grand & Cosmic',
+    character_uk: 'Грандіозний і космічний',
+    desc_en: 'Tone 8 is the most expansive tone — grand, cosmic in scope. It celebrates the fullness of creation praising God, and carries a sense of all things being gathered into worship.',
+    desc_uk: 'Глас 8 — найширший глас — грандіозний, космічного масштабу. Оспівує повноту творіння, що славить Бога.',
+    sample_en: '"Thou didst descend from on high, O Merciful One; Thou didst accept the three-day burial…"',
+    sample_uk: '"Зійшов Ти з висоти, Милосердний; прийняв триденне погребіння…"',
+    audio: null
+  }
+];
+
+// Generate placeholder staff notation SVG for a tone
+function toneStaffSVG(toneNum, isDark) {
+  const w = 320, h = 100;
+  const staffY = 25, gap = 10;
+  const lineColor = isDark ? '#555' : '#999';
+  const noteColor = isDark ? '#e0d4c0' : '#333';
+  const clefColor = isDark ? '#c8a44e' : '#1a3c6e';
+
+  // 5 staff lines
+  let lines = '';
+  for (let i = 0; i < 5; i++) {
+    lines += `<line x1="10" y1="${staffY + i*gap}" x2="${w-10}" y2="${staffY + i*gap}" stroke="${lineColor}" stroke-width="0.8"/>`;
+  }
+
+  // Simple treble clef approximation
+  const clef = `<text x="16" y="${staffY + 35}" font-size="48" font-family="serif" fill="${clefColor}" opacity="0.7">𝄞</text>`;
+
+  // Placeholder melody — different note patterns per tone to give variety
+  const melodies = {
+    1: [3,2,1,2,3,4,3,2],   // ascending, regal
+    2: [3,4,3,2,3,4,3,2],   // gentle wave
+    3: [2,1,2,3,2,1,2,3],   // smooth flow
+    4: [1,2,3,2,1,2,3,4],   // bright climb
+    5: [4,3,2,3,4,3,2,1],   // grave descent
+    6: [4,3,4,3,2,1,2,1],   // mournful
+    7: [1,1,2,3,4,3,2,1],   // bold march
+    8: [1,2,3,4,3,2,1,0],   // grand sweep
+  };
+  const notes = melodies[toneNum] || melodies[1];
+  let notesSvg = '';
+  notes.forEach((n, i) => {
+    const x = 60 + i * 32;
+    const y = staffY + n * gap;
+    notesSvg += `<ellipse cx="${x}" cy="${y}" rx="5.5" ry="4" fill="${noteColor}" transform="rotate(-15 ${x} ${y})"/>`;
+    notesSvg += `<line x1="${x+5}" y1="${y}" x2="${x+5}" y2="${y-25}" stroke="${noteColor}" stroke-width="1.2"/>`;
+  });
+
+  // "Placeholder" label
+  const label = `<text x="${w/2}" y="${h-6}" font-size="9" font-family="sans-serif" fill="${lineColor}" text-anchor="middle" font-style="italic">Placeholder melody — final notation pending</text>`;
+
+  return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:${w}px">${lines}${clef}${notesSvg}${label}</svg>`;
+}
+
+// Build standalone Tones Reference page
+function buildTonesView() {
+  const fs = S.fontSize;
+  const lang = S.lang;
+  const d = S.date;
+  const meta = getMeta(d);
+  const todayTone = meta.tone || 0;
+
+  const headerHtml = `
+  <div class="svc-view-header">
+    <button class="back-btn" onclick="S.view='home';render()">← ${lang==='uk'?'Назад':'Back'}</button>
+  </div>`;
+
+  // Today's tone banner
+  const todayData = todayTone ? TONE_DATA[todayTone - 1] : null;
+  const bannerHtml = todayData ? `
+  <div class="tone-today-banner">
+    <div class="tone-today-num">${todayTone}</div>
+    <div>
+      <div class="tone-today-name">${lang==='uk'?'Сьогоднішній глас':'Today\'s Tone'}: ${lang==='uk'?todayData.uk:todayData.en}</div>
+      <div class="tone-today-label">${lang==='uk'?todayData.character_uk:todayData.character_en}</div>
+    </div>
+  </div>` : '';
+
+  const introHtml = `
+  <div style="padding:8px 0 12px;font-size:${fs*0.85}px;color:var(--mt);line-height:1.6">
+    ${lang==='uk'
+      ? 'Октоїх (Осмогласник) — система 8 гласів, що чергуються щотижня. Кожен глас має свій характер і мелодію, які визначають спів богослужінь.'
+      : 'The Octoechos (Book of Eight Tones) is the system of 8 melodic modes that rotate weekly. Each tone has its own character and melody, shaping the singing of the divine services.'}
+  </div>`;
+
+  // Tone cards
+  const cardsHtml = TONE_DATA.map(t => {
+    const isToday = t.num === todayTone;
+    const name = lang==='uk' ? t.uk : t.en;
+    const character = lang==='uk' ? t.character_uk : t.character_en;
+    const desc = lang==='uk' ? t.desc_uk : t.desc_en;
+    const sample = lang==='uk' ? t.sample_uk : t.sample_en;
+
+    return `
+    <div class="tone-card${isToday?' active':''}" onclick="toggleToneCard(this)" data-tone="${t.num}">
+      <div class="tone-card-header">
+        <div class="tone-card-num">${t.num}</div>
+        <div class="tone-card-title">
+          <div class="tone-card-name">${name}${isToday?` <span style="color:var(--gold);font-size:0.8em">★ ${lang==='uk'?'сьогодні':'today'}</span>`:''}</div>
+          <div class="tone-card-char">${character}</div>
+        </div>
+        <div class="tone-card-arrow">›</div>
+      </div>
+      <div class="tone-card-body">
+        <div class="tone-card-desc">${desc}</div>
+        <div class="tone-sheet-music">${toneStaffSVG(t.num, S.dark)}</div>
+        <div class="tone-audio-row">
+          <button class="tone-play-btn" disabled title="${lang==='uk'?'Аудіо незабаром':'Audio coming soon'}">▶</button>
+          <div class="tone-audio-label">${lang==='uk'?'Аудіо мелодії — незабаром':'Melody audio — coming soon'}</div>
+        </div>
+        <div class="tone-sample">${sample}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `${headerHtml}
+  <div class="svc-content" style="padding:12px 16px">
+    <h2 style="font-size:${fs*1.15}px;color:var(--gold);margin-bottom:4px">
+      ${lang==='uk'?'🎵 Октоїх — Вісім Гласів':'🎵 Octoechos — The Eight Tones'}
+    </h2>
+    ${bannerHtml}
+    ${introHtml}
+    <div class="tones-grid">${cardsHtml}</div>
+  </div>`;
+}
+
+function toggleToneCard(el) {
+  // If clicking the already-active card, close it
+  if (el.classList.contains('active')) {
+    el.classList.remove('active');
+  } else {
+    // Close others, open this one
+    document.querySelectorAll('.tone-card.active').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    // Scroll into view
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+  }
+}
+
+// Inline tone modal for service pages
+function showToneModal(toneNum) {
+  if (!toneNum || toneNum < 1 || toneNum > 8) return;
+  const t = TONE_DATA[toneNum - 1];
+  const lang = S.lang;
+  const name = lang==='uk' ? t.uk : t.en;
+  const character = lang==='uk' ? t.character_uk : t.character_en;
+  const desc = lang==='uk' ? t.desc_uk : t.desc_en;
+  const sample = lang==='uk' ? t.sample_uk : t.sample_en;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'tone-modal-overlay';
+  overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+
+  overlay.innerHTML = `
+  <div class="tone-modal">
+    <div class="tone-modal-handle"></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+      <div class="tone-card-num" style="font-size:1.2em">${toneNum}</div>
+      <div>
+        <div style="font-weight:700;font-size:1.05em;color:var(--tx)">${name}</div>
+        <div style="font-size:0.82em;color:var(--mt);font-style:italic">${character}</div>
+      </div>
+    </div>
+    <div style="font-size:0.9em;color:var(--tx);line-height:1.6;margin-bottom:14px">${desc}</div>
+    <div class="tone-sheet-music">${toneStaffSVG(toneNum, S.dark)}</div>
+    <div class="tone-audio-row" style="margin-top:12px">
+      <button class="tone-play-btn" disabled>▶</button>
+      <div class="tone-audio-label">${lang==='uk'?'Аудіо незабаром':'Audio coming soon'}</div>
+    </div>
+    <div class="tone-sample" style="margin-top:12px">${sample}</div>
+    <div style="text-align:center;margin-top:16px">
+      <button onclick="this.closest('.tone-modal-overlay').remove();S.view='tones';render()" style="background:none;border:1px solid var(--gold);color:var(--gold);border-radius:6px;padding:8px 20px;font-family:inherit;cursor:pointer;font-size:0.9em">
+        ${lang==='uk'?'Всі гласи →':'All tones →'}
+      </button>
+    </div>
+  </div>`;
+
+  document.body.appendChild(overlay);
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -3770,6 +4109,10 @@ function openService(id) {
     window.scrollTo(0, 0);
   } else if (id === 'matins') {
     S.view = 'matins';
+    render();
+    window.scrollTo(0, 0);
+  } else if (id === 'tones') {
+    S.view = 'tones';
     render();
     window.scrollTo(0, 0);
   }

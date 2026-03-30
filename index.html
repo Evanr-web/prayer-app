@@ -210,6 +210,8 @@ body {
   flex-shrink: 0;
 }
 .tone-play-btn:disabled { opacity: 0.4; cursor: default; }
+.tone-play-btn.playing { background: var(--gold); animation: pulse-play 1s ease infinite; }
+@keyframes pulse-play { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
 .tone-audio-label { font-size: 0.82em; color: var(--mt); }
 .tone-sample { font-size: 0.88em; color: var(--tx); font-style: italic; line-height: 1.5; margin-top: 10px; padding: 10px; background: var(--bg2); border-radius: 6px; border-left: 3px solid var(--gold); }
 
@@ -3860,6 +3862,123 @@ const TONE_DATA = [
   }
 ];
 
+// Shared melody patterns for each tone (staff position: 0=high, 4=low)
+const TONE_MELODIES = {
+  1: [3,2,1,2,3,4,3,2],   // ascending, regal
+  2: [3,4,3,2,3,4,3,2],   // gentle wave
+  3: [2,1,2,3,2,1,2,3],   // smooth flow
+  4: [1,2,3,2,1,2,3,4],   // bright climb
+  5: [4,3,2,3,4,3,2,1],   // grave descent
+  6: [4,3,4,3,2,1,2,1],   // mournful
+  7: [1,1,2,3,4,3,2,1],   // bold march
+  8: [1,2,3,4,3,2,1,0],   // grand sweep
+};
+
+// Map staff positions to frequencies (C major scale, middle register)
+// 0=G4, 1=F4, 2=E4, 3=D4, 4=C4 (descending on staff)
+const TONE_FREQS = [392.00, 349.23, 329.63, 293.66, 261.63];
+
+// Web Audio — play a tone's melody
+let _toneAudioCtx = null;
+let _tonePlayingId = null;
+
+function playToneMelody(toneNum, btnEl) {
+  // If already playing this tone, stop it
+  if (_tonePlayingId === toneNum) {
+    stopToneMelody();
+    return;
+  }
+  // Stop any current playback
+  stopToneMelody();
+
+  const melody = TONE_MELODIES[toneNum];
+  if (!melody) return;
+
+  // Create or resume audio context (must be from user gesture)
+  if (!_toneAudioCtx) _toneAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const ctx = _toneAudioCtx;
+  if (ctx.state === 'suspended') ctx.resume();
+
+  _tonePlayingId = toneNum;
+  const noteDuration = 0.45; // seconds per note
+  const gapDuration = 0.05;
+  const startTime = ctx.currentTime + 0.05;
+
+  // Update button state
+  if (btnEl) {
+    btnEl.textContent = '■';
+    btnEl.classList.add('playing');
+  }
+
+  melody.forEach((pos, i) => {
+    const freq = TONE_FREQS[pos] || TONE_FREQS[2];
+    const t = startTime + i * (noteDuration + gapDuration);
+
+    // Fundamental — soft organ-like tone
+    const osc1 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    osc1.type = 'sine';
+    osc1.frequency.value = freq;
+    gain1.gain.setValueAtTime(0, t);
+    gain1.gain.linearRampToValueAtTime(0.25, t + 0.04);
+    gain1.gain.setValueAtTime(0.25, t + noteDuration - 0.08);
+    gain1.gain.linearRampToValueAtTime(0, t + noteDuration);
+    osc1.connect(gain1);
+    gain1.connect(ctx.destination);
+    osc1.start(t);
+    osc1.stop(t + noteDuration);
+
+    // Soft overtone (octave above, quiet) for warmth
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = 'sine';
+    osc2.frequency.value = freq * 2;
+    gain2.gain.setValueAtTime(0, t);
+    gain2.gain.linearRampToValueAtTime(0.06, t + 0.04);
+    gain2.gain.setValueAtTime(0.06, t + noteDuration - 0.08);
+    gain2.gain.linearRampToValueAtTime(0, t + noteDuration);
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    osc2.start(t);
+    osc2.stop(t + noteDuration);
+
+    // Third partial (fifth above, very soft) for richness
+    const osc3 = ctx.createOscillator();
+    const gain3 = ctx.createGain();
+    osc3.type = 'sine';
+    osc3.frequency.value = freq * 3;
+    gain3.gain.setValueAtTime(0, t);
+    gain3.gain.linearRampToValueAtTime(0.02, t + 0.04);
+    gain3.gain.setValueAtTime(0.02, t + noteDuration - 0.08);
+    gain3.gain.linearRampToValueAtTime(0, t + noteDuration);
+    osc3.connect(gain3);
+    gain3.connect(ctx.destination);
+    osc3.start(t);
+    osc3.stop(t + noteDuration);
+  });
+
+  // Reset button after playback finishes
+  const totalDuration = melody.length * (noteDuration + gapDuration) * 1000 + 100;
+  setTimeout(() => {
+    if (_tonePlayingId === toneNum) {
+      _tonePlayingId = null;
+      if (btnEl) {
+        btnEl.textContent = '▶';
+        btnEl.classList.remove('playing');
+      }
+    }
+  }, totalDuration);
+}
+
+function stopToneMelody() {
+  _tonePlayingId = null;
+  // Reset all play buttons
+  document.querySelectorAll('.tone-play-btn.playing').forEach(b => {
+    b.textContent = '▶';
+    b.classList.remove('playing');
+  });
+}
+
 // Generate placeholder staff notation SVG for a tone
 function toneStaffSVG(toneNum, isDark) {
   const w = 320, h = 100;
@@ -3877,18 +3996,7 @@ function toneStaffSVG(toneNum, isDark) {
   // Simple treble clef approximation
   const clef = `<text x="16" y="${staffY + 35}" font-size="48" font-family="serif" fill="${clefColor}" opacity="0.7">𝄞</text>`;
 
-  // Placeholder melody — different note patterns per tone to give variety
-  const melodies = {
-    1: [3,2,1,2,3,4,3,2],   // ascending, regal
-    2: [3,4,3,2,3,4,3,2],   // gentle wave
-    3: [2,1,2,3,2,1,2,3],   // smooth flow
-    4: [1,2,3,2,1,2,3,4],   // bright climb
-    5: [4,3,2,3,4,3,2,1],   // grave descent
-    6: [4,3,4,3,2,1,2,1],   // mournful
-    7: [1,1,2,3,4,3,2,1],   // bold march
-    8: [1,2,3,4,3,2,1,0],   // grand sweep
-  };
-  const notes = melodies[toneNum] || melodies[1];
+  const notes = TONE_MELODIES[toneNum] || TONE_MELODIES[1];
   let notesSvg = '';
   notes.forEach((n, i) => {
     const x = 60 + i * 32;
@@ -3956,8 +4064,8 @@ function buildTonesView() {
         <div class="tone-card-desc">${desc}</div>
         <div class="tone-sheet-music">${toneStaffSVG(t.num, S.dark)}</div>
         <div class="tone-audio-row">
-          <button class="tone-play-btn" disabled title="${lang==='uk'?'Аудіо незабаром':'Audio coming soon'}">▶</button>
-          <div class="tone-audio-label">${lang==='uk'?'Аудіо мелодії — незабаром':'Melody audio — coming soon'}</div>
+          <button class="tone-play-btn" onclick="event.stopPropagation();playToneMelody(${t.num},this)" title="${lang==='uk'?'Прослухати мелодію':'Listen to melody'}">▶</button>
+          <div class="tone-audio-label">${lang==='uk'?'Прослухати мелодію глас':'Listen to tone melody'} ${t.num}</div>
         </div>
         <div class="tone-sample">${sample}</div>
       </div>
@@ -4015,8 +4123,8 @@ function showToneModal(toneNum) {
     <div style="font-size:0.9em;color:var(--tx);line-height:1.6;margin-bottom:14px">${desc}</div>
     <div class="tone-sheet-music">${toneStaffSVG(toneNum, S.dark)}</div>
     <div class="tone-audio-row" style="margin-top:12px">
-      <button class="tone-play-btn" disabled>▶</button>
-      <div class="tone-audio-label">${lang==='uk'?'Аудіо незабаром':'Audio coming soon'}</div>
+      <button class="tone-play-btn" onclick="playToneMelody(${toneNum},this)">▶</button>
+      <div class="tone-audio-label">${lang==='uk'?'Прослухати мелодію':'Listen to melody'}</div>
     </div>
     <div class="tone-sample" style="margin-top:12px">${sample}</div>
     <div style="text-align:center;margin-top:16px">

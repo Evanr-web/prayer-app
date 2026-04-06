@@ -546,9 +546,9 @@ body {
 
 // ── State ────────────────────────────────────────────────────
 const S = {
-  date: new Date(2026, 2, 11),   // default: March 11, 2026
+  date: new Date(),               // default: today
   view: 'home',                   // 'home' | 'cal' | 'vespers'
-  calMonth: 2,                    // 0-indexed, 0=Jan 1=Feb 2=Mar
+  calMonth: new Date().getMonth(),// 0-indexed, matches today
   lang: 'en',
   dark: false,
   fontSize: 18,
@@ -557,8 +557,8 @@ const S = {
   moveableEN: null,               // from data/vespers-moveable-en.json (lazy)
   moveableLoading: false,
 };
-const TODAY = new Date(2026, 2, 11);
-const DATA_MONTHS = [0, 1, 2];    // Jan/Feb/Mar have data
+const TODAY = new Date();
+const DATA_MONTHS = [0, 1, 2, 3]; // Jan/Feb/Mar/Apr have data
 
 // ── Helpers ──────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
